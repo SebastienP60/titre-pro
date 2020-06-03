@@ -1,0 +1,57 @@
+body{
+    background: url(../img/camoBleu.jpeg);
+}
+#search{
+width: 300px;
+height: 40px;
+background: white;
+color: black;
+-webkit-transform:skew(-40deg);
+transform: skew(-40deg);
+margin-left: 450px;
+margin-top: -100px;
+}
+#searchProducts{
+    border: none;
+}
+#connect{
+    width: 300px;
+    height: 40px;
+    background: white;
+    color: black;
+    -webkit-transform:skew(-40deg);
+    transform: skew(-40deg);
+    margin-left: 900px;
+    margin-top: -20px;  
+}
+#banner{
+    background-color: black;
+    width: auto;
+    height: 250px;
+}
+#logo{
+    height: 180px;
+    width: auto;
+    margin-top: 10px;
+}
+#nameSite{
+    color: white;
+    font-size: 1.5em ;
+    line-height: 4px;
+    height: 100px;
+    padding-left: 300px;
+    margin-top: -110px;
+}
+#shoppingCart{
+    color: white;
+    width: 50px;
+    margin-left: 800px;
+    margin-top: -40px;
+}
+ul{
+    list-style: none;
+    color: white;
+}
+#category{
+    margin-top: 65px;
+}
