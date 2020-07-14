@@ -1,57 +1,64 @@
 body{
-    background: url(../img/camoBleu.jpeg);
+    background: url(../img/camoVert.png);
 }
 #search{
-width: 300px;
-height: 40px;
-background: white;
-color: black;
--webkit-transform:skew(-40deg);
-transform: skew(-40deg);
-margin-left: 450px;
-margin-top: -100px;
-}
-#searchProducts{
-    border: none;
-}
-#connect{
-    width: 300px;
     height: 40px;
     background: white;
     color: black;
-    -webkit-transform:skew(-40deg);
     transform: skew(-40deg);
-    margin-left: 900px;
-    margin-top: -20px;  
+}
+#searchProducts, #searchBtn{
+    border: none;
+    padding-top: 5px;
+    transform: skew(+40deg);
+}
+#searchBtn{
+    padding-left: 35px;
+    height: 30px;
+    padding-top: 1px;
+    /* border: none; */
 }
 #banner{
     background-color: black;
     width: auto;
-    height: 250px;
+    height: 200px;
 }
 #logo{
     height: 180px;
     width: auto;
     margin-top: 10px;
 }
-#nameSite{
-    color: white;
-    font-size: 1.5em ;
-    line-height: 4px;
-    height: 100px;
-    padding-left: 300px;
-    margin-top: -110px;
-}
 #shoppingCart{
     color: white;
     width: 50px;
-    margin-left: 800px;
-    margin-top: -40px;
 }
-ul{
+#menu{
+    background-color: black;
+}
+#navbarLongReplicate, #navbarGunReplicate, #navbarAccessories{
+    color: black;
+}
+.dropdown-menu{
+    background-color: #F76A01;
+}
+.dropdown-item {
+    color: black;
+}
+li{
     list-style: none;
+}
+/*#category{
+    margin-top: 36px;
+}*/
+.userAccountTitle{
+    padding-top: 8px;
+    transform: skew(+40deg);
+}
+.fa-shopping-basket{
     color: white;
 }
-#category{
-    margin-top: 65px;
+h1{
+    color: #F76A01;
 }
+
+
