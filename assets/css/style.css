@@ -18,7 +18,7 @@ body{
     padding-top: 1px;
     /* border: none; */
 }
-#banner{
+#banner, #footPage{
     background-color: black;
     width: auto;
     height: 200px;
@@ -59,6 +59,28 @@ li{
 }
 h1{
     color: #F76A01;
+    font-weight: bold;
+    font-size: 3.5rem;
+    padding-top: 70px;
+    padding-bottom: 70px;
 }
-
-
+#firstActualProduct, #secondActualProduct{
+    padding-right: 25px;
+}
+figcaption{
+    color: #F76A01;
+    font-weight: bold;
+}
+p{
+    color: #F76A01;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+#contact, #timetables li{
+    color: white;
+}
+#facebook, #instagram{
+    background-color: white;
+    height: 50px;
+    width: auto;
+}
