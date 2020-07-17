@@ -1,6 +1,3 @@
-<?php
-include('tables.php')
-?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
@@ -16,7 +13,7 @@ include('tables.php')
         <div class="container-fluid" id="banner">
             <div class="row">
                 <div class="col-md-2 ml-auto mr-auto my-auto" id="identity">
-                    <img id="logo" class="img-fluid" src="assets/img/logoRAS.jpg" alt="Logo du site" title="Logo du site"/>
+                    <a href="index.php"><img id="logo" class="img-fluid" src="assets/img/logoRAS.jpg" alt="Logo du site" title="Logo du site"/></a>
                 </div>
                 <!--<div class="col-md-1 mr-auto ml-auto my-auto" id="nameSite">
                         <p><strong>Retz</strong><br/>
@@ -31,7 +28,7 @@ include('tables.php')
                     <a href="panier.php"><i class="fas fa-shopping-basket fa-5x" alt="logo panier"></i></a>
                 </div>
                 <div class="col-md-2 mx-auto my-auto" id="connect">
-                    <a class="btn btn-account text-white" href="account.php">Mon compte</a>
+                    <a class="btn btn-account text-white" href="indexForm.php">Mon compte</a>
                 </div>
             </div>
         </div>
@@ -68,7 +65,7 @@ include('tables.php')
                                         Répliques longues
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarLongReplicate">
-                                        <li><a class="dropdown-item" href="armes-longues.php">Répliques longues</a></li>
+                                        <li><a class="dropdown-item" href="armes_longues.php">Répliques longues</a></li>
                                         <li><a class="dropdown-item" href="#">Répliques à ressort</a></li>
                                         <li><a class="dropdown-item" href="#">Répliques à gaz</a></li>
                                         <li><a class="dropdown-item" href="#">Répliques CO2</a></li>
@@ -208,64 +205,3 @@ include('tables.php')
                     </ul>
                 </div>
             </nav>
-    
-    <div class="container" id="principalPage">
-    <h1 class="text-center">Nos produits du moment</h1>                
-        <div class="row no-gutters" id="actualsProducts">
-            <figure class="col-lg-4">
-                <img class="img-fluid" id="firstActualProduct" src="assets/img/A69987-2.jpg" alt="Bas de masque" title="Bas de masque" />
-                <figcaption>Bas de masque grillage v1 - olive</figcaption>
-                <figcaption>21€ TTC</figcaption>
-            </figure>
-            <figure class="col-lg-4">
-                <img class="img-fluid" id="secondActualProduct" src="assets/img/PR2004.jpg" alt="Pistolet à ressort" title="Pistolet à ressort" />
-                <figcaption>Réplique pistolet à ressort H&K VP9 HME</figcaption>
-                <figcaption>Culasse métal 0,5J</figcaption>
-                <figcaption>44€ TTC</figcaption>
-            </figure>
-            <figure class="col-lg-4">
-                <img class="img-fluid" id="thirdActualProduct" src="assets/img/BB3313.jpg" alt="Bouteille de billes" title="Bouteille de billes" />
-                <figcaption>Billes BIO 0.30g x 5100 en bouteille</figcaption>
-                <figcaption>22,20€ TTC</figcaption>
-            </figure>
-        </div>
-    </div>
-    <div class="container">
-        <p id="hitsoryShop">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-    </div>
-    <footer>
-        <div class="container-fluid" id="footPage">
-            <div class="row">
-                <!-- <div class="col-md-2 ml-auto mr-auto my-auto" id="identity">
-                    <img id="logo" class="img-fluid" src="assets/img/logoRAS.jpg" alt="Logo du site" title="Logo du site"/>
-                </div> -->
-                <div class="col-md-4 mx-auto my-auto" id="contact">
-                    <ul>
-                        <li>Contact</li>
-                        <li>Retz Airsoft Shop</li>
-                        <li>14 Rue Léveillé 02600 Villers-Cotterêts</li>
-                        <li>info@retztacticalgames.com</li>
-                        <li>06.73.47.28.06</li>
-                        <li>09.88.66.27.55</li>
-                    </ul>
-                </div>
-                <div class="col-md-4 mx-auto my-auto" id="timetables">
-                    <ul>
-                        <li>Horaires</li>
-                        <li>du Mardi au Samedi</li>
-                        <li>11H00 à 19H00</li>
-                    </ul>
-                </div>
-                <div class="col-md-2 mx-auto my-auto">
-                    <img class="img-fluid" alt="icone Facebook" title="Facebook" src="assets/img/facebook.png" id="facebook"/>
-                    <img class="img-fluid" alt="icone Instagram" title="Instagram" src="assets/img/insta.png" id="instagram" />
-                </div>                    
-            </div>
-        </div>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="assets/js/script.js"></script>
-</body>
-</html>

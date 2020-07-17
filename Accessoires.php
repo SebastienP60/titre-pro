@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<?php
+include('header.php')
+?>
 <body>
     <h1>les accessoires</h1>
     <p id="crosses" style="height:100vh">loremoefqbvqjvnjmearvbaevj,erjvmbauehvjkeohjfthjkmjgckmjcgkjgkjh</p>
 </body>
-</html>
+<?php
+include('footer.php')
+?>

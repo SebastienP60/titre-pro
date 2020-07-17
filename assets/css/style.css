@@ -18,13 +18,18 @@ body{
     padding-top: 1px;
     /* border: none; */
 }
-#banner, #footPage{
+#banner{
+    background-color: black;
+    width: auto;
+    height: 140px;
+}
+#footPage{
     background-color: black;
     width: auto;
     height: 200px;
 }
 #logo{
-    height: 180px;
+    height: 130px;
     width: auto;
     margin-top: 10px;
 }
@@ -32,7 +37,7 @@ body{
     color: white;
     width: 50px;
 }
-#menu{
+nav{
     background-color: black;
 }
 #navbarLongReplicate, #navbarGunReplicate, #navbarAccessories{
@@ -71,7 +76,8 @@ figcaption{
     color: #F76A01;
     font-weight: bold;
 }
-p{
+#historyShop{
+    background-color: rgba(0, 0, 0, 0.5);
     color: #F76A01;
     padding-top: 70px;
     padding-bottom: 70px;
@@ -79,8 +85,15 @@ p{
 #contact, #timetables li{
     color: white;
 }
+#contact{
+    padding-top: 10px;
+}
 #facebook, #instagram{
     background-color: white;
     height: 50px;
     width: auto;
+}
+.btn-account{
+    outline: none;
+    box-shadow: none;
 }
