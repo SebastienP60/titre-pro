@@ -1,17 +1,13 @@
-$(document).ready(function(){
-    $('.dropdown-submenu a.navDropdown').on("click", function(e){
-      /*$('.dropdown-menu').toggle();*/
-      $(this).next('ul').toggle();
-      e.stopPropagation();
-      e.preventDefault();
-    });
-  });
+// $(document).ready(function(){
+//     $('.dropdown-submenu a.navDropdown').on("click", function(e){
+//       /*$('.dropdown-menu').toggle();*/
+//       $(this).next('ul').toggle();
+//       e.stopPropagation();
+//       e.preventDefault();
+//     });
+//   });
   
-  /*$(function() {
-    $('#"navbarLongReplicate').change(function(){
-        $('navbarGunReplicate').hide(); 
-           });
-});*/
-  /*$(document).on('click', '.dropdown-menu', function (e) {
-    e.stopPropagation();
-  });*/
+/* Si le sous menu réplique de poing est affiché
+ quand je clique sur le sous menu réplique longues il s'affiche 
+ et le sous menu réplique de poing se ferme*/
+

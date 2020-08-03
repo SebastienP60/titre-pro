@@ -1,9 +1,6 @@
 <footer>
         <div class="container-fluid" id="footPage">
             <div class="row">
-                <!-- <div class="col-md-2 ml-auto mr-auto my-auto" id="identity">
-                    <img id="logo" class="img-fluid" src="assets/img/logoRAS.jpg" alt="Logo du site" title="Logo du site"/>
-                </div> -->
                 <div class="col-md-4 mx-auto my-auto" id="contact">
                     <ul>
                         <li>Contact</li>
@@ -17,8 +14,10 @@
                 <div class="col-md-4 mx-auto my-auto" id="timetables">
                     <ul>
                         <li>Horaires</li>
-                        <li>du Mardi au Samedi</li>
-                        <li>11H00 à 19H00</li>
+                        <li>du Mardi au Vendredi : 11h00 à 12h30</li>
+                        <li>et de 13h30 à 19h00</li> 
+                        <li>le Mercredi fermeture à 18h00</li>
+                        <li>Samedi 11h00 à 19h00 non-stop</li>
                     </ul>
                 </div>
                 <div class="col-md-2 mx-auto my-auto">

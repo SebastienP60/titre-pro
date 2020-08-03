@@ -44,7 +44,7 @@ nav{
     color: black;
 }
 .dropdown-menu{
-    background-color: #F76A01;
+    background-color: #2E86AB;
 }
 .dropdown-item {
     color: black;
@@ -63,24 +63,33 @@ li{
     color: white;
 }
 h1{
-    color: #F76A01;
+    color: black;
     font-weight: bold;
     font-size: 3.5rem;
     padding-top: 70px;
     padding-bottom: 70px;
 }
-#firstActualProduct, #secondActualProduct{
-    padding-right: 25px;
+.card{
+    background-color: transparent;
 }
-figcaption{
-    color: #F76A01;
+.card-body{
+    background-color: white;
+    /* height: 50px; */
+}
+/* #firstActualProduct, #secondActualProduct{
+    padding-right: 2px;
+} */
+/* figcaption{
+    color: #2E86AB;
     font-weight: bold;
-}
+} */
 #historyShop{
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #F76A01;
-    padding-top: 70px;
-    padding-bottom: 70px;
+    background-color: rgba(33, 82, 33, 0.5);
+    color: white;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 50px;
+    margin-bottom: 30px;
 }
 #contact, #timetables li{
     color: white;
@@ -96,4 +105,12 @@ figcaption{
 .btn-account{
     outline: none;
     box-shadow: none;
+}
+form{
+    background-color: rgba(33, 82, 33, 0.5);
+    color: white;
+    font-weight: bold;
+    border: 3px solid black;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
