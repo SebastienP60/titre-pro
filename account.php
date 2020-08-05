@@ -2,13 +2,13 @@
 include 'header.php';
 include 'controllerForm.php';
 ?>
-<div class="container text-center">
+<h1 id="registration">Inscrivez-vous</h1>
+<div id="registrationForm" class="container text-center">
     <form method="POST" action="account.php">
         <fieldset>
-            <legend><h2>Formulaire d'inscription</h2></legend>
-                <div class="form-group">
+                <div id="civility" class="form-group">
                     <label for="civility">Civilité</label>
-                        <select name="civility" class="form-control">
+                        <select name="civility" class="text-center">
                             <option value=""></option>
                                 <!-- Avec la boucle on parcours tout le tableau-->
                                 <?php foreach($civilityList as $civilityName => $civilityValue){ ?>
@@ -20,23 +20,33 @@ include 'controllerForm.php';
                     <p><?= isset($formErrors['civility']) ? $formErrors['civility'] : '' ?></p>
                 </div>    
                 <div class="form-group">
-                    <label for="lastName">Votre nom de famille</label><input class="form-control" type="text" id="lastName" name="lastName" value="<?= isset($_POST['lastName']) ? $_POST['lastName'] : '' ?>" />
+                    <label for="lastName">Votre nom de famille : </label>
+                    <input class="text-center" type="text" id="lastName" name="lastName" value="<?= isset($_POST['lastName']) ? $_POST['lastName'] : '' ?>" />
                     <p><?= isset($formErrors['lastName']) ? $formErrors['lastName'] : '' ?></p>
                 </div>        
                 <div class="form-group">
-                    <label for="firstName">Votre prénom</label><input class="form-control" type="text" id="firstName" name="firstName" value="<?= isset($_POST['firstName']) ? $_POST['firstName'] : '' ?>" />
+                    <label for="firstName">Votre prénom : </label>
+                    <input class="text-center" type="text" id="firstName" name="firstName" value="<?= isset($_POST['firstName']) ? $_POST['firstName'] : '' ?>" />
                     <p><?= isset($formErrors['firstName']) ? $formErrors['firstName'] : '' ?></p>
+                </div>
+                <div class="form-group">
+                    <label for="address">Votre adresse postale : </label>
+                    <input class="text-center" type="text" id="address" name="address" value="<?= isset($_POST['address']) ? $_POST['address'] : '' ?>" />
+                    <p><?= isset($formErrors['address']) ? $formErrors['address'] : '' ?></p>
                 </div>        
                 <div class="form-group">
-                    <label for="mailAddress">Votre adresse mail</label><input class="form-control" type="text" id="mailAddress" name="mailAddress" value="<?= isset($_POST['mailAddress']) ? $_POST['mailAddress'] : '' ?>"/>
+                    <label for="mailAddress">Votre adresse mail : </label>
+                    <input class="text-center" type="text" id="mailAddress" name="mailAddress" value="<?= isset($_POST['mailAddress']) ? $_POST['mailAddress'] : '' ?>"/>
                     <p><?= isset($formErrors['mailAddress']) ? $formErrors['mailAddress'] : '' ?></p>
                 </div>    
                 <div class="form-group">
-                    <label for="password">Votre mot de passe</label><input class="form-control" type="password" id="password" name="password" value="<?= isset($_POST['password']) ? $_POST['password'] : '' ?>" />
+                    <label for="password">Votre mot de passe : </label>
+                    <input class="text-center" type="password" id="password" name="password" value="<?= isset($_POST['password']) ? $_POST['password'] : '' ?>" />
                     <p><?= isset($formErrors['password']) ? $formErrors['password'] : '' ?></p>
                 </div>    
                 <div class="form-group">
-                    <label for="confirmPassword">Confirmer votre mot de passe</label><input class="form-control" type="password" id="confirmPassword" name="confirmPassword" value="<?= isset($_POST['confirmPassword']) ? $_POST['confirmPassword'] : '' ?>" />
+                    <label for="confirmPassword">Confirmer votre mot de passe : </label>
+                    <input class="text-center" type="password" id="confirmPassword" name="confirmPassword" value="<?= isset($_POST['confirmPassword']) ? $_POST['confirmPassword'] : '' ?>" />
                     <p><?= isset($formErrors['confirmPassword']) ? $formErrors['confirmPassword'] : '' ?></p>
                 </div>    
                 <input type="submit" value="Valider" name="send" />

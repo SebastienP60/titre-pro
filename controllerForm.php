@@ -5,8 +5,6 @@ $formErrors = array();
 $civilityList = array('Mr' => 'Monsieur','Mme' => 'Madame', 'Mlle' => 'Mademoiselle');
 //Déclaration de l'expression régulière pour le nom et le prénom de l'utilisateur
 $regexName = '%^([A-Z]{1}[A-ÿ]+)([\-\ ]{1}[A-Z]{1}[A-ÿ]+)*$%';
-//Déclaration de l'expression régulière pour la vérification de l'adresse mail
-$regexMail = '%^([a-z0-9\-_.]{1,64})@([a-z0-9\-_.]{1,255})\.([a-z]{1,3})$%';
 //Déclaration de l'expression régulière pour la vérification du numéro de téléphone
 $regexPhone = '%^((0|\+33 ?)[1-9])([ -.]?)(([0-9]{2})([ -.]?)){4}$%';
 //Déclaration de l'expression régulière pour les mots de passe
@@ -47,7 +45,7 @@ if(isset($_POST['send'])){
     }
 
     if(!empty($_POST['mailAddress'])){
-        if(preg_match($regexMail, $_POST['mailAddress'])){
+        if(filter_var($_POST['mailAddress'], FILTER_VALIDATE_EMAIL )){
             $mailAddress = htmlspecialchars($_POST['mailAddress']);
         }else{
             $formErrors['mailAddress'] = 'Votre adresse mail doit être de la forme jean.dupont@moi.fr';
@@ -70,5 +68,11 @@ if(isset($_POST['send'])){
         $confirmPassword = htmlspecialchars($_POST['confirmPassword']);
     }else{
         $formErrors['confirmPassword'] = 'Votre mot passe doit être identique';
+    }
+
+    if(!empty($_POST['address'])){
+        $confirmPassword = htmlspecialchars($_POST['address']);
+    }else{
+        $formErrors['address'] = 'Veuillez renseigner votre adresse postale';
     }
 }

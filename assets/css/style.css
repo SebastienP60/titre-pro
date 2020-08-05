@@ -16,7 +16,6 @@ body{
     padding-left: 35px;
     height: 30px;
     padding-top: 1px;
-    /* border: none; */
 }
 #banner{
     background-color: black;
@@ -52,15 +51,21 @@ nav{
 li{
     list-style: none;
 }
-/*#category{
-    margin-top: 36px;
-}*/
 .userAccountTitle{
     padding-top: 8px;
     transform: skew(+40deg);
 }
 .fa-shopping-basket{
     color: white;
+}
+#gameLink{
+    color: white;
+    font-weight: bold;
+}
+#gameLink a{
+    color: #2E86AB;
+    text-decoration: none;
+    font-weight: bold;
 }
 h1{
     color: black;
@@ -74,18 +79,10 @@ h1{
 }
 .card-body{
     background-color: white;
-    /* height: 50px; */
 }
-/* #firstActualProduct, #secondActualProduct{
-    padding-right: 2px;
-} */
-/* figcaption{
-    color: #2E86AB;
-    font-weight: bold;
-} */
 #historyShop{
     background-color: rgba(33, 82, 33, 0.5);
-    color: white;
+    color: black;
     padding-top: 40px;
     padding-bottom: 40px;
     margin-top: 50px;
@@ -113,4 +110,58 @@ form{
     border: 3px solid black;
     margin-top: 100px;
     margin-bottom: 100px;
+}
+#registration{
+    text-align: center;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+#registrationForm{
+    margin-top: -50px;
+}
+#civility{
+    margin-top: 15px;
+}
+#home{
+    margin-top: 50px;
+    font-size: 1.5rem;
+    background-color: rgba(33, 82, 33, 0.5);
+    color: white;
+    padding-left: 10px;
+}
+#home a{
+    text-decoration: none;
+    color: white;
+}
+#identify{
+    margin-top: 50px;
+    font-size: 1.8rem;
+    border-bottom: 5px solid black;
+    color: white;
+    padding-left: 15px;
+}
+#createEmail, #yourEmail, #yourPassword{
+    width: 20rem;
+}
+#lastName, #firstName, #mailAddress, #password, #confirmPassword, #address{
+    width: 40rem;
+}
+#createAccount, #accountExist{
+    padding-top: 20px;
+    font-size: 1.8rem;
+    padding-left: 15px;
+}
+#enterMail{
+    padding-left: 15px;
+}
+label[for=createEmail],[for=yourEmail],[for=yourPassword]{
+    padding-left: 15px;
+}
+#identifyForm input[type=submit]{
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+input[name=send]{
+    margin-bottom: 15px;
 }

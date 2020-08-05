@@ -21,7 +21,7 @@
                     </ul>
                 </div>
                 <div class="col-md-2 mx-auto my-auto">
-                    <img class="img-fluid" alt="icone Facebook" title="Facebook" src="assets/img/facebook.png" id="facebook"/>
+                    <a href="https://fr-fr.facebook.com/RetzTacticalGames"><img class="img-fluid" alt="icone Facebook" title="Facebook" src="assets/img/facebook.png" id="facebook"/></a>
                     <img class="img-fluid" alt="icone Instagram" title="Instagram" src="assets/img/insta.png" id="instagram" />
                 </div>                    
             </div>
