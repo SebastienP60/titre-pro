@@ -20,13 +20,13 @@
                     <button class="btn border-none" type="submit" name="submitSearch" ><img src="assets/img/jumelles.png" id="searchBtn" alt="Bouton rechercher" title="Bouton rechercher"/></button>
                 </div>
                 <div class="col-lg-1 mr-auto ml-auto my-auto" id="shoppingCart">
-                    <a href="panier.php"><i class="fas fa-shopping-basket fa-5x" alt="logo panier"></i></a>
+                    <a href="./views/panier.php"><i class="fas fa-shopping-basket fa-5x" alt="logo panier"></i></a>
                 </div>
                 <div class="col-lg-2 mx-auto my-auto" id="gameLink">
                     <p>Avant de vous lancer dans l'aventure venez nous retrouver sur notre <a href="https://retztacticalgames.com/fr"> terrain de jeu</a></p>
                 </div>
                 <div class="col-lg-2 mx-auto my-auto" id="connect">
-                    <a class="btn btn-account text-white" href="inscription.php">Mon compte</a>
+                    <a class="btn btn-account text-white" href="./views/inscription.php">Mon compte</a>
                 </div>
             </div>
         </div>
