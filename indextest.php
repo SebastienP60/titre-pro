@@ -1,5 +1,10 @@
 <?php
-include('tables.php')
+include 'tables.php';
+include 'models/categoriesname.php';
+include 'controllers/headerController.php';
+/* $types = array('Armes de poing', 'Armes longues'); */
+$armesdepoing = array('Répliques à ressorts', 'Répliques à gaz');
+
 ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -18,11 +23,6 @@ include('tables.php')
                 <div class="col-md-2 ml-auto mr-auto my-auto" id="identity">
                     <img id="logo" class="img-fluid" src="assets/img/logoRAS.jpg" alt="logo du site" />
                 </div>
-                <!--<div class="col-md-1 mr-auto ml-auto my-auto" id="nameSite">
-                        <p><strong>Retz</strong><br/>
-                        <strong>Airsoft</strong><br/>
-                       <strong>Shop</strong></p>
-                </div>-->
                 <div class="col-md-3 mr-auto ml-auto my-auto" id="search">
                     <input id="searchProducts" class="searchProducts" type="text" name="searchProducts" placeholder="Rechercher" value="" autocomplete="off" />
                     <button class="btn border-none" type="submit" name="submitSearch" ><img src="assets/img/jumelles.png" id="searchBtn" /></button>
@@ -46,37 +46,23 @@ include('tables.php')
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!--Création de la liste non ordonnée de tous les liens et sous-menus-->
                     <ul class="navbar-nav mr-auto container-fluid">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarReplicate" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Répliques
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarReplicate">
-                                <li class="nav-item dropdown-submenu dropdown dropright">
-                                    <a class="dropdown-toggle" id="navbarGunReplicate" role="button" onclick="showSubmenu()">
-                                        Répliques de poing
-                                    </a>
-                                    <ul class="dropdown-menu" id="submenuGunReplicate">
-                                        <li><a class="dropdown-item" href="armes-de-poing.php">Répliques de poing</a></li>
-                                        <li><a class="dropdown-item" href="#">Répliques à ressort</a></li>
-                                        <li><a class="dropdown-item" href="#">Répliques à gaz</a></li>
-                                        <li><a class="dropdown-item" href="#">Répliques CO2</a></li>
-                                        <li><a class="dropdown-item" href="#">Répliques électriques</a></li>
-                                    </ul>
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Répliques
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <?php
+                            foreach ($showTypeNames as $type) { ?>
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#"><?= $type->typeName ?></a>
+                                    <ul class="dropdown-menu">
+                                        <?php
+                                        foreach ($showSubType1 as $arme) {
+                                        ?><li><a class="dropdown-item" href="<?= $arme->link ?>"><?= $arme->subtypeName ?></a></li><?php } ?>
+                                    </ul> 
                                 </li>
-                                <li class="nav-item dropdown-submenu">
-                                    <a class="nav-link dropdown-toggle navDropdown" id="navbarLongReplicate" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Répliques longues
-                                    </a>
-                                    <ul class="dropdown-menu" id="submenuLongReplicate">
-                                        <li><a class="dropdown-item" href="armes_longues.php">Répliques longues</a></li>
-                                        <li><a class="dropdown-item" href="#">Répliques à ressort</a></li>
-                                        <li><a class="dropdown-item" href="#">Répliques à gaz</a></li>
-                                        <li><a class="dropdown-item" href="#">Répliques CO2</a></li>
-                                        <li><a class="dropdown-item" href="#">Répliques électriques</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
+                                <?php
+                            } ?>
+                        </ul>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarAccessory" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Accessoires

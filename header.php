@@ -62,7 +62,7 @@
                                     Répliques longues
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarLongReplicate" id="submenuLongReplicate">
-                                    <li><a class="dropdown-item" href="armes_longues.php">Répliques longues</a></li>
+                                    <li><a class="dropdown-item" href="armes-longues.php">Répliques longues</a></li>
                                     <li><a class="dropdown-item" href="#">Répliques à ressort</a></li>
                                     <li><a class="dropdown-item" href="#">Répliques à gaz</a></li>
                                     <li><a class="dropdown-item" href="#">Répliques CO2</a></li>

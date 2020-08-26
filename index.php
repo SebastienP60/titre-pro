@@ -1,9 +1,17 @@
 <?php
 include 'header.php';
 include 'tables.php';
+include 'models/categoriesname.php';
+include 'controllers/headerController.php';
+/* $types = array('Armes de poing', 'Armes longues'); */
+$armesdepoing = array('Répliques à ressorts', 'Répliques à gaz');
 ?>
+    <div class="container text-center">
+        <h1>Notre histoire</h1>
+        <p id="historyShop">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+    </div>
     <div class="container" id="principalPage">
-        <h1 class="text-center">Nos produits du moment</h1>                
+        <h2 class="text-center">Nos produits du moment</h2>                
             <div class="card-deck">
                 <div class="card">
                     <img class="card-img-top" src="assets/img/A69987-2.jpg" alt="Bas de masque" title="Bas de masque" />
@@ -33,9 +41,6 @@ include 'tables.php';
                     </div>
                 </div> 
             </div>   
-    </div>
-    <div class="container text-center">
-        <p id="historyShop">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
     </div>
 <?php
 include 'footer.php';

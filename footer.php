@@ -3,17 +3,17 @@
             <div class="row">
                 <div class="col-md-4 mx-auto my-auto" id="contact">
                     <ul>
-                        <li>Contact</li>
+                        <li id="contacts">Contact</li>
                         <li>Retz Airsoft Shop</li>
                         <li>14 Rue Léveillé 02600 Villers-Cotterêts</li>
-                        <li>info@retztacticalgames.com</li>
+                        <li><a href="mailto:infos@retztacticalgames.com">infos@retztacticalgames.com</a></li>
                         <li>06.73.47.28.06</li>
                         <li>09.88.66.27.55</li>
                     </ul>
                 </div>
-                <div class="col-md-4 mx-auto my-auto" id="timetables">
+                <div class="col-md-4 m-auto" id="timetables">
                     <ul>
-                        <li>Horaires</li>
+                        <li id="shedules">Horaires</li>
                         <li>du Mardi au Vendredi : 11h00 à 12h30</li>
                         <li>et de 13h30 à 19h00</li> 
                         <li>le Mercredi fermeture à 18h00</li>
