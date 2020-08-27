@@ -18,7 +18,7 @@ if(isset($_POST['addUser'])){
             $user->lastname = htmlspecialchars($_POST['lastname']);
         //Si la synthaxe est mauvaise on le signale à l'aide d'un message
         }else{
-            $formErrors['lastname'] = 'Votre nom de famille doit être de la forme : Dupont';
+            $formErrors['lastname'] = 'Votre nom doit être de la forme : Dupont';
         }
     //Si le champ n'est pas renseigné au moment d'envoyer le formulaire on signale par un message
     }else{
@@ -55,14 +55,14 @@ if(isset($_POST['addUser'])){
         $formErrors['password'] = 'Veuillez choisir un mot de passe';
     }
 
-    if(!empty($_POST['confirmPassword'])){
+/*     if(!empty($_POST['confirmPassword'])){
         if(preg_match($regexPassword,$_POST['confirmPassword'])){
             $confirmPassword = htmlspecialchars($_POST['confirmPassword']);
         }else{
             $formErrors['confirmPassword'] = 'Votre mot de passe doit être identique';
         }
     }
-    if(!empty($_POST['address'])){
+ */    if(!empty($_POST['address'])){
         $user->address = htmlspecialchars($_POST['address']);
         }else{
             $formErrors['address'] = 'Veuillez renseigner votre adresse postale';

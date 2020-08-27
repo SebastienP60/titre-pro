@@ -21,8 +21,8 @@ class users{
                 die ($error->getMessage());
         }
     }
-//Méthode pour insérer un nouvel utilisateur dans la table users avec une fonction préparée
-//car on attend des informations du visiteur qui veut s'inscrire sur le site
+/*Méthode pour insérer un nouvel utilisateur dans la table users avec une fonction préparée
+car on attend des informations du visiteur qui veut s'inscrire sur le site*/
 //:lastname est un marqueur nominatif
     public function addUsersAccounts(){
         $addUsersAccountQuery = $this->db->prepare(
@@ -48,5 +48,24 @@ class users{
         $userAccountExist->execute();
         $data = $userAccountExist->fetch(PDO::FETCH_OBJ);
         return $data->isAccountExist;
+    }
+/*On crée une méthode pour afficher toutes les information relatives
+ au compte de l'utilisateur déjà inscrit*/
+    public function getInfoUserAccount(){
+        $infoUserAccount = $this->db->prepare(
+            'SELECT
+                `lastname`
+                , `firstname`
+                , `address`
+                , `phoneNumber`
+                , `mail`
+                ,  `password`   
+                FROM
+                `USERS`
+                WHERE `id` = :id' 
+            );
+        $infoUserAccount->bindValue(':id', $this->id, PDO::PARAM_INT);
+        $infoUserAccount->execute();
+        return $infoUserAccount->fetch(PDO::FETCH_OBJ);
     }
 }
