@@ -20,13 +20,13 @@
                     <button class="btn border-none" type="submit" name="submitSearch" ><img src="assets/img/jumelles.png" id="searchBtn" alt="Bouton rechercher" title="Bouton rechercher"/></button>
                 </div>
                 <div class="col-lg-1 mr-auto ml-auto my-auto" id="shoppingCart">
-                    <a href="./views/panier.php"><i class="fas fa-shopping-basket fa-5x" alt="logo panier"></i></a>
+                    <a href="panier.php"><i class="fas fa-shopping-basket fa-5x" alt="logo panier"></i></a>
                 </div>
                 <div class="col-lg-2 mx-auto my-auto" id="gameLink">
                     <p>Avant de vous lancer dans l'aventure venez nous retrouver sur notre <a href="https://retztacticalgames.com/fr"> terrain de jeu</a></p>
                 </div>
                 <div class="col-lg-2 mx-auto my-auto" id="connect">
-                    <a class="btn btn-account text-white" href="./views/inscription.php">Mon compte</a>
+                    <a class="btn btn-account text-white" href="inscription.php">Mon compte</a>
                 </div>
             </div>
         </div>
@@ -45,16 +45,16 @@
                                 Répliques
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="nav-item dropdown-submenu dropdown dropright">
+                            <li class="nav-item dropdown-submenu dropdown">
                                 <a class="nav-link dropdown-toggle navDropdown" id="navbarGunReplicate" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Répliques de poing
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarGunReplicate" id="submenuGunReplicate">
                                         <li><a class="dropdown-item" href="armes-de-poing.php">Répliques de poing</a></li>
-                                        <li><a class="dropdown-item" href="#">Répliques à ressort</a></li>
+                                        <!-- <li><a class="dropdown-item" href="#">Répliques à ressort</a></li> -->
                                         <li><a class="dropdown-item" href="#">Répliques à gaz</a></li>
                                         <li><a class="dropdown-item" href="#">Répliques CO2</a></li>
-                                        <li><a class="dropdown-item" href="#">Répliques électriques</a></li>
+                                        <!-- <li><a class="dropdown-item" href="#">Répliques électriques</a></li> -->
                                 </ul>
                             </li>
                             <li class="nav-item dropdown-submenu">
@@ -64,8 +64,8 @@
                                 <ul class="dropdown-menu" aria-labelledby="navbarLongReplicate" id="submenuLongReplicate">
                                     <li><a class="dropdown-item" href="armes-longues.php">Répliques longues</a></li>
                                     <li><a class="dropdown-item" href="#">Répliques à ressort</a></li>
-                                    <li><a class="dropdown-item" href="#">Répliques à gaz</a></li>
-                                    <li><a class="dropdown-item" href="#">Répliques CO2</a></li>
+                                    <!-- <li><a class="dropdown-item" href="#">Répliques à gaz</a></li>
+                                    <li><a class="dropdown-item" href="#">Répliques CO2</a></li> -->
                                     <li><a class="dropdown-item" href="#">Répliques électriques</a></li>
                                 </ul>
                             </li>
@@ -76,7 +76,7 @@
                                 Accessoires
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="nav-item dropdown-submenu dropdown dropright">
+                            <li class="nav-item dropdown-submenu dropdown">
                                 <a class="nav-link dropdown-toggle navDropdown" id="navbarAccessories" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Accessoires
                                 </a>

@@ -2,7 +2,7 @@
 include 'header.php';
 ?>
 <body>
-    <p>Les répliques d'armes longues</p>
+    <h1>Les répliques longues</h1>
 </body>
 <?php
 include 'footer.php';

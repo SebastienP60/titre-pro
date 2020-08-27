@@ -1,9 +1,9 @@
 <?php
-include 'header.php';
+include '../header.php';
 ?>
 <body>
-    <p>Les répliques de poing</p>
+    <h1>Les répliques de poing</h1>
 </body>
 <?php
-include 'footer.php';
+include '../footer.php';
 ?>

@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-include 'controllerForm.php';
+include 'controllers/accountController.php';
 ?>
 <h1 id="registration">Inscrivez-vous</h1>
 <div id="registrationForm" class="container text-center">

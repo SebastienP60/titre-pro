@@ -36,6 +36,11 @@ body{
     color: white;
     width: 50px;
 }
+@media all and (max-width: 1024px){
+    p{
+    font-size: 0.8em;
+}
+}
 nav{
     background-color: black;
 }
@@ -58,7 +63,14 @@ li{
 .fa-shopping-basket{
     color: white;
 }
-#gameLink{
+@media all and (max-width: 1024px){
+    #gameLink{
+    position: absolute;
+    top: 0;
+    right: 0;
+            }
+}
+    #gameLink{
     color: white;
     font-weight: bold;
     text-align: center;

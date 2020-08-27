@@ -67,7 +67,7 @@ if(isset($_POST['send'])){
     if(!empty($_POST['confirmPassword'])){
         $confirmPassword = htmlspecialchars($_POST['confirmPassword']);
     }else{
-        $formErrors['confirmPassword'] = 'Votre mot passe doit être identique';
+        $formErrors['confirmPassword'] = 'Votre mot de passe doit être identique';
     }
 
     if(!empty($_POST['address'])){

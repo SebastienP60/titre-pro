@@ -17,21 +17,24 @@ $armesdepoing = array('Répliques à ressorts', 'Répliques à gaz');
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
 </head>
 <body>
-    <header>
+<header class="sticky-top">
         <div class="container-fluid" id="banner">
             <div class="row">
-                <div class="col-md-2 ml-auto mr-auto my-auto" id="identity">
-                    <img id="logo" class="img-fluid" src="assets/img/logoRAS.jpg" alt="logo du site" />
+                <div class="col-md-offset-1 col-md-2 m-auto" id="identity">
+                    <a href="index.php"><img id="logo" class="img-fluid" src="assets/img/logoRASNegatif.jpg" alt="Logo du site" title="Logo du site"/></a>
                 </div>
-                <div class="col-md-3 mr-auto ml-auto my-auto" id="search">
+                <div class="col-md-3 d-md-block m-auto" id="search">
                     <input id="searchProducts" class="searchProducts" type="text" name="searchProducts" placeholder="Rechercher" value="" autocomplete="off" />
-                    <button class="btn border-none" type="submit" name="submitSearch" ><img src="assets/img/jumelles.png" id="searchBtn" /></button>
+                    <button class="btn border-none" type="submit" name="submitSearch" ><img src="assets/img/jumelles.png" id="searchBtn" alt="Bouton rechercher" title="Bouton rechercher"/></button>
                 </div>
-                <div id="shoppingCart" class="col-md-1 mr-auto ml-auto my-auto">
-                    <a href="panier.php"><i class="fas fa-shopping-basket fa-5x" alt="logo panier"></i></a>
+                <div class="col-md-1 m-auto" id="shoppingCart">
+                    <a href="panier.php"><i class="fas fa-shopping-basket fa-4x" alt="logo panier"></i></a>
                 </div>
-                <div class="col-md-2 mr-auto ml-auto my-auto" id="connect">
-                    <a class="btn btn-account text-white" href="indexForm.php">Mon compte</a>
+                <div class="col-md-2" id="gameLink">
+                    <p>Avant de vous lancer dans l'aventure venez nous retrouver sur notre <a href="https://retztacticalgames.com/fr"> terrain de jeu</a></p>
+                </div>
+                <div class="col-md-2 m-auto" id="connect">
+                    <a class="btn btn-account text-white" href="inscription.php">Mon compte</a>
                 </div>
             </div>
         </div>
@@ -42,11 +45,15 @@ $armesdepoing = array('Répliques à ressorts', 'Répliques à gaz');
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="col-md-3 d-sm-block d-md-none mx-auto my-auto" id="search">
+                <input id="searchProducts" class="searchProducts" type="text" name="searchProducts" placeholder="Rechercher" value="" autocomplete="off" />
+                <button class="btn border-none" type="submit" name="submitSearch" ><img src="assets/img/jumelles.png" id="searchBtn" alt="Bouton rechercher" title="Bouton rechercher"/></button>
+            </div>
                 <!--Intégration du bloc navbar-collapse-->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!--Création de la liste non ordonnée de tous les liens et sous-menus-->
                     <ul class="navbar-nav mr-auto container-fluid">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Répliques
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
