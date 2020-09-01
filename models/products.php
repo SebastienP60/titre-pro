@@ -27,7 +27,7 @@ car on attend des informations de l'administrateur */
         $addNewProductQuery = $this->db->prepare(
             'INSERT INTO `ahl115_products` (`name`, `reference`, `description`, `price`, `picture`, `energy`, `id_ahl115_subtypes`)
              VALUES(:name, :reference, :description, :price, :picture, :energy, :fk)');
-       $addNewProductQuery->bindValue(':name', $this->lastname, PDO::PARAM_STR);
+       $addNewProductQuery->bindValue(':name', $this->name, PDO::PARAM_STR);
        $addNewProductQuery->bindValue(':reference', $this->reference, PDO::PARAM_STR);
        $addNewProductQuery->bindValue(':description', $this->description, PDO::PARAM_STR);
        $addNewProductQuery->bindValue(':price', $this->price, PDO::PARAM_STR);
@@ -85,7 +85,6 @@ car on attend des informations de l'administrateur */
             SET
              `name` = :name
             , `reference` = :reference
-            , `mail` = :mail 
             , `description` = :description
             , `price` = :price
             , `picture` = :picture
@@ -109,4 +108,19 @@ car on attend des informations de l'administrateur */
         $deleteProductQuery->bindvalue(':reference', $this->reference, PDO::PARAM_STR);
         return $deleteProductQuery->execute();
     }
+//On crée une méthode pour le champ de recherche d'un produit via sa référence
+    public function searchReferenceProduct(){
+        $searchRefProduct = $this->db->prepare(
+            'SELECT
+            `reference`
+            FROM 
+            `products`
+            WHERE
+            `reference`
+            LIKE :find
+        ');
+        $searchRefProduct->bindvalue(':find', '%'.$this->reference.'%',PDO::PARAM_STR);
+        $searchRefProduct->execute();
+        return $searchRefProduct->fetch(PDO::FETCH_OBJ);    
+    }    
 }
