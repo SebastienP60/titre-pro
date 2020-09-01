@@ -1,5 +1,7 @@
 <?php
 include 'header.php';
+include 'models/usersAccount.php';
+include 'controllers/inscriptionController.php';
 ?>
 <div class="container">
     <div class="homeBanner">
@@ -10,16 +12,11 @@ include 'header.php';
                 <div class="col-lg-6">
                     <form action="account.php" method="POST">
                     <p id="createAccount">Créer un compte</p>
-                    <p id="enterMail">Pour créer un compte veuillez saisir votre adresse mail</p>
-                    <div class="form-group">
-                        <label for="createEmail">Adresse mail : </label>
-                        <input type="mail" id="createEmail" name="createEmail" placeholder="Adresse mail" />
-                    </div>
-                        <input type="submit" value="Créer un compte" />
+                        <input type="submit" name="createAccount" value="Créer un compte" />
                     </form>
                 </div>
                 <div class="col-lg-6">
-                    <form action="#" method="POST">
+                    <form action="myAccount.php" method="POST">
                     <p id="accountExist">Déjà inscrit ?</p>
                     <div class="form-group">
                         <label for="yourEmail">Votre adresse mail : </label>
@@ -29,7 +26,7 @@ include 'header.php';
                         <label for="yourPassword">Votre mot de passe : </label>
                         <input type="password" id="yourPassword" name="yourPassword" placeholder="Votre mot de passe"/>
                     </div>
-                        <input type="submit" value="Identifiez vous" />
+                        <input type="submit" name="myIdentity" value="Identifiez vous" />
                     </form>
                 </div>
             </div>

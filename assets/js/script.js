@@ -18,11 +18,3 @@
       });
       return false;
   });
-
-
-
-
-  /* Si le sous menu réplique de poing est affiché
- quand je clique sur le sous menu réplique longues il s'affiche 
- et le sous menu réplique de poing se ferme*/
-

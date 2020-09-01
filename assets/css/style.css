@@ -36,11 +36,6 @@ body{
     color: white;
     width: 50px;
 }
-@media all and (max-width: 1024px){
-    p{
-    font-size: 0.8em;
-}
-}
 nav{
     background-color: black;
 }
@@ -62,13 +57,6 @@ li{
 }
 .fa-shopping-basket{
     color: white;
-}
-@media all and (max-width: 1024px){
-    #gameLink{
-    position: absolute;
-    top: 0;
-    right: 0;
-            }
 }
     #gameLink{
     color: white;
@@ -170,7 +158,7 @@ form{
 #createEmail, #yourEmail, #yourPassword{
     width: 20rem;
 }
-#lastName, #firstName, #mailAddress, #password, #confirmPassword, #address{
+#lastName, #firstName, #mailAddress, #password, #address{
     width: 40rem;
 }
 #createAccount, #accountExist{
