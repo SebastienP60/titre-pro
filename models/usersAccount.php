@@ -59,8 +59,8 @@ car on attend des informations du visiteur qui veut s'inscrire sur le site*/
                 , `password`   
                 FROM
                 `ahl115_users`
-                WHERE `id` = :id'); 
-        $infoUserAccount->bindValue(':id', $this->id, PDO::PARAM_INT);
+                WHERE `mail` = :mail'); 
+        $infoUserAccount->bindValue(':mail', $this->mail, PDO::PARAM_INT);
         $infoUserAccount->execute();
         return $infoUserAccount->fetch(PDO::FETCH_OBJ);
     }

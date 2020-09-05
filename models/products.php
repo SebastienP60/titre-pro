@@ -48,7 +48,7 @@ car on attend des informations de l'administrateur */
         return $data->isReferenceExist;
     }
 /*On crée une méthode pour afficher la liste des sous-types
- dans le formulaire d'ajout de produits*/    
+ de chaque produit pour l'ajouter.*/    
     public function getListSubtypeProduct(){
         $listSubtypeProduct = $this->db->query(
         'SELECT
@@ -58,6 +58,42 @@ car on attend des informations de l'administrateur */
             ORDER BY `name` ASC' 
     );
     return $listSubtypeProduct->fetchAll(PDO::FETCH_OBJ);
+    }
+/*On crée une méthode pour afficher la liste des types
+ de chaque produit pour l'ajouter.*/    
+    public function getListTypeProduct(){
+        $listTypeProduct = $this->db->query(
+        'SELECT
+            `name`
+            FROM
+            `ahl115_types`
+            ORDER BY `name` ASC' 
+    );
+    return $listTypeProduct->fetchAll(PDO::FETCH_OBJ);
+    }
+/*On crée une méthode pour afficher la liste des sous-catégories
+ de chaque produit pour l'ajouter.*/    
+    public function getListSubcategoriesProduct(){
+        $listSubcategoriesProduct = $this->db->query(
+        'SELECT
+            `name`
+            FROM
+            `ahl115_subcategories`
+            ORDER BY `name` ASC' 
+    );
+    return $listSubcategoriesProduct->fetchAll(PDO::FETCH_OBJ);
+    }
+/*On crée une méthode pour afficher la liste des catégories
+ de chaque produit pour l'ajouter.*/    
+    public function getListCategoriesProduct(){
+        $listCategoriesProduct = $this->db->query(
+        'SELECT
+            `name`
+            FROM
+            `ahl115_categories`
+            ORDER BY `name` ASC' 
+    );
+    return $listCategoriesProduct->fetchAll(PDO::FETCH_OBJ);
     }
 /*On crée une méthode pour afficher toutes les information relatives
  à un produit enregistré*/

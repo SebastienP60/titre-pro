@@ -1,7 +1,10 @@
 <?php
 //Controller pour ajouter un nouveau produit
 //On instencie dans une variable l'objet de notre model products
-$product = new product(); 
+$product = new product();
+$listCategoriesProduct = $product->getListCategoriesProduct();
+$listSubcategoriesProduct = $product->getListSubcategoriesProduct();
+$listTypeProduct = $product->getListTypeProduct();
 $listSubtypeProduct = $product->getListSubtypeProduct();
 $addProduct = $product->addNewProduct();
 $updateProduct = $product->updateinfoProduct();

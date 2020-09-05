@@ -1,47 +1,49 @@
+/*image de fond du site*/
 body{
     background: url(../img/camoVert.png);
 }
-#search{
-    height: 40px;
-    background: white;
-    color: black;
-    transform: skew(-40deg);
-}
-#searchProducts, #searchBtn{
-    border: none;
-    padding-top: 5px;
-    transform: skew(+40deg);
-}
-#searchBtn{
-    padding-left: 35px;
-    height: 30px;
-    padding-top: 1px;
-}
+/* balise principale incluant la barre de navigation et liens */
 #banner{
     background-color: black;
     width: auto;
-    height: 140px;
-}
-#footPage{
-    background-color: black;
-    width: auto;
-    height: 200px;
 }
 #logo{
-    height: 130px;
+    height: 120px;
     width: auto;
-    margin-top: 10px;
+    padding-left: 30px;
 }
-#shoppingCart{
+/* icône panier */
+.fa-shopping-basket{
     color: white;
-    width: 50px;
 }
-nav{
-    background-color: black;
+/* texte lien vers le terrain */
+#gameLink{
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1rem;
 }
-#navbarLongReplicate, #navbarGunReplicate, #navbarAccessories{
-    color: black;
+#gameLink a{
+    color: #2E86AB;
+    text-decoration: none;
+    font-weight: bold;
 }
+/* icône compte */
+.fa-user{
+    color: white;
+}
+/* media queries pour emplacement icônes panier et compte en version mobile  */
+@media all and (min-width: 1024px){
+    #iconAccount, #iconCart{
+        display: none;
+    }
+}
+@media all and (max-width: 1024px){
+    #connect, #shoppingCart, #column{
+        display: none;
+    }
+}
+    /* Mise en forme des menus déroulants */
 .dropdown-menu{
     background-color: #2E86AB;
 }
@@ -50,134 +52,6 @@ nav{
 }
 li{
     list-style: none;
-}
-.userAccountTitle{
-    padding-top: 8px;
-    transform: skew(+40deg);
-}
-.fa-shopping-basket{
-    color: white;
-}
-    #gameLink{
-    color: white;
-    font-weight: bold;
-    text-align: center;
-}
-#gameLink a{
-    color: #2E86AB;
-    text-decoration: none;
-    font-weight: bold;
-}
-h1{
-    color: black;
-    font-weight: bold;
-    font-size: 3.5rem;
-    padding-top: 40px;
-    text-align: center;
-}
-h2{
-    color: black;
-    font-weight: bold;
-    font-size: 3.5rem;
-    padding-top: 70px;
-    padding-bottom: 70px;
-}
-#principalPage{
-    padding-bottom: 70px;
-}
-.card{
-    background-color: transparent;
-}
-.card-body{
-    background-color: white;
-}
-#historyShop{
-    background-color: rgba(33, 82, 33, 0.5);
-    color: black;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    margin-top: 50px;
-    margin-bottom: 30px;
-}
-#contact, #timetables li{
-    color: white;
-}
-#contact{
-    padding-top: 10px;
-}
-#contacts, #shedules{
-    font-size: 1.5rem;
-}
-#facebook, #instagram{
-    background-color: white;
-    height: 50px;
-    width: auto;
-}
-.btn-account{
-    outline: none;
-    box-shadow: none;
-}
-form{
-    background-color: rgba(33, 82, 33, 0.5);
-    color: white;
-    font-weight: bold;
-    border: 3px solid black;
-    margin-top: 100px;
-    margin-bottom: 100px;
-}
-#registration{
-    text-align: center;
-    color: white;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-#registrationForm{
-    margin-top: -50px;
-}
-#civility{
-    margin-top: 15px;
-}
-#home{
-    margin-top: 50px;
-    font-size: 1.5rem;
-    background-color: rgba(33, 82, 33, 0.5);
-    color: white;
-    padding-left: 10px;
-}
-#home a{
-    text-decoration: none;
-    color: white;
-}
-#identify{
-    margin-top: 50px;
-    font-size: 1.8rem;
-    border-bottom: 5px solid black;
-    color: white;
-    padding-left: 15px;
-}
-#createEmail, #yourEmail, #yourPassword{
-    width: 20rem;
-}
-#lastName, #firstName, #mailAddress, #password, #address{
-    width: 40rem;
-}
-#createAccount, #accountExist{
-    padding-top: 20px;
-    font-size: 1.8rem;
-    padding-left: 15px;
-}
-#enterMail{
-    padding-left: 15px;
-}
-label[for=createEmail],[for=yourEmail],[for=yourPassword]{
-    padding-left: 15px;
-}
-#identifyForm input[type=submit]{
-    margin-bottom: 15px;
-    margin-left: 15px;
-}
-input[name=send]{
-    margin-bottom: 15px;
 }
 .dropdown-submenu {
     position: relative;
@@ -195,4 +69,100 @@ input[name=send]{
     left: 100%;
     margin-left: .1rem;
     margin-right: .1rem;
+}
+/*Contenu de la page principale */
+h1{
+    color: black;
+    font-weight: bold;
+    font-size: 3.5rem;
+    padding-top: 40px;
+    text-align: center;
+}
+#history{
+    background-color: #BFB083;
+    color: black;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+#indexProduct{
+    color: black;
+    font-weight: bold;
+    font-size: 3.5rem;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+#cardContainer{
+    padding-bottom: 70px;
+}
+.card{
+    background-color: transparent;
+}
+.card-body{
+    background-color: white;
+}
+/* Pied de page */
+#footPage{
+    background-color: black;
+    width: auto;
+    height: 200px;
+}
+#footPage li{
+    color: white;
+    font-size: 1rem;
+}
+#facebook, #instagram{
+    background-color: white;
+    height: 50px;
+    width: auto;
+}
+/* Formulaires */
+form{
+    color: white;
+    font-weight: bold;
+    margin-bottom: 100px;
+}
+/* Formulaire de création d'un compte */
+#registrationForm{
+    background-color: #302727;
+}
+button[name=createMyAccount]{
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+#accounth2{
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+/* page d'inscription ou d'identification de compte */
+#home{
+    margin-top: 50px;
+    font-size: 1.5rem;
+    background-color: #4D704D;
+    color: black;
+    padding-left: 10px;
+}
+#home a{
+    text-decoration: none;
+    color: black;
+}
+#identify{
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 1.8rem;
+    border-bottom: 5px solid black;
+    color: black;
+    padding-left: 15px;
+}
+#formCreateAccount{
+    margin-top: 80px;
+    color: black;
+}
+#formAccountExist{
+    margin-top: 30px;
+    color: black;
+}
+#createAccount, #accountExist{
+    font-size: 1.8rem;
 }

@@ -10,7 +10,7 @@ $regexPassword = '%^(([a-z]|[A-Z]|[0-9]|&|\?|!|#|@)+){8,32}$%';
 //Si le formulaire est validé
 if(isset($_POST['updateMyAccount'])){
     //On instencie dans une variable l'objet de notre model usersAccount
-    $user = new users(); 
+    $user = new user(); 
     //On vérifie que le champ du nom de famille est correctement rempli
     if(!empty($_POST['lastname'])){
         //Si la saisie est conforme à la vérification via la regex on stocke dans la variable $_POST

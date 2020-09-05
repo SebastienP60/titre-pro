@@ -7,7 +7,7 @@ include 'controllers/productsController.php';
     <!-- On crée une ternaire pour afficher le message d'erreur si il existe -->
     <p><?= isset($addProductMessage) ? $addProductMessage : '' ?></p>
     <div class="container text-center" id="productForm">
-        <form method="POST" action="#">
+        <form class="w-75 mx-auto" method="POST" action="#">
             <input type="search" name="find" placeholder="Rechercher une référence" />
             <input type="submit" value="Rechercher" />
             <fieldset>
@@ -32,8 +32,38 @@ include 'controllers/productsController.php';
                     <input class="form-control" type="text" id="picture" name="picture" placeholder="Image(s) du produit" value="<?= isset($_POST['picture']) ? $_POST['picture'] : '' ?>"/>
                 </div>    
                 <div class="form-group">
-                    <label for="energy">Puissance en joules : </label>
+                    <label for="energy">Puissance du produit : </label>
                     <input class="form-control" type="text" id="energy" name="energy" placeholder="Puissance en joules" value="<?= isset($_POST['energy']) ? $_POST['energy'] : '' ?>" />
+                </div>
+                <div class="form-group">
+                    <label for="selecCategoriesOfProduct">Catégorie du produit</label>
+                    <select class="form-control" id="selecCategoriesOfProduct">
+                    <option disabled selected></option>
+                    <!-- Avec la boucle on parcours tout le tableau-->
+                        <?php foreach($listCategoriesProduct as $allListCategoriesProduct){ ?>
+                    <option value="<?= $allListCategoriesProduct->id ?>"><?= $allListCategoriesProduct->name ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="selecSubcategoriesOfProduct">Sous Categorie de produit</label>
+                    <select class="form-control" id="selecSubcategoriesOfProduct">
+                    <option disabled selected></option>
+                    <!-- Avec la boucle on parcours tout le tableau-->
+                        <?php foreach($listSubcategoriesProduct as $alllistSubcategoriesProduct){ ?>
+                    <option value="<?= $alllistSubcategoriesProduct->id ?>"><?= $alllistSubcategoriesProduct->name ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="selecTypeOfProduct">Type de produit</label>
+                    <select class="form-control" id="selecTypeOfProduct">
+                    <option disabled selected></option>
+                    <!-- Avec la boucle on parcours tout le tableau-->
+                        <?php foreach($listTypeProduct as $allTypeProduct){ ?>
+                    <option value="<?= $allTypeProduct->id ?>"><?= $allTypeProduct->name ?></option>
+                        <?php } ?>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="selectSubtypeOfProduct">Sous-type de produit</label>
