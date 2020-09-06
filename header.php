@@ -1,13 +1,14 @@
-<!-- <?php
+<?php
 //On démarre une nouvelle session
 session_start();
 //On définit les variables de session
-$_SESSION['lastname'];
-$_SESSION['firstname'];
-$_SESSION['address'];
-$_SESSION['mail'];
-$_SESSION['phoneNumber'];
-?> -->
+$_SESSION['lastname'] = '';
+$_SESSION['firstname'] = '';
+$_SESSION['address'] = '';
+$_SESSION['mail'] = '';
+$_SESSION['phoneNumber'] = '';
+$_SESSION['password'] = '';
+?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
@@ -72,7 +73,7 @@ $_SESSION['phoneNumber'];
                                         Répliques de poing
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarGunReplicate" id="submenuGunReplicate">
-                                        <li><a class="dropdown-item" href="armes-de-poing.php">Répliques de poing</a></li>
+                                        <li><a class="dropdown-item" href="views/armes-de-poing.php">Répliques de poing</a></li>
                                         <li><a class="dropdown-item" href="#">Répliques à gaz</a></li>
                                         <li><a class="dropdown-item" href="#">Répliques CO2</a></li>
                                 </ul>

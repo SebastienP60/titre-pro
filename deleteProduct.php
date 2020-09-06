@@ -1,12 +1,12 @@
 <?php
 include 'header.php';
 include 'models/products.php';
-include 'controllers/productsController.php';
+include 'controllers/deleteProductController.php';
 ?>
-<h1 id="addProduct">Ajout d'un produit</h1>
+<h1 id="addProduct">Supprimer un produit</h1>
     <!-- On crée une ternaire pour afficher le message d'erreur si il existe -->
     <p><?= isset($addProductMessage) ? $addProductMessage : '' ?></p>
-    <div class="container text-center" id="productForm">
+    <div class="container text-center" id="deleteProductForm">
         <form class="w-75 mx-auto" method="POST" action="#">
             <fieldset>
                 <div class="form-group" id="nameProduct">
@@ -74,9 +74,7 @@ include 'controllers/productsController.php';
                     </select>
                 </div>    
                 <div class="button">
-                    <button type="submit" name="addProduct">Ajoutez le produit</button><!--Ce bouton doit envoyer sur la page correspondante au produits via son nom ou id-->
-                    <button type="submit" name="updateProduct"><a href="updateProduct.php">Modifiez un produit</a></button>
-                    <button type="submit" name="deleteProduct"><a href="deleteProduct.php">Supprimez un produit</a></button>
+                    <button type="submit" name="deleteProduct">Supprimez un produit</button>
                 </div>
             </fieldset>
         </form>

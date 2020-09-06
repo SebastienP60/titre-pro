@@ -106,7 +106,7 @@ h1{
 #footPage{
     background-color: black;
     width: auto;
-    height: 200px;
+    height: auto;
 }
 #footPage li{
     color: white;
@@ -165,4 +165,33 @@ button[name=createMyAccount]{
 }
 #createAccount, #accountExist{
     font-size: 1.8rem;
+}
+/*Formulaire mon compte*/
+#myAccountForm{
+    background-color: #302727;
+}
+button[name=updateMyAccount], [name=deleteMyAccount]{
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+#yourName{
+    margin-top: 30px;
+}
+/*Formulaire d'ajout/modification/suppression de produits*/
+#productForm, #updateProductForm{
+    background-color: #4D704D;
+}
+button[name=addProduct], [name=updateProduct]{
+    margin-right: 15px;
+}
+button[name=addProduct], [name=updateProduct], [name=deleteProduct]{
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+input[name=find], [name=search]{
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+#nameProduct{
+    margin-top: 20px;
 }

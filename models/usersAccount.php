@@ -46,7 +46,7 @@ car on attend des informations du visiteur qui veut s'inscrire sur le site*/
         $data = $userAccountExist->fetch(PDO::FETCH_OBJ);
         return $data->isMailAccountExist;
     }
-/*On crée une méthode pour afficher toutes les information relatives
+/*On crée une méthode pour afficher toutes les informations relatives
  au compte de l'utilisateur déjà inscrit*/
     public function getInfoUserAccount(){
         $infoUserAccount = $this->db->prepare(

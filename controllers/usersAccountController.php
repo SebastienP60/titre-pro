@@ -71,13 +71,12 @@ if(isset($_POST['createMyAccount'])){
     }else{
         $formErrors['phoneNumber'] = 'Veuillez renseigner votre numéro de téléphone';
     }
-    if (empty($formErrors)){
-        if(!$user->checkUserAccountExist()){
+    if(empty($formErrors)){
+        if($user->checkUserAccountExist()){
             if($user->addUserAccount()){
                 $addUserAccountMessage = 'Votre compte a été ajouté.';
             } else {
                 $addUserAccountMessage = 'Votre compte n\'a pas été enregistré.';
-                var_dump($user);
             }    
         } else {
             $addUserAccountMessage = 'Le compte existe déjà.';
