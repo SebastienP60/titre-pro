@@ -8,6 +8,8 @@ include 'controllers/deleteProductController.php';
     <p><?= isset($addProductMessage) ? $addProductMessage : '' ?></p>
     <div class="container text-center" id="deleteProductForm">
         <form class="w-75 mx-auto" method="POST" action="#">
+            <input type="search" name="find" placeholder="Rechercher une référence" />
+            <input type="submit" name="search" value="Rechercher" />
             <fieldset>
                 <div class="form-group" id="nameProduct">
                     <label for="name">Nom du produit : </label>
