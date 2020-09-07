@@ -1,8 +1,9 @@
 <?php
-include 'header.php';
+session_start();
 include 'tables.php';
 include 'models/categoriesname.php';
 include 'controllers/headerController.php';
+include 'header.php';
 /* $types = array('Armes de poing', 'Armes longues'); */
 $armesdepoing = array('Répliques à ressorts', 'Répliques à gaz');
 ?>

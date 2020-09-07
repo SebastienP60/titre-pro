@@ -2,6 +2,7 @@
 include 'header.php';
 include 'models/usersAccount.php';
 include 'controllers/usersAccountController.php';
+include 'modals.php';
 ?>
 <h1 id="registration">Inscription</h1>
     <!-- On crée une ternaire pour afficher le message d'erreur si il existe -->

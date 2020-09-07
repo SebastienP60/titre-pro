@@ -1,13 +1,5 @@
 <?php
-//On démarre une nouvelle session
-session_start();
-//On définit les variables de session
-$_SESSION['lastname'] = '';
-$_SESSION['firstname'] = '';
-$_SESSION['address'] = '';
-$_SESSION['mail'] = '';
-$_SESSION['phoneNumber'] = '';
-$_SESSION['password'] = '';
+include 'controllers/headerController.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -46,7 +38,18 @@ $_SESSION['password'] = '';
                   <p>Avant de vous lancer dans l'aventure venez nous retrouver sur notre <a href="https://retztacticalgames.com/fr"> terrain de jeu</a></p>
                 </div>  
                   <div id="column"class="col-lg-2">  <!--colonne pour le lien de connection-->
-                    <a class="btn btn-account text-white" href="inscription.php"><i class="far fa-user fa-2x" id="connect"></i></a>
+                <?php if(!isset($_SESSION['profil']['lastname'])){?> <!--On est pas connecté-->
+                  <a class="btn btn-account text-white" href="connection.php"><i class="far fa-user fa-2x" id="connect"></i></a>                  
+                <?php }else{ ?>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="index.php" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-2x" id="isConnect"></i></a>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="profile.php">Mon profil</a>
+                        <a class="dropdown-item" href="userBasket.php">Mon panier</a>
+                        <a class="dropdown-item" href="?action=disconnect">Se deconnecter</a>
+                      </div>
+                    </li>  
+                <?php  } ?>
                   </div>
           </div>
           <div class="row">  <!--2ème rangée secondaire pour la barre de navigation-->

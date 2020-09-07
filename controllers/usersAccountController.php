@@ -74,7 +74,7 @@ if(isset($_POST['createMyAccount'])){
     if(empty($formErrors)){
         if(!$user->checkUserAccountExist()){
             if($user->addUserAccount()){
-                $addUserAccountMessage = 'Votre compte a été ajouté.';
+                $script = '$(\'#confirmSubscribe\').modal({show:true})';
             } else {
                 $addUserAccountMessage = 'Votre compte n\'a pas été enregistré.';
             }    

@@ -46,6 +46,22 @@ car on attend des informations du visiteur qui veut s'inscrire sur le site*/
         $data = $userAccountExist->fetch(PDO::FETCH_OBJ);
         return $data->isMailAccountExist;
     }
+//On crée une méthode permettant de récupérer le hash du mot de passe de l'utilisateur
+    public function getUserHashPassword(){
+        $userHashPassword = $this->db->prepare(
+            'SELECT `password`
+            FROM `ahl115_users`
+            WHERE `mail` = :mail'
+        );
+        $userHashPassword->bindValue(':mail', $this->mail, PDO::PARAM_STR);
+        $userHashPassword->execute();
+        $response = $userHashPassword->fetch(PDO::FETCH_OBJ);
+        if(is_object($response)){
+            return $response->password;
+        }else{
+            return '';
+        }
+    }
 /*On crée une méthode pour afficher toutes les informations relatives
  au compte de l'utilisateur déjà inscrit*/
     public function getInfoUserAccount(){
@@ -60,7 +76,7 @@ car on attend des informations du visiteur qui veut s'inscrire sur le site*/
                 FROM
                 `ahl115_users`
                 WHERE `mail` = :mail'); 
-        $infoUserAccount->bindValue(':mail', $this->mail, PDO::PARAM_INT);
+        $infoUserAccount->bindValue(':mail', $this->mail, PDO::PARAM_STR);
         $infoUserAccount->execute();
         return $infoUserAccount->fetch(PDO::FETCH_OBJ);
     }
