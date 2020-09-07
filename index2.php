@@ -9,6 +9,34 @@
   <title> Magasin Air-soft / Paintball Retz Airsoft Shop</title>
 </head>
 <body>
+<?php if(!isset($_SESSION['profil']['id_ahl115_roles']) == 1){?>
+    <div class="row">
+      <div class="col-lg-12">
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top"> 
+        <a href="index.php"><img id="logo" class="img-fluid" src="assets/img/logoRASNegatif.jpg" alt="Logo du site" title="Logo du site"/></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarAdmin" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarAdmin">
+            <ul class="navbar-nav mr-auto container-fluid">
+              <li class="nav-item">
+                <a class="nav-link" href="products.php">Ajouter un produit</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="updateProduct.php">Modifier un produit</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="deleteProduct.php">Supprimer un produit</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Liste clients</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>  
+    </div>      
+  <?php } else { ?>
   <div class="container-fluid" id="banner">
     <div class="row">  <!--début de la rangée principale-->
       <div class="col-lg-2"> <!-- colonne pour le logo-->
@@ -202,7 +230,8 @@
           </div>
         </div>
     </div>
-  </div>  
+  </div>
+<?php } ?>
   <div class="container-fluid">
 
   </div>

@@ -12,7 +12,7 @@ include 'header.php';
         <p id="identify">Identifiez-vous</p>
             <div class="row">
                 <div class="text-center col-lg-6">
-                    <form id="formCreateAccount" action="myAccount.php" method="POST">
+                    <form id="formCreateAccount" action="Account.php" method="POST">
                     <p id="createAccount">Créer un compte</p>
                         <input type="submit" name="createAccount" value="Créer un compte" />
                     </form>
@@ -23,10 +23,12 @@ include 'header.php';
                     <div class="form-group">
                         <label for="mail">Votre adresse mail : </label>
                         <input class="form-control" type="mail" id="mail" name="mail" placeholder="Votre adresse mail"/>
+                        <p class="text-danger"><?= isset($formErrors['mail']) ? $formErrors['mail'] : '' ?></p>
                     </div>
                     <div class="form-group">
                         <label for="password">Votre mot de passe : </label>
                         <input class="form-control" type="password" id="password" name="password" placeholder="Votre mot de passe"/>
+                        <p class="text-danger"><?= isset($formErrors['password']) ? $formErrors['password'] : '' ?></p>
                     </div>
                         <input type="submit" name="myIdentity" value="Identifiez vous" />
                     </form>

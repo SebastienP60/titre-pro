@@ -1,7 +1,8 @@
 <?php
-include 'header.php';
+session_start();
 include 'models/products.php';
 include 'controllers/productsController.php';
+include 'header.php';
 ?>
 <h1 id="addProduct">Ajout d'un produit</h1>
     <!-- On crée une ternaire pour afficher le message d'erreur si il existe -->

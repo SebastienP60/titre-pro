@@ -27,9 +27,9 @@ include 'controllers/headerController.php';
                   </div>
                   <div class="form-group col-2">  
                     <button class="btn btn-secondary " type="submit"><i class="fas fa-binoculars"></i></button>
+                  </div>
                 </div>
-              </div>
-            </form>
+              </form>
             </div>
               <div class="col-lg-2">  <!-- colonne pour le logo panier-->
                 <a href="panier.php"><i class="fas fa-shopping-basket fa-3x" id="shoppingCart" alt="logo panier"></i></a>
@@ -38,9 +38,9 @@ include 'controllers/headerController.php';
                   <p>Avant de vous lancer dans l'aventure venez nous retrouver sur notre <a href="https://retztacticalgames.com/fr"> terrain de jeu</a></p>
                 </div>  
                   <div id="column"class="col-lg-2">  <!--colonne pour le lien de connection-->
-                <?php if(!isset($_SESSION['profil']['lastname'])){?> <!--On est pas connecté-->
-                  <a class="btn btn-account text-white" href="connection.php"><i class="far fa-user fa-2x" id="connect"></i></a>                  
-                <?php }else{ ?>
+                    <?php if(!isset($_SESSION['profil']['lastname'])){?> <!--On est pas connecté-->
+                    <a class="btn btn-account text-white" href="connection.php"><i class="far fa-user fa-2x" id="connect"></i></a>                  
+                    <?php }else{ ?>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="index.php" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-2x" id="isConnect"></i></a>
                       <div class="dropdown-menu">
@@ -49,7 +49,7 @@ include 'controllers/headerController.php';
                         <a class="dropdown-item" href="?action=disconnect">Se deconnecter</a>
                       </div>
                     </li>  
-                <?php  } ?>
+                    <?php  } ?>
                   </div>
           </div>
           <div class="row">  <!--2ème rangée secondaire pour la barre de navigation-->
@@ -61,7 +61,18 @@ include 'controllers/headerController.php';
                       <span class="navbar-toggler-icon"></span>
                   </button>
                   <a href="panier.php"> <i class="fas fa-shopping-basket fa-3x" id="iconCart"></i></a>
-                  <a href="inscription.php"><i class="far fa-user fa-2x" id="iconAccount"></i></a>
+                  <?php if(!isset($_SESSION['profil']['lastname'])){?> <!--On est pas connecté-->
+                  <a href="connection.php"><i class="far fa-user fa-2x" id="iconAccount"></i></a>
+                  <?php }else{ ?>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="index.php" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-2x" id="isConnect"></i></a>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="profile.php">Mon profil</a>
+                        <a class="dropdown-item" href="userBasket.php">Mon panier</a>
+                        <a class="dropdown-item" href="?action=disconnect">Se deconnecter</a>
+                      </div>
+                    </li>  
+                    <?php  } ?>
                   <!--Intégration du bloc navbar-collapse-->
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <!--Création de la liste non ordonnée de tous les liens et sous-menus-->

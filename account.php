@@ -1,7 +1,7 @@
 <?php
 include 'header.php';
 include 'models/usersAccount.php';
-include 'controllers/usersAccountController.php';
+include 'controllers/accountController.php';
 include 'modals.php';
 ?>
 <h1 id="registration">Inscription</h1>
