@@ -12,6 +12,34 @@ include 'controllers/headerController.php';
   <title> Magasin Air-soft / Paintball Retz Airsoft Shop</title>
 </head>
 <body>
+<?php if(isset($_SESSION['profil']['id_ahl115_roles']) && $_SESSION['profil']['id_ahl115_roles'] == 1){?>
+    <div class="row">
+      <div class="col-lg-12">
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top"> 
+        <a href="index.php"><img id="logo" class="img-fluid" src="assets/img/logoRASNegatif.jpg" alt="Logo du site" title="Logo du site"/></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarAdmin" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarAdmin">
+            <ul class="navbar-nav mr-auto container-fluid">
+              <li class="nav-item">
+                <a class="nav-link" href="products.php">Ajouter un produit</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="updateProduct.php">Modifier un produit</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="deleteProduct.php">Supprimer un produit</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Liste clients</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>  
+    </div>      
+  <?php } else { ?>
   <div class="container-fluid sticky-top" id="banner">
     <div class="row">  <!--début de la rangée principale-->
       <div class="col-lg-2"> <!-- colonne pour le logo-->
@@ -61,18 +89,7 @@ include 'controllers/headerController.php';
                       <span class="navbar-toggler-icon"></span>
                   </button>
                   <a href="panier.php"> <i class="fas fa-shopping-basket fa-3x" id="iconCart"></i></a>
-                  <?php if(!isset($_SESSION['profil']['lastname'])){?> <!--On est pas connecté-->
                   <a href="connection.php"><i class="far fa-user fa-2x" id="iconAccount"></i></a>
-                  <?php }else{ ?>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="index.php" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-2x" id="isConnect"></i></a>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="profile.php">Mon profil</a>
-                        <a class="dropdown-item" href="userBasket.php">Mon panier</a>
-                        <a class="dropdown-item" href="?action=disconnect">Se deconnecter</a>
-                      </div>
-                    </li>  
-                    <?php  } ?>
                   <!--Intégration du bloc navbar-collapse-->
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <!--Création de la liste non ordonnée de tous les liens et sous-menus-->
@@ -227,5 +244,7 @@ include 'controllers/headerController.php';
           </div>
         </div>
     </div>
-  </div>  
+  </div>
+<?php } ?>
+
   <div class="container-fluid">

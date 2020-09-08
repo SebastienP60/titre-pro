@@ -36,7 +36,7 @@ include 'header.php';
                 </div>
                 <div class="form-group">
                     <label for="selecCategoriesOfProduct">Catégorie du produit</label>
-                    <select class="form-control" id="selecCategoriesOfProduct">
+                    <select class="form-control" id="selecCategoriesOfProduct" onchange="choiceCategory()">
                     <option disabled selected></option>
                     <!-- Avec la boucle on parcours tout le tableau-->
                         <?php foreach($listCategoriesProduct as $allListCategoriesProduct){ ?>

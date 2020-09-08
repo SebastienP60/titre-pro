@@ -12,7 +12,7 @@ include 'header.php';
         <p id="identify">Identifiez-vous</p>
             <div class="row">
                 <div class="text-center col-lg-6">
-                    <form id="formCreateAccount" action="Account.php" method="POST">
+                    <form id="formCreateAccount" action="account.php" method="POST">
                     <p id="createAccount">Créer un compte</p>
                         <input type="submit" name="createAccount" value="Créer un compte" />
                     </form>

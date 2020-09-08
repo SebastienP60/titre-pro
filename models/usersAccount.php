@@ -62,9 +62,25 @@ car on attend des informations du visiteur qui veut s'inscrire sur le site*/
             return '';
         }
     }
-/*On crée une méthode pour afficher toutes les informations relatives
+/*On crée une méthode pour récupérer toutes les informations relatives
  au compte de l'utilisateur déjà inscrit*/
     public function getInfoUserAccount(){
+        $infoUserAccount = $this->db->prepare(
+            'SELECT
+                `id`
+                ,`lastname`
+                , `firstname`
+                , `id_ahl115_roles`
+                FROM
+                `ahl115_users`
+                WHERE `mail` = :mail'); 
+        $infoUserAccount->bindValue(':mail', $this->mail, PDO::PARAM_STR);
+        $infoUserAccount->execute();
+        return $infoUserAccount->fetch(PDO::FETCH_OBJ);
+    }
+/*On crée une méthode pour récupérer toutes les informations relatives
+au compte de l'utilisateur déjà inscrit via son id*/
+    public function getInfoUserAccountById(){
         $infoUserAccount = $this->db->prepare(
             'SELECT
                 `lastname`
@@ -72,11 +88,10 @@ car on attend des informations du visiteur qui veut s'inscrire sur le site*/
                 , `address`
                 , `phoneNumber`
                 , `mail`
-                , `password`   
                 FROM
                 `ahl115_users`
-                WHERE `mail` = :mail'); 
-        $infoUserAccount->bindValue(':mail', $this->mail, PDO::PARAM_STR);
+                WHERE `id` = :id'); 
+        $infoUserAccount->bindValue(':id', $this->id, PDO::PARAM_INT);
         $infoUserAccount->execute();
         return $infoUserAccount->fetch(PDO::FETCH_OBJ);
     }

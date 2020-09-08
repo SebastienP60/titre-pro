@@ -27,22 +27,17 @@ if(isset($_POST['myIdentity'])){
     }else{
         $formErrors['password'] = 'Veuillez choisir un mot de passe';
     }
-var_dump($formErrors);
     if (empty($formErrors)){
         //Vérification que le mot de passe saisi correspond au Hash
         $hash = $user->getUserHashPassword();
         if(password_verify($user->password, $hash)){
-
             //On stocke dans une variable la méthode permettant de récupérer les infos de l'utilisateur
             $userProfil = $user->getInfoUserAccount();
             //On appel les sessions
+            $_SESSION['profil']['id'] = $userProfil->id;
             $_SESSION['profil']['lastname'] = $userProfil->lastname;
             $_SESSION['profil']['firstname'] = $userProfil->firstname;
-            $_SESSION['profil']['address'] = $userProfil->address;
-            $_SESSION['profil']['mail'] = $userProfil->mail;
-            $_SESSION['profil']['phoneNumber'] = $userProfil->phoneNumber;
-            $_SESSION['profil']['password'] = $userProfil->password;
-            //On redirige vers une autre page
+            $_SESSION['profil']['id_ahl115_roles'] = $userProfil->id_ahl115_roles;            //On redirige vers une autre page
             header('location: index.php');
             exit;
             };
