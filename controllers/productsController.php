@@ -1,14 +1,30 @@
 <?php
-//Controller pour ajouter un nouveau produit
-//On instencie dans une variable l'objet de notre model products
-$product = new product();
-$listCategoriesProduct = $product->getListCategoriesProduct();
-$listSubcategoriesProduct = $product->getListSubcategoriesProduct();
-$listTypeProduct = $product->getListTypeProduct();
-$listSubtypeProduct = $product->getListSubtypeProduct();
-$addProduct = $product->addNewProduct();
-//Si le formulaire est validé
-if(isset($_POST['addProduct'])){
+
+
+//Traitement de la demande AJAX
+if(isset($_POST['idCategory'])){
+    //On vérifie que l'on a bien envoyé des données en POST
+    if(!empty($_POST['idCategory'])){
+        //On inclut les bons fichiers car dans ce contexte ils ne sont pas connu.
+        include_once '../models/subcategoriesProducts.php';
+        $subcategorieProduct = new subcategoryProduct();
+        $subcategorieProduct->id_ahl115_categories = $_POST['idCategory'];
+        //Le echo sert à envoyer la réponse au JS
+        echo json_encode($subcategorieProduct->getListSubcategoriesProduct());
+    }else{
+        echo 2;
+    }
+} else {
+    //Controller pour ajouter un nouveau produit
+    //On instencie dans une variable l'objet de notre model products
+    $product = new product();
+    $categorieProduct = new categoryProduct();
+    $listCategoriesProduct = $categorieProduct->categoriesProducts();
+    var_dump($selectCategoryProduct);
+    $subcategorieProduct = new subcategoryProduct();
+    $selectSubcategorieProduct = $subcategorieProduct->getListSubcategoriesProduct(); 
+    //Si le formulaire est validé
+    if(isset($_POST['addProduct'])){
         if(!$product->checkProductExist()){
             if($product->addNewProduct()){
                 $addProductMessage = 'Le produit a été ajouté.';
@@ -19,18 +35,4 @@ if(isset($_POST['addProduct'])){
             $addProductMessage = 'Le produit existe déjà.';
         }
     }
-
-//Traitement de la demande AJAX
-if(isset($_POST['fieldValue'])){
-    //On vérifie que l'on a bien envoyé des données en POST
-    if(!empty($_POST['fieldValue']) && !empty($_POST['fieldName'])){
-        //On inclut les bons fichiers car dans ce contexte ils ne sont pas connu.
-        include_once '../models/products.php';
-        $product = new product();
-        $select = htmlspecialchars($_POST['fieldName']);
-        $product->$select = htmlspecialchars($_POST['fieldValue']);
-        //Le echo sert à envoyer la réponse au JS
-        echo $product->addNewProduct([htmlspecialchars($_POST['fieldName'])]);
-    }else{
-        echo 2;
-    }
+}

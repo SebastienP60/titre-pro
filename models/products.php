@@ -5,10 +5,10 @@ class product{
     public $name = '';
     public $reference = '';
     public $description = '';
-    public $price = '';
+    public $price = 0;
     public $picture = '';
     public $energy = '';
-    public $id_ahl115_subtypes = '';
+    public $id_ahl115_subtypes = 0;
     private $db = NULL;
     public function __construct()
     {
@@ -46,54 +46,6 @@ car on attend des informations de l'administrateur */
         $ProductExist->execute();
         $data = $ProductExist->fetch(PDO::FETCH_OBJ);
         return $data->isReferenceExist;
-    }
-/*On crée une méthode pour afficher la liste des sous-types
- de chaque produit pour l'ajouter.*/    
-    public function getListSubtypeProduct(){
-        $listSubtypeProduct = $this->db->query(
-        'SELECT
-            `name`
-            FROM
-            `ahl115_subtypes`
-            ORDER BY `name` ASC' 
-    );
-    return $listSubtypeProduct->fetchAll(PDO::FETCH_OBJ);
-    }
-/*On crée une méthode pour afficher la liste des types
- de chaque produit pour l'ajouter.*/    
-    public function getListTypeProduct(){
-        $listTypeProduct = $this->db->query(
-        'SELECT
-            `name`
-            FROM
-            `ahl115_types`
-            ORDER BY `name` ASC' 
-    );
-    return $listTypeProduct->fetchAll(PDO::FETCH_OBJ);
-    }
-/*On crée une méthode pour afficher la liste des sous-catégories
- de chaque produit pour l'ajouter.*/    
-    public function getListSubcategoriesProduct(){
-        $listSubcategoriesProduct = $this->db->query(
-        'SELECT
-            `name`
-            FROM
-            `ahl115_subcategories`
-            ORDER BY `name` ASC' 
-    );
-    return $listSubcategoriesProduct->fetchAll(PDO::FETCH_OBJ);
-    }
-/*On crée une méthode pour afficher la liste des catégories
- de chaque produit pour l'ajouter.*/    
-    public function getListCategoriesProduct(){
-        $listCategoriesProduct = $this->db->query(
-        'SELECT
-            `name`
-            FROM
-            `ahl115_categories`
-            ORDER BY `name` ASC' 
-    );
-    return $listCategoriesProduct->fetchAll(PDO::FETCH_OBJ);
     }
 /*On crée une méthode pour afficher toutes les information relatives
  à un produit enregistré*/

@@ -1,5 +1,7 @@
 <?php
 session_start();
+include 'models/categoriesProducts.php';
+include 'models/subcategoriesProducts.php';
 include 'models/products.php';
 include 'controllers/productsController.php';
 include 'header.php';
@@ -35,8 +37,8 @@ include 'header.php';
                     <input class="form-control" type="text" id="energy" name="energy" placeholder="Puissance en joules" value="<?= isset($_POST['energy']) ? $_POST['energy'] : '' ?>" />
                 </div>
                 <div class="form-group">
-                    <label for="selecCategoriesOfProduct">Catégorie du produit</label>
-                    <select class="form-control" id="selecCategoriesOfProduct" onchange="choiceCategory()">
+                    <label for="selectCategoriesOfProduct">Catégorie du produit</label>
+                    <select class="form-control" id="selectCategoriesOfProduct" onchange="choiceCategory(this)" name="selectCategoriesOfProduct">
                     <option disabled selected></option>
                     <!-- Avec la boucle on parcours tout le tableau-->
                         <?php foreach($listCategoriesProduct as $allListCategoriesProduct){ ?>
@@ -45,8 +47,8 @@ include 'header.php';
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="selecSubcategoriesOfProduct">Sous Categorie de produit</label>
-                    <select class="form-control" id="selecSubcategoriesOfProduct">
+                    <label for="selectSubcategoriesOfProduct">Sous Categorie de produit</label>
+                    <select class="form-control" id="selectSubcategoriesOfProduct" name="selectSubcategoriesOfProduct">
                     <option disabled selected></option>
                     <!-- Avec la boucle on parcours tout le tableau-->
                         <?php foreach($listSubcategoriesProduct as $alllistSubcategoriesProduct){ ?>
@@ -55,8 +57,8 @@ include 'header.php';
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="selecTypeOfProduct">Type de produit</label>
-                    <select class="form-control" id="selecTypeOfProduct">
+                    <label for="selectTypeOfProduct">Type de produit</label>
+                    <select class="form-control" id="selectTypeOfProduct" name="selectTypeOfProduct">
                     <option disabled selected></option>
                     <!-- Avec la boucle on parcours tout le tableau-->
                         <?php foreach($listTypeProduct as $allTypeProduct){ ?>
@@ -66,7 +68,7 @@ include 'header.php';
                 </div>
                 <div class="form-group">
                     <label for="selectSubtypeOfProduct">Sous-type de produit</label>
-                    <select class="form-control" id="selectSubtypeOfProduct">
+                    <select class="form-control" id="selectSubtypeOfProduct" name="selectSubtypeOfProduct">
                     <option disabled selected></option>
                     <!-- Avec la boucle on parcours tout le tableau-->
                         <?php foreach($listSubtypeProduct as $allSubtypeProduct){ ?>
