@@ -3,7 +3,7 @@
 class types{
     public $id = 0;
     public $name = '';
-    public $id_ahl115_subcategories = '';
+    public $id_ahl115_subcategories = 0;
     private $db = NULL;
     public function __construct(){
     //try essaie de se connecter à la base de données
@@ -14,18 +14,20 @@ class types{
             die ($error->getMessage());
         }
     }
-/*On crée une méthode pour afficher la liste des sous-types
+/*On crée une méthode pour afficher la liste des types
  de chaque produit pour l'ajouter.*/    
-    public function getListSubtypeProduct(){
-        $listSubtypeProduct = $this->db->query(
+    public function getListTypeProduct(){
+        $listTypeProduct = $this->db->prepare(
         'SELECT
             `id`
             ,`name`
-            ,`id_ahl115_types`
             FROM
-            `ahl115_subtypes`
+            `ahl115_types`
+            WHERE `id_ahl115_subcategories` = :id_ahl115_subcategories
             ORDER BY `name` ASC' 
         );
-        return $listSubtypeProduct->fetchAll(PDO::FETCH_OBJ);
+        $listTypeProduct->bindValue(':id_ahl115_subcategories', $this->id_ahl115_subcategories, PDO::PARAM_STR);
+        $listTypeProduct->execute();
+        return $listTypeProduct->fetchAll(PDO::FETCH_OBJ);
     }
 }

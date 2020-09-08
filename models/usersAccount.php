@@ -8,7 +8,7 @@ class user{
     public $address = '';
     public $password = '';
     public $phoneNumber = '';
-    public $id_ahl115_roles = '';
+    public $id_ahl115_roles = 0;
     private $db = NULL;
     public function __construct()
     {

@@ -1,9 +1,9 @@
 <?php
 //On crée l'objet subtypes pour initialiser ses attributs et avec le mot class qui est la définition de l'objet
-class types{
+class subtypes{
     public $id = 0;
     public $name = '';
-    public $id_ahl115_types = '';
+    public $id_ahl115_types = 0;
     private $db = NULL;
     public function __construct(){
     //try essaie de se connecter à la base de données
@@ -14,18 +14,20 @@ class types{
             die ($error->getMessage());
         }
     }
-/*On crée une méthode pour afficher la liste des types
+/*On crée une méthode pour afficher la liste des sous-types
  de chaque produit pour l'ajouter.*/    
-    public function getListTypeProduct(){
-        $listTypeProduct = $this->db->query(
+    public function getListSubtypeProduct(){
+        $listSubtypeProduct = $this->db->prepare(
         'SELECT
             `id`
             ,`name`
-            ,`id_ahl115_subcategories`
             FROM
-            `ahl115_types`
+            `ahl115_subtypes`
+            WHERE `id_ahl115_types` = :id_ahl115_types
             ORDER BY `name` ASC' 
         );
-        return $listTypeProduct->fetchAll(PDO::FETCH_OBJ);
+        $listSubtypeProduct->bindValue(':id_ahl115_types', $this->id_ahl115_types, PDO::PARAM_STR);
+        $listSubtypeProduct->execute();
+        return $listSubtypeProduct->fetchAll(PDO::FETCH_OBJ);
     }
 }

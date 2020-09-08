@@ -2,15 +2,28 @@
 
 
 //Traitement de la demande AJAX
-if(isset($_POST['idCategory'])){
+if(isset($_POST['idFirstSelect'])){
     //On vérifie que l'on a bien envoyé des données en POST
-    if(!empty($_POST['idCategory'])){
+    if(!empty($_POST['idFirstSelect'])){
+        if($_POST['secondSelect'] == 'selectSubcategoriesOfProduct'){
         //On inclut les bons fichiers car dans ce contexte ils ne sont pas connu.
-        include_once '../models/subcategoriesProducts.php';
-        $subcategorieProduct = new subcategoryProduct();
-        $subcategorieProduct->id_ahl115_categories = $_POST['idCategory'];
-        //Le echo sert à envoyer la réponse au JS
-        echo json_encode($subcategorieProduct->getListSubcategoriesProduct());
+            include_once '../models/subcategoriesProducts.php';
+            $subcategorieProduct = new subcategoryProduct();
+            $subcategorieProduct->id_ahl115_categories = $_POST['idFirstSelect'];
+            //Le echo sert à envoyer la réponse au JS
+            echo json_encode($subcategorieProduct->getListSubcategoriesProduct());
+        } elseif($_POST['secondSelect'] == 'selectTypeOfProduct'){
+            include_once '../models/typesProducts.php';
+            $typeProduct = new types();
+            //Méthode pour remplir le type selon l'id de la sous catégorie
+            $typeProduct->id_ahl115_subcategories = $_POST['idFirstSelect'];
+            echo json_encode($typeProduct->getListTypeProduct());
+        } elseif($_POST['secondSelect'] == 'selectSubtypeOfProduct'){
+            include_once '../models/subtypesProducts.php';
+            $subtypeProduct = new subtypes();
+            $subtypeProduct->id_ahl115_types = $_POST['idFirstSelect'];
+            echo json_encode($subtypeProduct->getListSubtypeProduct());
+        }
     }else{
         echo 2;
     }

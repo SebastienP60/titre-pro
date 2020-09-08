@@ -38,7 +38,7 @@ include 'header.php';
                 </div>
                 <div class="form-group">
                     <label for="selectCategoriesOfProduct">Catégorie du produit</label>
-                    <select class="form-control" id="selectCategoriesOfProduct" onchange="choiceCategory(this)" name="selectCategoriesOfProduct">
+                    <select class="form-control" id="selectCategoriesOfProduct" onchange="choiceCategory(this, 'selectSubcategoriesOfProduct')" name="selectCategoriesOfProduct">
                     <option disabled selected></option>
                     <!-- Avec la boucle on parcours tout le tableau-->
                         <?php foreach($listCategoriesProduct as $allListCategoriesProduct){ ?>
@@ -48,7 +48,7 @@ include 'header.php';
                 </div>
                 <div class="form-group">
                     <label for="selectSubcategoriesOfProduct">Sous Categorie de produit</label>
-                    <select class="form-control" id="selectSubcategoriesOfProduct" name="selectSubcategoriesOfProduct">
+                    <select class="form-control" id="selectSubcategoriesOfProduct" onchange="choiceCategory(this, 'selectTypeOfProduct')" name="selectSubcategoriesOfProduct">
                     <option disabled selected></option>
                     <!-- Avec la boucle on parcours tout le tableau-->
                         <?php foreach($listSubcategoriesProduct as $alllistSubcategoriesProduct){ ?>
@@ -58,7 +58,7 @@ include 'header.php';
                 </div>
                 <div class="form-group">
                     <label for="selectTypeOfProduct">Type de produit</label>
-                    <select class="form-control" id="selectTypeOfProduct" name="selectTypeOfProduct">
+                    <select class="form-control" id="selectTypeOfProduct" onchange="choiceCategory(this, 'selectSubtypeOfProduct')" name="selectTypeOfProduct">
                     <option disabled selected></option>
                     <!-- Avec la boucle on parcours tout le tableau-->
                         <?php foreach($listTypeProduct as $allTypeProduct){ ?>
