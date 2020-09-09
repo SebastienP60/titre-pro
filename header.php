@@ -74,14 +74,22 @@ include 'controllers/headerController.php';
                     <?php if(!isset($_SESSION['profil']['lastname'])){?> <!--On est pas connecté-->
                     <a class="btn btn-account text-white" href="connection.php"><i class="far fa-user fa-2x" id="connect"></i></a>                  
                     <?php }else{ ?>
-                    <li class="nav-item dropdown">
+                      <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,100"><i class="fas fa-user fa-2x" id="isConnect"></i></button>
+                        <div class="dropdown-menu" id="dropIcone" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="profile.php">Mon profil</a>
+                          <a class="dropdown-item" href="userBasket.php">Mon panier</a>
+                          <a class="dropdown-item" href="?action=disconnect">Déconnection</a>
+                        </div>
+                      </div>  
+                  <!-- <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="index.php" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-2x" id="isConnect"></i></a>
                       <div class="dropdown-menu bg-dark" id="dropIcone">
                         <a class="dropdown-item" href="profile.php">Mon profil</a>
                         <a class="dropdown-item" href="userBasket.php">Mon panier</a>
                         <a class="dropdown-item" href="?action=disconnect">Déconnection</a>
                       </div>
-                    </li>  
+                    </li>   -->
                     <?php  } ?>
                   </div>
           </div>
@@ -109,9 +117,9 @@ include 'controllers/headerController.php';
                                         Répliques de poing
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarGunReplicate" id="submenuGunReplicate">
-                                        <li><a class="dropdown-item" href="views/armes-de-poing.php">Répliques de poing</a></li>
-                                        <li><a class="dropdown-item" href="#">Répliques à gaz</a></li>
-                                        <li><a class="dropdown-item" href="#">Répliques CO2</a></li>
+                                  <li><a class="dropdown-item" href="views/armes-de-poing.php">Répliques de poing</a></li>
+                                  <li><a class="dropdown-item" href="#">Répliques à gaz</a></li>
+                                  <li><a class="dropdown-item" href="#">Répliques CO2</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item dropdown-submenu">

@@ -73,8 +73,10 @@ li{
 }
 /*Mise en forme menu déroulant icône dcu compte*/
 #dropIcone{
-    background-color: black !important;
-    z-index: 99;
+    background-color: black;
+}
+.dropdown-divider{
+    border: black;
 }
 #dropIcone a{
     color: white;
