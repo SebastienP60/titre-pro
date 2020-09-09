@@ -82,14 +82,6 @@ include 'controllers/headerController.php';
                           <a class="dropdown-item" href="?action=disconnect">Déconnection</a>
                         </div>
                       </div>  
-                  <!-- <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="index.php" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-2x" id="isConnect"></i></a>
-                      <div class="dropdown-menu bg-dark" id="dropIcone">
-                        <a class="dropdown-item" href="profile.php">Mon profil</a>
-                        <a class="dropdown-item" href="userBasket.php">Mon panier</a>
-                        <a class="dropdown-item" href="?action=disconnect">Déconnection</a>
-                      </div>
-                    </li>   -->
                     <?php  } ?>
                   </div>
           </div>
