@@ -13,6 +13,7 @@ include 'controllers/headerController.php';
 </head>
 <body>
 <?php if(isset($_SESSION['profil']['id_ahl115_roles']) && $_SESSION['profil']['id_ahl115_roles'] == 1){?>
+  <div class="container-fluid sticky-top" id="bannerAdmin">
     <div class="row">
       <div class="col-lg-12">
         <nav class="navbar navbar-expand-lg navbar-dark sticky-top"> 
@@ -34,12 +35,16 @@ include 'controllers/headerController.php';
               <li class="nav-item">
                 <a class="nav-link" href="#">Liste clients</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="?action=disconnect">Se deconnecter</a>
+              </li>
             </ul>
           </div>
         </nav>
       </div>  
-    </div>      
-  <?php } else { ?>
+    </div>
+  </div>      
+<?php } else { ?>
   <div class="container-fluid sticky-top" id="banner">
     <div class="row">  <!--début de la rangée principale-->
       <div class="col-lg-2"> <!-- colonne pour le logo-->
@@ -71,10 +76,10 @@ include 'controllers/headerController.php';
                     <?php }else{ ?>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="index.php" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-2x" id="isConnect"></i></a>
-                      <div class="dropdown-menu">
+                      <div class="dropdown-menu bg-dark" id="dropIcone">
                         <a class="dropdown-item" href="profile.php">Mon profil</a>
                         <a class="dropdown-item" href="userBasket.php">Mon panier</a>
-                        <a class="dropdown-item" href="?action=disconnect">Se deconnecter</a>
+                        <a class="dropdown-item" href="?action=disconnect">Déconnection</a>
                       </div>
                     </li>  
                     <?php  } ?>

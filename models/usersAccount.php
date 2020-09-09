@@ -46,6 +46,18 @@ car on attend des informations du visiteur qui veut s'inscrire sur le site*/
         $data = $userAccountExist->fetch(PDO::FETCH_OBJ);
         return $data->isMailAccountExist;
     }
+/*On crée une méthode pour vérifié si l'utilisateur a déjà un compte 
+grâce à son id lorsqu'il veut modifier son compte*/
+    public function checkUserAccountExistById(){
+        $userAccountExistById = $this->db->prepare(
+            'SELECT COUNT(`id`) AS `isIdAccountExist`
+                    FROM `ahl115_users` 
+                    WHERE `id` = :id');
+        $userAccountExistById->bindValue(':id', $this->id, PDO::PARAM_INT);
+        $userAccountExistById->execute();
+        $data = $userAccountExistById->fetch(PDO::FETCH_OBJ);
+        return $data->isIdAccountExist;
+    }
 //On crée une méthode permettant de récupérer le hash du mot de passe de l'utilisateur
     public function getUserHashPassword(){
         $userHashPassword = $this->db->prepare(
@@ -100,15 +112,18 @@ au compte de l'utilisateur déjà inscrit via son id*/
         $updateMyAccountQuery = $this->db->prepare(
             'UPDATE `ahl115_users`
             SET
-             `address` = :address
+            `lastname` = :lastname
+            , `firstname` = :firstname
+            , `address` = :address
             , `phoneNumber` = :phoneNumber
             , `mail` = :mail 
-            , `password` = :password
             WHERE `id` = :id');
+        $updateMyAccountQuery->bindValue(':lastname', $this->lastname, PDO::PARAM_STR);
+        $updateMyAccountQuery->bindValue(':firstname', $this->firstname, PDO::PARAM_STR);
         $updateMyAccountQuery->bindValue(':address', $this->address, PDO::PARAM_STR);
         $updateMyAccountQuery->bindValue(':phoneNumber', $this->phoneNumber, PDO::PARAM_STR);
         $updateMyAccountQuery->bindValue(':mail', $this->mail, PDO::PARAM_STR);
-        $updateMyAccountQuery->bindValue(':password', $this->password, PDO::PARAM_STR);
+        $updateMyAccountQuery->bindValue(':id', $this->id, PDO::PARAM_INT);
         return $updateMyAccountQuery->execute();
     }
 //On crée une méthode pour supprimer un compte utiisateur
@@ -118,7 +133,7 @@ au compte de l'utilisateur déjà inscrit via son id*/
             `ahl115_users`
             WHERE `id` = :id'    
         );
-        $deleteuserAccountQuery->bindvalue(':id', $this->id, PDO::PARAM_STR);
+        $deleteuserAccountQuery->bindvalue(':id', $this->id, PDO::PARAM_INT);
         return $deleteuserAccountQuery->execute();
     }
 }

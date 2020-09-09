@@ -20,7 +20,7 @@
       });
       return false;
   });
-
+  //AJAX
   //On crée une fonction qui sera appelée au changement du select (quand on clique sur une option)
   function choiceCategory(firstSelectElement, secondSelectId){
     //Instanciation de l'objet XMLHttpRequest permettant de faire de l'AJAX

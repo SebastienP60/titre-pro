@@ -3,9 +3,10 @@ body{
     background: url(../img/camoVert.png);
 }
 /* balise principale incluant la barre de navigation et liens */
-#banner{
+#banner, #bannerAdmin{
     background-color: black;
     width: auto;
+    z-index: 1;
 }
 #logo{
     height: 120px;
@@ -43,7 +44,7 @@ body{
         display: none;
     }
 }
-    /* Mise en forme des menus déroulants */
+    /* Mise en forme des menus déroulants de la barre de navigation*/
 .dropdown-menu{
     background-color: #2E86AB;
 }
@@ -69,6 +70,14 @@ li{
     left: 100%;
     margin-left: .1rem;
     margin-right: .1rem;
+}
+/*Mise en forme menu déroulant icône dcu compte*/
+#dropIcone{
+    background-color: black !important;
+    z-index: 99;
+}
+#dropIcone a{
+    color: white;
 }
 /*Contenu de la page principale */
 h1{
@@ -169,14 +178,21 @@ button[name=createMyAccount]{
 /*Formulaire mon compte*/
 #myAccountForm{
     background-color: #302727;
-}
-button[name=updateMyAccount], [name=deleteMyAccount]{
     margin-bottom: 30px;
+}
+#myAccountForm li{
+    font-size: 1.5rem;
+}
+#divButton {
+    padding-bottom: 30px;
     margin-top: 20px;
 }
-#yourName{
-    margin-top: 30px;
+button[name=]{
+    text-decoration: none;
 }
+/* #yourName{
+    margin-top: 30px;
+} */
 /*Formulaire d'ajout/modification/suppression de produits*/
 #productForm, #updateProductForm{
     background-color: #4D704D;

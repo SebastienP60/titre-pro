@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'tables.php';
-include 'models/categoriesname.php';
+include 'models/categoriesProducts.php';
 include 'controllers/headerController.php';
 include 'header.php';
 /* $types = array('Armes de poing', 'Armes longues'); */

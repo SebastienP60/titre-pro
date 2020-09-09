@@ -37,12 +37,18 @@ if(isset($_POST['myIdentity'])){
             $_SESSION['profil']['id'] = $userProfil->id;
             $_SESSION['profil']['lastname'] = $userProfil->lastname;
             $_SESSION['profil']['firstname'] = $userProfil->firstname;
-            $_SESSION['profil']['id_ahl115_roles'] = $userProfil->id_ahl115_roles;            //On redirige vers une autre page
-            header('location: index.php');
+            $_SESSION['profil']['id_ahl115_roles'] = $userProfil->id_ahl115_roles; 
+            
+         if($_SESSION['profil']['id_ahl115_roles'] == 1){
+             //On redirige vers la page de l'administrateur
+            header('Location: products.php');
             exit;
-            };
-        } else {
-                $addUserAccountMessage = 'Le compte n\'existe pas.';
-            }    
-        
-}
+            } else {
+            //Sinon redirige vers la page index si c'est l'utilisateur qui se connecte
+            header('Location: index.php');
+            exit;            
+        }      
+
+        } 
+    }
+}   

@@ -1,7 +1,7 @@
 <?php
-include 'header.php';
 include 'models/products.php';
 include 'controllers/updateProductController.php';
+include 'header.php';
 ?>
 <h1 id="updateProduct">Modifier un produit</h1>
     <!-- On crée une ternaire pour afficher le message d'erreur si il existe -->

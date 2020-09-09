@@ -8,6 +8,7 @@
       </div>
       <div class="modal-body">
         <p>Vôtre compte a été créé.</p>
+        <p>Veuillez vous connecter pour profiter du site</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

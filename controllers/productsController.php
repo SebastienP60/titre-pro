@@ -33,7 +33,6 @@ if(isset($_POST['idFirstSelect'])){
     $product = new product();
     $categorieProduct = new categoryProduct();
     $listCategoriesProduct = $categorieProduct->categoriesProducts();
-    var_dump($selectCategoryProduct);
     $subcategorieProduct = new subcategoryProduct();
     $selectSubcategorieProduct = $subcategorieProduct->getListSubcategoriesProduct(); 
     //Si le formulaire est validé
