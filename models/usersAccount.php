@@ -128,12 +128,12 @@ au compte de l'utilisateur déjà inscrit via son id*/
     }
 //On crée une méthode pour supprimer un compte utiisateur
     public function deleteUserAccount(){
-        $deleteuserAccountQuery = $this->db->prepare(
+        $deleteUserAccountQuery = $this->db->prepare(
             'DELETE FROM
             `ahl115_users`
             WHERE `id` = :id'    
         );
-        $deleteuserAccountQuery->bindvalue(':id', $this->id, PDO::PARAM_INT);
-        return $deleteuserAccountQuery->execute();
+        $deleteUserAccountQuery->bindvalue(':id', $this->id, PDO::PARAM_INT);
+        return $deleteUserAccountQuery->execute();
     }
 }

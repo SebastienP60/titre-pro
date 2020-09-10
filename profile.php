@@ -16,7 +16,7 @@ include 'header.php';
             </ul>
         <div class="button" id="divButton">
                 <button type="submit" name="updateMyAccount"><a href="updateProfile.php"> Modifier mon compte</a></button>
-                <button type="submit" name="deleteMyAccount">Supprimer mon compte</button>
+                <button type="submit" data-toggle="modal" data-target="#deleteProfile">Supprimer mon compte</button>
         </div>
     </div>
 <?php

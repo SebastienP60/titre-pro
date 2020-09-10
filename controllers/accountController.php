@@ -13,7 +13,7 @@ $regexPassword = '%^(([a-z]|[A-Z]|[0-9]|&|\?|!|#|@)+){8,32}$%';
 if(isset($_POST['createMyAccount'])){
     //On instencie dans une variable l'objet de notre model usersAccount
     $user = new user(); 
-    //On vérifie que le champ du nom de famille est correctement rempli
+    //On vérifie que le champ du nom de famille est correctement rempli et si il n'est pas vide
     if(!empty($_POST['lastname'])){
         //Si la saisie est conforme à la vérification via la regex on stocke dans la variable $_POST
         if(preg_match($regexName,$_POST['lastname'])){

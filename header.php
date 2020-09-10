@@ -94,7 +94,7 @@ include 'controllers/headerController.php';
                       <span class="navbar-toggler-icon"></span>
                   </button>
                   <a href="panier.php"> <i class="fas fa-shopping-basket fa-3x" id="iconCart"></i></a>
-                  <a href="connection.php"><i class="far fa-user fa-2x" id="iconAccount"></i></a>
+                  <a href="connection.php"><i class="<?= isset($_SESSION['profil']['lastname']) ? 'fas' : 'far' ?> fa-user fa-2x" id="iconAccount"></i></a>
                   <!--Intégration du bloc navbar-collapse-->
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <!--Création de la liste non ordonnée de tous les liens et sous-menus-->
