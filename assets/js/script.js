@@ -32,7 +32,6 @@
         //Si on a bien fini de recevoir la réponse de PHP (4) et que le code retour HTTP est ok (200)
         if (request.readyState == 4 && request.status == 200) {
             let response = JSON.parse(request.responseText);
-            //ici 
             let filledSelect = document.getElementById(secondSelectId);
             for(let element of response){
                 let option = document.createElement('option');

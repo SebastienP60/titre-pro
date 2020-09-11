@@ -8,7 +8,7 @@ include 'controllers/headerController.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
   <title> Magasin Air-soft / Paintball Retz Airsoft Shop</title>
 </head>
 <body>
@@ -17,7 +17,7 @@ include 'controllers/headerController.php';
     <div class="row">
       <div class="col-lg-12">
         <nav class="navbar navbar-expand-lg navbar-dark sticky-top"> 
-        <a href="index.php"><img id="logo" class="img-fluid" src="assets/img/logoRASNegatif.jpg" alt="Logo du site" title="Logo du site"/></a>
+        <a href="index.php"><img id="logo" class="img-fluid" src="../assets/img/logoRASNegatif.jpg" alt="Logo du site" title="Logo du site"/></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarAdmin" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -36,7 +36,7 @@ include 'controllers/headerController.php';
                 <a class="nav-link" href="#">Liste clients</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="?action=disconnect">Se deconnecter</a>
+                <a class="nav-link" href="?action=disconnect">Se déconnecter</a>
               </li>
             </ul>
           </div>
@@ -48,7 +48,7 @@ include 'controllers/headerController.php';
   <div class="container-fluid sticky-top" id="banner">
     <div class="row">  <!--début de la rangée principale-->
       <div class="col-lg-2"> <!-- colonne pour le logo-->
-        <a href="index.php"><img id="logo" class="img-fluid" src="assets/img/logoRASNegatif.jpg" alt="Logo du site" title="Logo du site"/></a>
+        <a href="index.php"><img id="logo" class="img-fluid" src="../assets/img/logoRASNegatif.jpg" alt="Logo du site" title="Logo du site"/></a>
       </div>
         <div class="col-lg-10"> <!--colonne pour inclure les rangées secondaires-->
           <div class="row mt-4">  <!--1ère rangée secondaire pour différents liens-->
@@ -79,7 +79,7 @@ include 'controllers/headerController.php';
                         <div class="dropdown-menu" id="dropIcone" aria-labelledby="dropdownMenuButton">
                           <a class="dropdown-item" href="profile.php">Mon profil</a>
                           <a class="dropdown-item" href="userBasket.php">Mon panier</a>
-                          <a class="dropdown-item" href="?action=disconnect">Déconnection</a>
+                          <a class="dropdown-item" href="?action=disconnect">Déconnexion</a>
                         </div>
                       </div>  
                     <?php  } ?>
@@ -109,7 +109,7 @@ include 'controllers/headerController.php';
                                         Répliques de poing
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarGunReplicate" id="submenuGunReplicate">
-                                  <li><a class="dropdown-item" href="views/armes-de-poing.php">Répliques de poing</a></li>
+                                  <li><a class="dropdown-item" href="views/répliques-de-poing.php">Répliques de poing</a></li>
                                   <li><a class="dropdown-item" href="#">Répliques à gaz</a></li>
                                   <li><a class="dropdown-item" href="#">Répliques CO2</a></li>
                                 </ul>
@@ -119,7 +119,7 @@ include 'controllers/headerController.php';
                                     Répliques longues
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarLongReplicate" id="submenuLongReplicate">
-                                    <li><a class="dropdown-item" href="views/armes-longues.php">Répliques longues</a></li>
+                                    <li><a class="dropdown-item" href="views/répliques-longues.php">Répliques longues</a></li>
                                     <li><a class="dropdown-item" href="#">Répliques à ressort</a></li>
                                     <li><a class="dropdown-item" href="#">Répliques électriques</a></li>
                                 </ul>

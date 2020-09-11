@@ -33,7 +33,7 @@ car on attend des informations de l'administrateur */
        $addNewProductQuery->bindValue(':price', $this->price, PDO::PARAM_STR);
        $addNewProductQuery->bindValue(':picture', $this->picture, PDO::PARAM_STR);
        $addNewProductQuery->bindValue(':energy', $this->energy, PDO::PARAM_STR);
-       $addNewProductQuery->bindValue(':fk', $this->id_ahl115_subtypes, PDO::PARAM_STR);
+       $addNewProductQuery->bindValue(':fk', $this->id_ahl115_subtypes, PDO::PARAM_INT);
        return $addNewProductQuery->execute();
     }
 //On crée une méthode pour vérifié si le produit exsite déjà grâce à sa référence
@@ -66,6 +66,23 @@ car on attend des informations de l'administrateur */
         $infoProduct->execute();
         return $infoProduct->fetch(PDO::FETCH_OBJ);
     }
+/*On crée une méthode pour récupérer toutes les information relatives
+ à tous les produits enregistrés*/
+ public function getProductsList(){
+    $ListProduct = $this->db->query(
+        'SELECT
+            `name`
+            , `reference`
+            , `description`
+            , `price`
+            , `picture`
+            , `energy`
+            , `id_ahl115_subtypes`   
+            FROM
+            `ahl115_products`
+            '); 
+    return $ListProduct->fetchAll(PDO::FETCH_OBJ);
+}
 //On crée une méthode pour modifier les informations d'un produit
     public function updateinfoProduct(){
         $updateinfoProductQuery = $this->db->prepare(

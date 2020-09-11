@@ -17,7 +17,7 @@ class subtypes{
 /*On crée une méthode pour afficher la liste des sous-types
  de chaque produit pour l'ajouter.*/    
     public function getListSubtypeProduct(){
-        $listSubtypeProduct = $this->db->prepare(
+        $subtypeProduct = $this->db->prepare(
         'SELECT
             `id`
             ,`name`
@@ -26,8 +26,8 @@ class subtypes{
             WHERE `id_ahl115_types` = :id_ahl115_types
             ORDER BY `name` ASC' 
         );
-        $listSubtypeProduct->bindValue(':id_ahl115_types', $this->id_ahl115_types, PDO::PARAM_STR);
-        $listSubtypeProduct->execute();
-        return $listSubtypeProduct->fetchAll(PDO::FETCH_OBJ);
+        $subtypeProduct->bindValue(':id_ahl115_types', $this->id_ahl115_types, PDO::PARAM_INT);
+        $subtypeProduct->execute();
+        return $subtypeProduct->fetchAll(PDO::FETCH_OBJ);
     }
 }

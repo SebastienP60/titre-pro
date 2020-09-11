@@ -41,7 +41,7 @@ if(isset($_POST['myIdentity'])){
             
          if($_SESSION['profil']['id_ahl115_roles'] == 1){
              //On redirige vers la page de l'administrateur
-            header('Location: products.php');
+            header('Location: addProduct.php');
             exit;
             } else {
             //Sinon redirige vers la page index si c'est l'utilisateur qui se connecte

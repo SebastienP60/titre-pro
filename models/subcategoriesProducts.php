@@ -17,14 +17,14 @@ class subcategoryProduct{
 /*On crée une méthode pour afficher la liste des sous-catégories
  de chaque produit pour l'ajouter.*/    
     public function getListSubcategoriesProduct(){
-        $listSubcategoriesProduct = $this->db->prepare(
+        $subcategoriesProduct = $this->db->prepare(
         'SELECT `id`, `name`
         FROM `ahl115_subcategories` 
         WHERE `id_ahl115_categories` = :id_ahl115_categories
         ORDER BY `name`  ASC
     ');
-    $listSubcategoriesProduct->bindValue(':id_ahl115_categories', $this->id_ahl115_categories,PDO::PARAM_STR);
-    $listSubcategoriesProduct->execute();
-    return $listSubcategoriesProduct->fetchAll(PDO::FETCH_OBJ);
+    $subcategoriesProduct->bindValue(':id_ahl115_categories', $this->id_ahl115_categories,PDO::PARAM_INT);
+    $subcategoriesProduct->execute();
+    return $subcategoriesProduct->fetchAll(PDO::FETCH_OBJ);
     }
 }

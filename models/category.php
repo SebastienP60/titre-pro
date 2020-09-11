@@ -1,6 +1,6 @@
 <?php
 //On crée l'objet categoryProduct pour initialiser ses attributs et avec le mot class qui est la définition de l'objet
-class categoryProduct{
+class category{
     public $id = 0;
     public $name = '';
     private $db = NULL;
@@ -13,16 +13,16 @@ class categoryProduct{
             die ($error->getMessage());
     }
 }
-//On crée ue méthode pour afficher les différentes catégories
-    public function categoriesProducts(){
-        $categoryProducts = $this->db->query(
+//On crée une méthode pour afficher les différentes catégories
+    public function categoryList(){
+        $categoryListQuery = $this->db->query(
             'SELECT
                 `id`
                 , `name`
             FROM
             `ahl115_categories`
         ');
-            return $categoryProducts->fetchAll(PDO::FETCH_OBJ);
+            return $categoryListQuery->fetchAll(PDO::FETCH_OBJ);
     }
 }
  
