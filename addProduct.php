@@ -2,14 +2,14 @@
 session_start();
 include 'models/category.php';
 include 'models/products.php';
-include 'controllers/productsController.php';
+include 'controllers/addProductsController.php';
 include 'header.php';
 ?>
-<h1 id="addProduct">Ajout d'un produit</h1>
+<h1 id="addProduct">Ajouter un produit</h1>
     <!-- On crée une ternaire pour afficher le message d'erreur si il existe -->
     <p><?= isset($addProductMessage) ? $addProductMessage : '' ?></p>
     <div class="container text-center" id="productForm">
-        <form class="w-75 mx-auto" method="POST" action="products.php" enctype="multipart/form-data">
+        <form class="w-75 mx-auto" method="POST" action="addProduct.php" enctype="multipart/form-data">
             <fieldset>
                 <div class="form-group" id="nameProduct">
                     <label for="name">Nom du produit : </label>
@@ -42,38 +42,36 @@ include 'header.php';
                     <p class="text-danger"><?= isset($formErrors['energy']) ? $formErrors['energy'] : '' ?></p>
                 </div>
                 <div class="form-group">
-                    <label for="selectCategoriesOfProduct">Catégorie du produit</label>
-                    <select class="form-control" id="selectCategoriesOfProduct" onchange="choiceCategory(this, 'selectSubcategoriesOfProduct')" name="selectCategoriesOfProduct">
+                    <label for="selectCategory">Catégorie du produit</label>
+                    <select class="form-control" id="selectCategory" onchange="choiceCategory(this, 'selectSubcategory')" name="selectCategory">
                     <option disabled selected></option>
                     <!-- Avec la boucle on parcours tout le tableau-->
-                        <?php foreach($categoryList as $allListCategoriesProduct){ ?>
-                    <option value="<?= $allListCategoriesProduct->id ?>"><?= $allListCategoriesProduct->name ?></option>
+                        <?php foreach($categoryList as $allListCategory){ ?>
+                    <option value="<?= $allListCategory->id ?>"><?= $allListCategory->name ?></option>
                         <?php } ?>
                     </select>
-                    <p class="text-danger"><?= isset($formErrors['selectCategoriesOfProduct']) ? $formErrors['selectCategoriesOfProduct'] : '' ?></p>
+                    <p class="text-danger"><?= isset($formErrors['selectCategory']) ? $formErrors['selectCategory'] : '' ?></p>
                 </div>
                 <div class="form-group">
-                    <label for="selectSubcategoriesOfProduct">Sous Categorie de produit</label>
-                    <select class="form-control" id="selectSubcategoriesOfProduct" onchange="choiceCategory(this, 'selectTypeOfProduct')" name="selectSubcategoriesOfProduct">
+                    <label for="selectSubcategory">Sous-Categorie de produit</label>
+                    <select class="form-control" id="selectSubcategory" onchange="choiceCategory(this, 'selectType')" name="selectSubcategory">
                     <option disabled selected></option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="selectTypeOfProduct">Type de produit</label>
-                    <select class="form-control" id="selectTypeOfProduct" onchange="choiceCategory(this, 'selectSubtypeOfProduct')" name="selectTypeOfProduct">
+                    <label for="selectType">Type de produit</label>
+                    <select class="form-control" id="selectType" onchange="choiceCategory(this, 'selectSubtype')" name="selectType">
                     <option disabled selected></option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="selectSubtypeOfProduct">Sous-type de produit</label>
-                    <select class="form-control" id="selectSubtypeOfProduct" name="selectSubtypeOfProduct">
+                    <label for="selectSubtype">Sous-type de produit</label>
+                    <select class="form-control" id="selectSubtype" name="selectSubtype">
                     <option disabled selected></option>
                     </select>
                 </div>    
                 <div class="button">
                     <button type="submit" name="addProduct">Ajoutez le produit</button><!--Ce bouton doit envoyer sur la page correspondante au produits via son nom ou id-->
-                    <button type="submit" name="updateProduct"><a href="updateProduct.php">Modifiez un produit</a></button>
-                    <button type="submit" name="deleteProduct"><a href="deleteProduct.php">Supprimez un produit</a></button>
                 </div>
             </fieldset>
         </form>

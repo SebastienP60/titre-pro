@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'models/products.php';
 include 'controllers/updateProductController.php';
 include 'header.php';

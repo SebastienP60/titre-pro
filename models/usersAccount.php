@@ -1,5 +1,5 @@
 <?php
-//On crée l'objet users pour initialiser ses attributs et avec le mot class qui est la définition de l'objet
+//On crée l'objet user pour initialiser ses attributs et avec le mot class qui est la définition de l'objet
 class user{
     public $id = 0;
     public $lastname = '';

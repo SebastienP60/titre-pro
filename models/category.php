@@ -1,5 +1,5 @@
 <?php
-//On crée l'objet categoryProduct pour initialiser ses attributs et avec le mot class qui est la définition de l'objet
+//On crée l'objet category pour initialiser ses attributs et avec le mot class qui est la définition de l'objet
 class category{
     public $id = 0;
     public $name = '';

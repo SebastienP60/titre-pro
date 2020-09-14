@@ -24,13 +24,10 @@ include 'controllers/headerController.php';
           <div class="collapse navbar-collapse" id="navbarAdmin">
             <ul class="navbar-nav mr-auto container-fluid">
               <li class="nav-item">
-                <a class="nav-link" href="products.php">Ajouter un produit</a>
+                <a class="nav-link" href="addProduct.php">Ajouter un produit</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="updateProduct.php">Modifier un produit</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="deleteProduct.php">Supprimer un produit</a>
+                <a class="nav-link" href="../views/products.php">Liste des produits</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Liste clients</a>

@@ -2,10 +2,6 @@
 //Controller pour ajouter un nouveau produit
 //On instencie dans une variable l'objet de notre model products
 $product = new product();
-$listCategoriesProduct = $product->getListCategoriesProduct();
-$listSubcategoriesProduct = $product->getListSubcategoriesProduct();
-$listTypeProduct = $product->getListTypeProduct();
-$listSubtypeProduct = $product->getListSubtypeProduct();
 $deleteProduct = $product->deleteProduct();
 //Si le formulaire est validé
 if(isset($_POST['addProduct'])){

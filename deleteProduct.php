@@ -4,7 +4,7 @@ include 'models/products.php';
 include 'controllers/deleteProductController.php';
 include 'header.php';
 ?>
-<h1 id="addProduct">Supprimer un produit</h1>
+<h1 id="delProduct">Supprimer un produit</h1>
     <!-- On crée une ternaire pour afficher le message d'erreur si il existe -->
     <p><?= isset($addProductMessage) ? $addProductMessage : '' ?></p>
     <div class="container text-center" id="deleteProductForm">

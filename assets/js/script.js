@@ -25,13 +25,16 @@
   function choiceCategory(firstSelectElement, secondSelectId){
     //Instanciation de l'objet XMLHttpRequest permettant de faire de l'AJAX
     var request = new XMLHttpRequest();
+    // document.getElementById('selectSubcategory').innerHTML = '';
     //Les données sont envoyés en POST et c'est le controlleur qui va les traiter
-    request.open('POST', '../../controllers/productsController.php', true);
+    request.open('POST', '../../controllers/addProductsController.php', true);
     //Au changement d'état de la demande d'AJAX
-    request.onreadystatechange = function () {
+    request.onreadystatechange = function() {
         //Si on a bien fini de recevoir la réponse de PHP (4) et que le code retour HTTP est ok (200)
+        console.log(request);
         if (request.readyState == 4 && request.status == 200) {
             let response = JSON.parse(request.responseText);
+            console.log(response);
             let filledSelect = document.getElementById(secondSelectId);
             for(let element of response){
                 let option = document.createElement('option');

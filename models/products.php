@@ -66,6 +66,86 @@ car on attend des informations de l'administrateur */
         $infoProduct->execute();
         return $infoProduct->fetch(PDO::FETCH_OBJ);
     }
+/*On crée une méthode pour récupérer tous les produits 
+ via son sous-type*/
+ public function getListProductsBySubtype(){
+    $getListProductsSubtype = $this->db->prepare(
+        'SELECT
+            `name`
+            , `reference`
+            , `description`
+            , `price`
+            , `picture`
+            , `energy`  
+            FROM
+            `ahl115_products`
+            WHERE `id_ahl115_subtypes` = :id_ahl115_subtypes'); 
+    $getListProductsSubtype->bindValue(':id_ahl115_subtypes', $this->id_ahl115_subtypes, PDO::PARAM_INT);
+    $getListProductsSubtype->execute();
+    return $getListProductsSubtype->fetch(PDO::FETCH_OBJ);
+}
+/*On crée une méthode pour récupérer tous les produits 
+ via la sous-catégorie*/
+ public function getListProductsBySubcategory(){
+    $getListProductsSubcategory = $this->db->prepare(
+        'SELECT
+        `ahl115_products`.`name`
+        , `reference`
+        , `description`
+        , `price`
+        , `picture`
+        , `energy`  
+        FROM
+        `ahl115_products`
+        INNER JOIN `ahl115_subtypes` ON `id_ahl115_subtypes`= `ahl115_subtypes`.`id`
+        INNER JOIN `ahl115_types` ON `id_ahl115_types`= `ahl115_types`.`id`
+        WHERE `id_ahl115_subcategories` = :id_ahl115_subcategories'); 
+    $getListProductsSubcategory->bindValue(':id_ahl115_subcategories', $this->id_ahl115_subcategories, PDO::PARAM_INT);
+    $getListProductsSubcategory->execute();
+    return $getListProductsSubcategory->fetch(PDO::FETCH_OBJ);
+}
+/*On crée une méthode pour récupérer tous les produits
+via le type*/
+public function getListProductsByType(){
+    $getListProductsByType = $this->db->prepare(
+        'SELECT
+        `ahl115_products`.`name`
+        , `reference`
+        , `description`
+        , `price`
+        , `picture`
+        , `energy`  
+        FROM
+        `ahl115_products`
+        INNER JOIN `ahl115_subtypes` ON `id_ahl115_subtypes`= `ahl115_subtypes`.`id`
+        WHERE `id_ahl115_types` = :id_ahl115_types
+    ');
+    $getListProductsByType->bindValue(':id_ahl115_types', $this->id_ahl115_types, PDO::PARAM_INT);
+    $getListProductsByType->execute();
+    return $getListProductsByType->fetch(PDO::FETCH_OBJ);
+}
+/* ONcrée une méthode pour récupérer tous les produits
+via la catégorie*/
+public function getListProductsByCategory(){
+    $getListProductsCategory = $this->db->prepare(
+        'SELECT
+        `ahl115_products`.`name`
+        , `reference`
+        , `description`
+        , `price`
+        , `picture`
+        , `energy`  
+        FROM
+        `ahl115_products`
+        INNER JOIN `ahl115_subtypes` ON `id_ahl115_subtypes`= `ahl115_subtypes`.`id`
+        INNER JOIN `ahl115_types` ON `id_ahl115_types`= `ahl115_types`.`id`
+        INNER JOIN `ahl115_subcategories` ON `id_ahl115_subcategories`= `ahl115_subcategories`.`id`
+        WHERE `id_ahl115_categories` = :id_ahl115_categories
+    ');
+    $getListProductsCategory->bindValue(':id_ahl115_categories', $this->id_ahl115_categories, PDO::PARAM_INT);
+    $getListProductsCategory->execute();
+    return $getListProductsCategory->fetch(PDO::FETCH_OBJ);
+}
 /*On crée une méthode pour récupérer toutes les information relatives
  à tous les produits enregistrés*/
  public function getProductsList(){
@@ -94,7 +174,8 @@ car on attend des informations de l'administrateur */
             , `price` = :price
             , `picture` = :picture
             , `energy` = :energy
-            WHERE `reference` = :reference');
+            WHERE `reference` = :reference
+            ');
         $updateinfoProductQuery->bindValue(':name', $this->name, PDO::PARAM_STR);
         $updateinfoProductQuery->bindValue(':reference', $this->reference, PDO::PARAM_STR);
         $updateinfoProductQuery->bindValue(':description', $this->description, PDO::PARAM_STR);
