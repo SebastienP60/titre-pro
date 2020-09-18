@@ -15,7 +15,7 @@ class product{
     //try essaie de se connecter à la base de données
     try{
             // $db devient une instance de l'objet PDO
-            $this->db = new PDO('mysql:host=54.37.71.121;dbname=c69retzairsoftshop;charset=utf8', 'c69sebastienp', 'fYru!JEa4C');
+            $this->db = new PDO('mysql:host='.SQL_HOST.';dbname='.SQL_DBNAME.';charset=utf8', SQL_USER, SQL_PWD);
             }catch(Exception $error) {
                 die ($error->getMessage());
         }

@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'config.php';
 include 'models/category.php';
 include 'models/products.php';
 include 'controllers/updateProductController.php';
@@ -9,36 +10,36 @@ include 'header.php';
     <!-- On crée une ternaire pour afficher le message d'erreur si il existe -->
     <p><?= isset($addProductMessage) ? $addProductMessage : '' ?></p>
     <div class="container text-center" id="updateProductForm">
-        <form class="w-75 mx-auto" method="GET" action="#" enctype="multipart/form-data">
+        <form class="w-75 mx-auto" method="POST" action="#" enctype="multipart/form-data">
         <fieldset>
                 <div class="form-group" id="nameProduct">
                     <label for="name">Nom du produit : </label>
-                    <input class="form-control" type="text" id="name" name="name" placeholder="Nom du produit" value="<?= isset($_GET['name']) ? $_GET['name'] : $product->name ?>" />
+                    <input class="form-control" type="text" id="name" name="name" placeholder="Nom du produit" value="<?= isset($_POST['name']) ? $_POST['name'] : $infoProduct->name ?>" />
                     <p class="text-danger"><?= isset($formErrors['name']) ? $formErrors['name'] : '' ?></p>
                 </div>        
                 <div class="form-group">
                     <label for="reference">Référence du produit : </label>
-                    <input class="form-control" type="text" id="reference" name="reference" placeholder="Référence du produit" value="<?= isset($_GET['reference']) ? $_GET['reference'] : $product->reference ?>" />
+                    <input class="form-control" type="text" id="reference" name="reference" placeholder="Référence du produit" value="<?= isset($_POST['reference']) ? $_POST['reference'] : $infoProduct->reference ?>" />
                     <p class="text-danger"><?= isset($formErrors['reference']) ? $formErrors['reference'] : '' ?></p>
                 </div>
                 <div class="form-group">
                     <label for="descriptionMCE">Description du produit : </label>
-                    <textarea class="form-control" type="text" id="descriptionMCE" name="description" placeholder="Description du produit" ></textarea>
+                    <textarea class="form-control" type="text" id="descriptionMCE" name="description" placeholder="Description du produit" ><?= isset($_POST['description']) ? $_POST['description'] : $infoProduct->description ?></textarea>
                     <p class="text-danger"><?= isset($formErrors['description']) ? $formErrors['description'] : '' ?></p>
                 </div>
                 <div class="form-group">
                     <label for="price">Prix du produit : </label>
-                    <input class="form-control" type="text" id="price" name="price" placeholder="Prix du produit" value="<?= isset($_GET['price']) ? $_GET['price'] : $product->price ?>" />
+                    <input class="form-control" type="text" id="price" name="price" placeholder="Prix du produit" value="<?= isset($_POST['price']) ? $_POST['price'] : $infoProduct->price ?>" />
                     <p class="text-danger"><?= isset($formErrors['price']) ? $formErrors['price'] : '' ?></p>
                 </div>
                 <div class="form-group">
                     <label for="file">Image(s) du produit : </label>
-                    <input class="form-control" type="file" name="picture" id="picture" value="<?= isset($_GET['picture']) ? $_GET['picture'] : $product->picture ?>" />
+                    <input class="form-control" type="file" name="picture" id="picture" value="<?= isset($_POST['picture']) ? $_POST['picture'] : $infoProduct->picture ?>" />
                     <p class="text-danger"><?= isset($formErrors['picture']) ? $formErrors['picture'] : '' ?></p>
                 </div>
                 <div class="form-group">
                     <label for="energy">Puissance du produit : </label>
-                    <input class="form-control" type="text" id="energy" name="energy" placeholder="Puissance en joules" value="<?= isset($_GET['energy']) ? $_GET['energy'] : $product->energy ?>" />
+                    <input class="form-control" type="text" id="energy" name="energy" placeholder="Puissance en joules" value="<?= isset($_POST['energy']) ? $_POST['energy'] : $infoProduct->energy ?>" />
                     <p class="text-danger"><?= isset($formErrors['energy']) ? $formErrors['energy'] : '' ?></p>
                 </div>
                 <div class="form-group">

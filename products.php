@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'config.php';
 include 'models/category.php';
 include 'models/subcategory.php';
 include 'models/subtypes.php';
@@ -61,7 +62,7 @@ include 'header.php';
                         <td><?= $allProducts->reference ?></td>
                         <td><?= $allProducts->price ?></td>
                         <td><a href="infoProduct.php?id=<?= $allProducts->id ?>"><i class="fas fa-info-circle fa-2x"></i></a></td>
-                        <td><a href="updateProduct.php"><i class="fas fa-pen-square fa-2x"></i></td>
+                        <td><a href="updateProduct.php?id=<?= $allProducts->id ?>"><i class="fas fa-pen-square fa-2x"></i></td>
                         <td><button id="supProduct" data-toggle="modal" data-target="#deleteProduct" data-delete="<?= $allProducts->id ?>"><i class="fas fa-trash-alt fa-2x" id="sup"></i></button></td>
                     </tr>
             <?php } ?>

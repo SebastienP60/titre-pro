@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'config.php';
 include 'models/usersAccount.php';
 include 'controllers/accountController.php';
 include 'modals.php';

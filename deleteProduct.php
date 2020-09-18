@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'config.php';
 include 'models/products.php';
 include 'controllers/deleteProductController.php';
 include 'header.php';

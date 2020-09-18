@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'config.php';
 include 'tables.php';
 include 'models/category.php';
 include 'controllers/headerController.php';

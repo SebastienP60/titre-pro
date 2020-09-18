@@ -1,6 +1,7 @@
 <?php
 //On démarre une nouvelle session
 session_start();
+include 'config.php';
 include 'models/usersAccount.php';
 include 'controllers/connectionController.php';
 include 'header.php';

@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'config.php';
 include 'models/category.php';
 include 'models/products.php';
 include 'controllers/addProductsController.php';
