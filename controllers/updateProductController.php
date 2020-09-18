@@ -11,32 +11,32 @@ $infoProduct = $product->getInfoProductById();
     //Déclaration du tableau des erreurs
     $formErrors = array();
     //Si le formulaire est validé
-    if(isset($_GET['updateProduct'])){
+    if(isset($_POST['updateProduct'])){
         //On instencie dans une variable l'objet de notre model products
         $product = new product();
 
         //On vérifie que le champ du nom est correctement rempli et si il n'est pas vide
-        if(!empty($_GET['name'])){
-            $product->name = htmlspecialchars($_GET['name']);
+        if(!empty($_POST['name'])){
+            $product->name = htmlspecialchars($_POST['name']);
         //Si le champ n'est pas renseigné au moment d'envoyer le formulaire on signale par un message
         } else{
             $formErrors['name'] = 'Veuillez renseigner le nom du produit';
         }
     
-        if(!empty($_GET['reference'])){
-            $product->reference = htmlspecialchars($_GET['reference']);
+        if(!empty($_POST['reference'])){
+            $product->reference = htmlspecialchars($_POST['reference']);
         }else{
             $formErrors['reference'] = 'Veuillez renseigner la référence du produit';
         }
         
-        if(!empty($_GET['description'])){
-            $product->description = htmlspecialchars($_GET['description']);
+        if(!empty($_POST['description'])){
+            $product->description = htmlspecialchars($_POST['description']);
         }else{
             $formErrors['description'] = 'Veuillez renseigner la description du produit';
         }
 
-        if(!empty($_GET['price'])){
-            $product->price = htmlspecialchars($_GET['price']);
+        if(!empty($_POST['price'])){
+            $product->price = htmlspecialchars($_POST['price']);
         }else{
             $formErrors['price'] = 'Veuillez renseigner le prix du produit';
         }
@@ -67,14 +67,14 @@ $infoProduct = $product->getInfoProductById();
         } else {
             $formErrors['picture'] = 'Veuillez selectionner un fichier';
         }
-        if(!empty($_GET['energy'])){
-            $product->energy = htmlspecialchars($_GET['energy']);
+        if(!empty($_POST['energy'])){
+            $product->energy = htmlspecialchars($_POST['energy']);
         }else{
             $formErrors['energy'] = 'Veuillez renseigner le nombre de joules';
         }
 
-        if(!empty($_GET['selectSubtype'])){
-            $product->id_ahl115_subtypes = $_GET['selectSubtype'];
+        if(!empty($_POST['selectSubtype'])){
+            $product->id_ahl115_subtypes = $_POST['selectSubtype'];
                 if(empty($formErrors)){
                     if(!$product->checkProductExist()){
                         if($product->updateinfoProduct()){

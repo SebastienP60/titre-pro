@@ -1,6 +1,12 @@
 /*image de fond du site*/
 body{
     background: url(../img/camoVert.png);
+	display : table;
+	width: 100%;
+}
+html, body {
+	height: 100%;
+	margin: 0; padding: 0;
 }
 /* balise principale incluant la barre de navigation et liens */
 #banner, #bannerAdmin{
@@ -104,16 +110,18 @@ h1{
 #cardContainer{
     padding-bottom: 70px;
 }
-
-/* .card-body{
-    background-color: white;
-} */
 /* Pied de page */
-#footPage{
+footer {
+    display : table-row;
     background-color: black;
     width: auto;
     height: auto;
 }
+/* #footPage{
+    background-color: black;
+    width: auto;
+    height: auto;
+} */
 #footPage li{
     color: white;
     font-size: 1rem;

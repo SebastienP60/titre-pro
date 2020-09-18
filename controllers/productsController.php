@@ -7,19 +7,22 @@ if(isset($_POST['idFirstSelect'])){
     if(!empty($_POST['idFirstSelect'])){
         if($_POST['secondSelect'] == 'selectSubcategory'){
             //On inclut le bon fichier car dans ce contexte il n'est pas connu.
-            include_once 'models/subcategory.php';
+            include_once '../config.php';
+            include_once '../models/subcategory.php';
             $subcategoryListQuery = new subcategory();
             $subcategoryListQuery->id_ahl115_categories = $_POST['idFirstSelect'];
             //Le echo sert à envoyer la réponse au JS
             echo json_encode($subcategoryListQuery->subcategoryList());
         } elseif($_POST['secondSelect'] == 'selectType'){
-            include_once 'models/types.php';
+            include_once '../config.php';
+            include_once '../models/types.php';
             $typesListQuery = new types();
             //Méthode pour remplir le type selon l'id de la sous catégorie
             $typesListQuery->id_ahl115_subcategories = $_POST['idFirstSelect'];
             echo json_encode($typesListQuery->typesList());
         } elseif($_POST['secondSelect'] == 'selectSubtype'){
-            include_once 'models/subtypes.php';
+            include_once '../config.php';
+            include_once '../models/subtypes.php';
             $subtypesListQuery = new subtypes();
             $subtypesListQuery->id_ahl115_types = $_POST['idFirstSelect'];
             echo json_encode($subtypesListQuery->subtypesList());
