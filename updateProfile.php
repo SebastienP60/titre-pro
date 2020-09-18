@@ -2,7 +2,6 @@
 session_start();
 include 'models/usersAccount.php';
 include 'controllers/updateProfileController.php';
-// include 'modals.php';
 include 'header.php';
 ?>
 <h1 id="registration">Modifier mon compte</h1>

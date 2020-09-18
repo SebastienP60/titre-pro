@@ -12,15 +12,17 @@ include 'header.php';
         <form class="w-75 mx-auto" method="POST" action="account.php">
             <h2 id="accounth2">Veuillez renseigner tous les champs</h2>
             <fieldset>
-                <div class="form-group">
+                <div class="row">
+                <div class="form-group col-6">
                     <label for="lastname">Votre nom : </label>
                     <input class="form-control" type="text" id="lastname" name="lastname" placeholder="Nom" value="<?= isset($_POST['lastname']) ? $_POST['lastname'] : '' ?>" />
                     <p class="text-danger"><?= isset($formErrors['lastname']) ? $formErrors['lastname'] : '' ?></p>
                 </div>        
-                <div class="form-group">
+                <div class="form-group col-6">
                     <label for="firstname">Votre prénom : </label>
                     <input class="form-control" type="text" id="firstname" name="firstname" placeholder="Prénom" value="<?= isset($_POST['firstname']) ? $_POST['firstname'] : '' ?>" />
                     <p class="text-danger"><?= isset($formErrors['firstname']) ? $formErrors['firstname'] : '' ?></p>
+                </div>
                 </div>
                 <div class="form-group">
                     <label for="address">Votre adresse postale : </label>
@@ -43,7 +45,7 @@ include 'header.php';
                     <p class="text-danger"><?= isset($formErrors['password']) ? $formErrors['password'] : '' ?></p>
                 </div>
                 <div class="button">
-                    <button type="submit" name="createMyAccount">Créer mon compte</button>
+                    <button class="btn btn-dark" type="submit" name="createMyAccount">Créer mon compte</button>
                 </div>
             </fieldset>
         </form>

@@ -15,7 +15,7 @@ class user{
     //try essaie de se connecter à la base de données
     try{
             // $db devient une instance de l'objet PDO
-            $this->db = new PDO('mysql:host=localhost;dbname=retzAirsoftShop;charset=utf8', 'sebastien', 'ahlmann');
+            $this->db = new PDO('mysql:host=54.37.71.121;dbname=c69retzairsoftshop;charset=utf8', 'c69sebastienp', 'fYru!JEa4C');
             }catch(Exception $error) {
                 die ($error->getMessage());
         }
@@ -126,7 +126,7 @@ au compte de l'utilisateur déjà inscrit via son id*/
         $updateMyAccountQuery->bindValue(':id', $this->id, PDO::PARAM_INT);
         return $updateMyAccountQuery->execute();
     }
-//On crée une méthode pour supprimer un compte utiisateur
+//On crée une méthode pour supprimer un compte utilisateur
     public function deleteUserAccount(){
         $deleteUserAccountQuery = $this->db->prepare(
             'DELETE FROM

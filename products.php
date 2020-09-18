@@ -1,89 +1,92 @@
 <?php
 session_start();
-include 'models/categoriesProducts.php';
-include 'models/subcategoriesProducts.php';
+include 'models/category.php';
+include 'models/subcategory.php';
+include 'models/subtypes.php';
+include 'models/types.php';
 include 'models/products.php';
 include 'controllers/productsController.php';
 include 'header.php';
+
 ?>
-<h1 id="addProduct">Ajout d'un produit</h1>
-    <!-- On crée une ternaire pour afficher le message d'erreur si il existe -->
-    <p><?= isset($addProductMessage) ? $addProductMessage : '' ?></p>
-    <div class="container text-center" id="productForm">
-        <form class="w-75 mx-auto" method="POST" action="#">
-            <fieldset>
-                <div class="form-group" id="nameProduct">
-                    <label for="name">Nom du produit : </label>
-                    <input class="form-control" type="text" id="name" name="name" placeholder="Nom du produit" value="<?= isset($_POST['name']) ? $_POST['name'] : '' ?>" />
-                </div>        
-                <div class="form-group">
-                    <label for="reference">Référence du produit : </label>
-                    <input class="form-control" type="text" id="reference" name="reference" placeholder="Référence du produit" value="<?= isset($_POST['reference']) ? $_POST['reference'] : '' ?>" />
-                </div>
-                <div class="form-group">
-                    <label for="descriptionTextarea">Description du produit : </label>
-                    <textarea class="form-control" type="text" id="descriptionTextarea" name="descriptionTextarea" placeholder="Description du produit" value="<?= isset($_POST['description']) ? $_POST['description'] : '' ?>" ></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="price">Prix du produit : </label>
-                    <input class="form-control" type="text" id="price" name="price" placeholder="Prix du produit" value="<?= isset($_POST['price']) ? $_POST['price'] : '' ?>" />
-                </div>
-                <div class="form-group">
-                    <label for="file">Image(s) du produit : </label>
-                    <input class="form-control" type="file" name="file" id="file" value="<?= isset($_POST['file']) ? $_POST['file'] : '' ?>" />
-                </div>
-                <div class="form-group">
-                    <label for="energy">Puissance du produit : </label>
-                    <input class="form-control" type="text" id="energy" name="energy" placeholder="Puissance en joules" value="<?= isset($_POST['energy']) ? $_POST['energy'] : '' ?>" />
-                </div>
-                <div class="form-group">
-                    <label for="selectCategoriesOfProduct">Catégorie du produit</label>
-                    <select class="form-control" id="selectCategoriesOfProduct" onchange="choiceCategory(this, 'selectSubcategoriesOfProduct')" name="selectCategoriesOfProduct">
-                    <option disabled selected></option>
-                    <!-- Avec la boucle on parcours tout le tableau-->
-                        <?php foreach($listCategoriesProduct as $allListCategoriesProduct){ ?>
-                    <option value="<?= $allListCategoriesProduct->id ?>"><?= $allListCategoriesProduct->name ?></option>
-                        <?php } ?>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="selectSubcategoriesOfProduct">Sous Categorie de produit</label>
-                    <select class="form-control" id="selectSubcategoriesOfProduct" onchange="choiceCategory(this, 'selectTypeOfProduct')" name="selectSubcategoriesOfProduct">
-                    <option disabled selected></option>
-                    <!-- Avec la boucle on parcours tout le tableau-->
-                        <?php foreach($listSubcategoriesProduct as $alllistSubcategoriesProduct){ ?>
-                    <option value="<?= $alllistSubcategoriesProduct->id ?>"><?= $alllistSubcategoriesProduct->name ?></option>
-                        <?php } ?>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="selectTypeOfProduct">Type de produit</label>
-                    <select class="form-control" id="selectTypeOfProduct" onchange="choiceCategory(this, 'selectSubtypeOfProduct')" name="selectTypeOfProduct">
-                    <option disabled selected></option>
-                    <!-- Avec la boucle on parcours tout le tableau-->
-                        <?php foreach($listTypeProduct as $allTypeProduct){ ?>
-                    <option value="<?= $allTypeProduct->id ?>"><?= $allTypeProduct->name ?></option>
-                        <?php } ?>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="selectSubtypeOfProduct">Sous-type de produit</label>
-                    <select class="form-control" id="selectSubtypeOfProduct" name="selectSubtypeOfProduct">
-                    <option disabled selected></option>
-                    <!-- Avec la boucle on parcours tout le tableau-->
-                        <?php foreach($listSubtypeProduct as $allSubtypeProduct){ ?>
-                    <option value="<?= $allSubtypeProduct->id ?>"><?= $allSubtypeProduct->name ?></option>
-                        <?php } ?>
-                    </select>
-                </div>    
-                <div class="button">
-                    <button type="submit" name="addProduct">Ajoutez le produit</button><!--Ce bouton doit envoyer sur la page correspondante au produits via son nom ou id-->
-                    <button type="submit" name="updateProduct"><a href="updateProduct.php">Modifiez un produit</a></button>
-                    <button type="submit" name="deleteProduct"><a href="deleteProduct.php">Supprimez un produit</a></button>
-                </div>
-            </fieldset>
+    <h1>Liste des produits</h1>
+    <div class="row">
+        <form id="makeYourChoice" class="form-inline container-fluid" method="POST" action="products.php">
+            <label for="selectCategory" class="mr-sm-2">Catégorie : </label>
+            <select class="form-control col-2" id="selectCategory" onchange="choiceCategory(this, 'selectSubcategory')" name="selectCategory">
+            <option disabled selected>Choisir</option>
+            <!-- Avec la boucle on parcours tout le tableau-->
+            <?php foreach($categoryList as $allListCategory){ ?>
+            <option value="<?= $allListCategory->id ?>"><?= $allListCategory->name ?></option>
+                <?php } ?>
+            </select>
+            <label for="selectSubcategory" class="mr-sm-2 ml-4">Sous-catégorie : </label>
+            <select class="form-control col-2" id="selectSubcategory" onchange="choiceCategory(this, 'selectType')" name="selectSubcategory">
+                <option disabled selected>Choisir</option>
+            </select>
+            <label for="selectType" class="mr-sm-2 ml-4">Type : </label>
+            <select class="form-control col-2" id="selectType" onchange="choiceCategory(this, 'selectSubtype')" name="selectType">
+                <option disabled selected>Choisir</option>
+            </select>
+            <label for="selectSubtype" class="mr-sm-2 ml-4">Sous-type : </label>
+            <select class="form-control col-2" id="selectSubtype" name="selectSubtype">
+                <option disabled selected>Choisir</option>
+            </select>
+    </div>
+    <div class="row">
+        <div class="offset-5">
+            <button class="btn btn-info" type="submit" name="valideChoice" value="">Valider vos choix</button>
+        </div>
+    </div>
+        </form>
+    <div class="row">    
+        <div class="offset-5">
+            <input type="search" name="find" placeholder="Rechercher un produit" />
+            <button type="submit" value="" ><i class="fas fa-binoculars" id="binocular"></i></button>
+        </div>
+    </div>
+        <table class="table table-dark table-striped">
+            <tr>
+                <th>Nom</th>
+                <th>Référence</th>
+                <th>Prix</th>
+                <th>Informations</th>
+                <th>Modification</th>
+                <th>Suppression</th>
+            </tr>
+            <?php
+                foreach($productsList as $allProducts){ ?>
+                    <tr>
+                        <td><?= $allProducts->name ?></td>
+                        <td><?= $allProducts->reference ?></td>
+                        <td><?= $allProducts->price ?></td>
+                        <td><a href="infoProduct.php?id=<?= $allProducts->id ?>"><i class="fas fa-info-circle fa-2x"></i></a></td>
+                        <td><a href="updateProduct.php"><i class="fas fa-pen-square fa-2x"></i></td>
+                        <td><button id="supProduct" data-toggle="modal" data-target="#deleteProduct" data-delete="<?= $allProducts->id ?>"><i class="fas fa-trash-alt fa-2x" id="sup"></i></button></td>
+                    </tr>
+            <?php } ?>
+        </table>
+        <div class="modal fade" id="deleteProduct" tabindex="-1" aria-labelledby="deleteProduct" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p>Le produit va être supprimé.</p>
+        </div>
+        <form action="products.php" method="POST">
+            <div class="modal-footer">
+                <input type="hidden" name="deleteId" value="" />
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                <button type="submit" class="btn btn-primary" name="deleteProduct">Confirmer</button>
+            </div>
         </form>
     </div>
-<?php
+  </div>
+</div>
+<?php 
 include 'footer.php';
 ?>

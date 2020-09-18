@@ -9,7 +9,7 @@ class subcategory{
     //try essaie de se connecter à la base de données
     try{
         // $db devient une instance de l'objet PDO
-        $this->db = new PDO('mysql:host=localhost;dbname=retzAirsoftShop;charset=utf8', 'sebastien', 'ahlmann');
+        $this->db = new PDO('mysql:host=54.37.71.121;dbname=c69retzairsoftshop;charset=utf8', 'c69sebastienp', 'fYru!JEa4C');
         }catch(Exception $error) {
             die ($error->getMessage());
     }
@@ -27,4 +27,18 @@ class subcategory{
     $subcategoryListQuery->execute();
     return $subcategoryListQuery->fetchAll(PDO::FETCH_OBJ);
     }
+
+/*On crée une méthode pour vérifié si la sous-catégorie du produit existe déjà 
+grâce à son id avant de les afficher*/
+public function checkSubcategoryExistById(){
+    $ProductExistBySubcategoryId = $this->db->prepare(
+        'SELECT COUNT(`id`) AS `isIdProductSubcategoryExist`
+                FROM `ahl115_subcategories` 
+                WHERE `id` = :id
+                ');
+    $ProductExistBySubcategoryId->bindValue(':id', $this->id, PDO::PARAM_INT);
+    $ProductExistBySubcategoryId->execute();
+    $data = $ProductExistBySubcategoryId->fetch(PDO::FETCH_OBJ);
+    return $data->isIdProductSubcategoryExist;
+}
 }

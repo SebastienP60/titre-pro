@@ -12,10 +12,8 @@ include 'header.php';
         <p id="identify">Identifiez-vous</p>
             <div class="row">
                 <div class="text-center col-lg-6">
-                    <form id="formCreateAccount" action="account.php" method="POST">
                     <p id="createAccount">Créer un compte</p>
-                        <input type="submit" name="createAccount" value="Créer un compte" />
-                    </form>
+                    <a href="account.php" class="btn btn-dark">Créer un compte</a>
                 </div>
                 <div class="text-center col-lg-6">
                     <form id="formAccountExist" action="connection.php" method="POST">
@@ -30,7 +28,7 @@ include 'header.php';
                         <input class="form-control" type="password" id="password" name="password" placeholder="Votre mot de passe"/>
                         <p class="text-danger"><?= isset($formErrors['password']) ? $formErrors['password'] : '' ?></p>
                     </div>
-                        <input type="submit" name="myIdentity" value="Identifiez vous" />
+                        <input class="btn btn-dark" type="submit" name="myIdentity" value="Identifiez vous" />
                     </form>
                 </div>
             </div>

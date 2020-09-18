@@ -9,7 +9,7 @@ class subtypes{
     //try essaie de se connecter à la base de données
     try{
         // $db devient une instance de l'objet PDO
-        $this->db = new PDO('mysql:host=localhost;dbname=retzAirsoftShop;charset=utf8', 'sebastien', 'ahlmann');
+        $this->db = new PDO('mysql:host=54.37.71.121;dbname=c69retzairsoftshop;charset=utf8', 'c69sebastienp', 'fYru!JEa4C');
         }catch(Exception $error) {
             die ($error->getMessage());
         }
@@ -29,5 +29,19 @@ class subtypes{
         $subtypesListQuery->bindValue(':id_ahl115_types', $this->id_ahl115_types, PDO::PARAM_INT);
         $subtypesListQuery->execute();
         return $subtypesListQuery->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    /*On crée une méthode pour vérifié si le sous-type du produit existe déjà 
+    grâce à son id avant de les afficher*/
+    public function checkSubtypeExistById(){
+        $ProductExistBySubtypeId = $this->db->prepare(
+            'SELECT COUNT(`id`) AS `isIdProductSubtypeExist`
+                    FROM `ahl115_subtypes` 
+                    WHERE `id` = :id
+                    ');
+        $ProductExistBySubtypeId->bindValue(':id', $this->id, PDO::PARAM_INT);
+        $ProductExistBySubtypeId->execute();
+        $data = $ProductExistBySubtypeId->fetch(PDO::FETCH_OBJ);
+        return $data->isIdProductSubtypeExist;
     }
 }

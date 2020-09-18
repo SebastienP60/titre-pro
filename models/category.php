@@ -8,7 +8,7 @@ class category{
     //try essaie de se connecter à la base de données
     try{
         // $db devient une instance de l'objet PDO
-        $this->db = new PDO('mysql:host=localhost;dbname=retzAirsoftShop;charset=utf8', 'sebastien', 'ahlmann');
+        $this->db = new PDO('mysql:host=54.37.71.121;dbname=c69retzairsoftshop;charset=utf8', 'c69sebastienp', 'fYru!JEa4C');
         }catch(Exception $error) {
             die ($error->getMessage());
     }
@@ -24,6 +24,20 @@ class category{
         ');
             return $categoryListQuery->fetchAll(PDO::FETCH_OBJ);
     }
+
+/*On crée une méthode pour vérifié si le type du produit existe déjà 
+grâce à son id avant de les afficher*/
+public function checkCategoryExistById(){
+    $ProductExistByCategoryId = $this->db->prepare(
+        'SELECT COUNT(`id`) AS `isIdProductCategoryExist`
+                FROM `ahl115_categories` 
+                WHERE `id` = :id
+                ');
+    $ProductExistByCategoryId->bindValue(':id', $this->id, PDO::PARAM_INT);
+    $ProductExistByCategoryId->execute();
+    $data = $ProductExistByCategoryId->fetch(PDO::FETCH_OBJ);
+    return $data->isIdProductCategoryExist;
+}
 }
  
 //     public function getAllTypes(){

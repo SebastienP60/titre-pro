@@ -9,8 +9,6 @@ include 'header.php';
     <p><?= isset($addProductMessage) ? $addProductMessage : '' ?></p>
     <div class="container text-center" id="deleteProductForm">
         <form class="w-75 mx-auto" method="POST" action="#">
-            <input type="search" name="find" placeholder="Rechercher une référence" />
-            <input type="submit" name="search" value="Rechercher" />
             <fieldset>
                 <div class="form-group" id="nameProduct">
                     <label for="name">Nom du produit : </label>
@@ -21,8 +19,8 @@ include 'header.php';
                     <input class="form-control" type="text" id="reference" name="reference" placeholder="Référence du produit" value="<?= isset($_POST['reference']) ? $_POST['reference'] : '' ?>" />
                 </div>
                 <div class="form-group">
-                    <label for="descriptionTextarea">Description du produit : </label>
-                    <textarea class="form-control" type="text" id="descriptionTextarea" name="descriptionTextarea" placeholder="Description du produit" value="<?= isset($_POST['description']) ? $_POST['description'] : '' ?>" ></textarea>
+                    <label for="description">Description du produit : </label>
+                    <textarea class="form-control" type="text" id="description" name="description" placeholder="Description du produit" value="<?= isset($_POST['description']) ? $_POST['description'] : '' ?>" ></textarea>
                 </div>
                 <div class="form-group">
                     <label for="price">Prix du produit : </label>

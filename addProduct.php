@@ -22,8 +22,8 @@ include 'header.php';
                     <p class="text-danger"><?= isset($formErrors['reference']) ? $formErrors['reference'] : '' ?></p>
                 </div>
                 <div class="form-group">
-                    <label for="descriptionTextarea">Description du produit : </label>
-                    <textarea class="form-control" type="text" id="description" name="description" placeholder="Description du produit" value="<?= isset($_POST['description']) ? $_POST['description'] : '' ?>" ></textarea>
+                    <label for="descriptionMCE">Description du produit : </label>
+                    <textarea class="form-control" type="text" id="descriptionMCE" name="description" placeholder="Description du produit" value="<?= isset($_POST['description']) ? $_POST['description'] : '' ?>" ></textarea>
                     <p class="text-danger"><?= isset($formErrors['description']) ? $formErrors['description'] : '' ?></p>
                 </div>
                 <div class="form-group">
@@ -43,7 +43,7 @@ include 'header.php';
                 </div>
                 <div class="form-group">
                     <label for="selectCategory">Catégorie du produit</label>
-                    <select class="form-control" id="selectCategory" onchange="choiceCategory(this, 'selectSubcategory')" name="selectCategory">
+                    <select class="form-control mx-auto" id="selectCategory" onchange="choiceCategory(this, 'selectSubcategory')" name="selectCategory">
                     <option disabled selected></option>
                     <!-- Avec la boucle on parcours tout le tableau-->
                         <?php foreach($categoryList as $allListCategory){ ?>
@@ -54,19 +54,19 @@ include 'header.php';
                 </div>
                 <div class="form-group">
                     <label for="selectSubcategory">Sous-Categorie de produit</label>
-                    <select class="form-control" id="selectSubcategory" onchange="choiceCategory(this, 'selectType')" name="selectSubcategory">
+                    <select class="form-control mx-auto" id="selectSubcategory" onchange="choiceCategory(this, 'selectType')" name="selectSubcategory">
                     <option disabled selected></option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="selectType">Type de produit</label>
-                    <select class="form-control" id="selectType" onchange="choiceCategory(this, 'selectSubtype')" name="selectType">
+                    <select class="form-control mx-auto" id="selectType" onchange="choiceCategory(this, 'selectSubtype')" name="selectType">
                     <option disabled selected></option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="selectSubtype">Sous-type de produit</label>
-                    <select class="form-control" id="selectSubtype" name="selectSubtype">
+                    <select class="form-control mx-auto" id="selectSubtype" name="selectSubtype">
                     <option disabled selected></option>
                     </select>
                 </div>    

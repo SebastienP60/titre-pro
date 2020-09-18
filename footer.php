@@ -22,13 +22,14 @@
                     </ul>
                 </div>
                 <div class="col-lg-2 m-auto">
-                    <a href="https://fr-fr.facebook.com/RetzTacticalGames"><img class="img-fluid" alt="icone Facebook" title="Facebook" src="../assets/img/facebook.png" id="facebook"/></a>
-                    <img class="img-fluid" alt="icone Instagram" title="Instagram" src="../assets/img/insta.png" id="instagram" />
+                    <a href="https://fr-fr.facebook.com/RetzTacticalGames"><img class="img-fluid" alt="icone Facebook" title="Facebook" src="assets/img/facebook.png" id="facebook"/></a>
+                    <img class="img-fluid" alt="icone Instagram" title="Instagram" src="assets/img/insta.png" id="instagram" />
                 </div>                    
             </div>
         </div>
     </footer>    
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" ></script>
+    <script src="https://cdn.tiny.cloud/1/pc6fs2mpz2q2gxzyzakgol12l7w9plfxyul6pwx78antqcbs/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>

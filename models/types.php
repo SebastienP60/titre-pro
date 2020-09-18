@@ -9,7 +9,7 @@ class types{
     //try essaie de se connecter à la base de données
     try{
         // $db devient une instance de l'objet PDO
-        $this->db = new PDO('mysql:host=localhost;dbname=retzAirsoftShop;charset=utf8', 'sebastien', 'ahlmann');
+        $this->db = new PDO('mysql:host=54.37.71.121;dbname=c69retzairsoftshop;charset=utf8', 'c69sebastienp', 'fYru!JEa4C');
         }catch(Exception $error) {
             die ($error->getMessage());
         }
@@ -29,5 +29,19 @@ class types{
         $typesListQuery->bindValue(':id_ahl115_subcategories', $this->id_ahl115_subcategories, PDO::PARAM_INT);
         $typesListQuery->execute();
         return $typesListQuery->fetchAll(PDO::FETCH_OBJ);
+    }
+
+/*On crée une méthode pour vérifié si le type du produit existe déjà 
+grâce à son id avant de les afficher*/
+    public function checkTypeExistById(){
+        $ProductExistByTypeId = $this->db->prepare(
+            'SELECT COUNT(`id`) AS `isIdProductTypeExist`
+                    FROM `ahl115_types` 
+                    WHERE `id` = :id
+                    ');
+        $ProductExistByTypeId->bindValue(':id', $this->id, PDO::PARAM_INT);
+        $ProductExistByTypeId->execute();
+        $data = $ProductExistByTypeId->fetch(PDO::FETCH_OBJ);
+        return $data->isIdProductTypeExist;
     }
 }
