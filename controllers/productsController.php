@@ -55,7 +55,7 @@ if(isset($_POST['idFirstSelect'])){
               <div class="modal-footer">
                 <input type="hidden" name="deleteId" value="" />
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                <button type="submit" class="btn btn-primary" name="deleteProd">Confirmer</button>
+                <button type="submit" class="btn btn-danger" name="deleteProd">Confirmer</button>
               </div>
           </form>
       </div>

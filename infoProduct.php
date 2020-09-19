@@ -21,6 +21,9 @@ include 'header.php';
         </div>
     </div>
 </form>
+<div class="text-center mb-5">
+    <button type="submit" class="btn btn-success"><a href="products.php">Retour</a></button>
+</div>
 <?php
 include 'footer.php';
 ?>

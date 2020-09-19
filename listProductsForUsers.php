@@ -10,7 +10,7 @@ include 'header.php';
         <h1 class=""><?= isset($_GET['id']) ?></h1>
     </div>
     <div class="row container-fluid">
-        <div class="card-deck">
+        <div class="card-deck mb-5">
             <?php $i = 0; ?>
     <?php foreach($listProd as $prod){ ?>
         <div class="card">

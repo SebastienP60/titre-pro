@@ -22,7 +22,7 @@ if(isset ($_POST['deleteMyAccount'])){
         <form action="profile.php" method="POST">
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                <button type="submit" class="btn btn-primary" name="deleteMyAccount">Confirmer</button>
+                <button type="submit" class="btn btn-danger" name="deleteMyAccount">Confirmer</button>
             </div>
         </form>
     </div>

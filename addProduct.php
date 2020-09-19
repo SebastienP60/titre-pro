@@ -75,8 +75,8 @@ include 'header.php';
                     <option disabled selected></option>
                     </select>
                 </div>    
-                <div class="button mb-4 mt-5">
-                    <button type="submit" name="addProduct">Ajoutez le produit</button><!--Ce bouton doit envoyer sur la page correspondante au produits via son nom ou id-->
+                <div>
+                    <button class="btn btn-secondary mb-4 mt-4" type="submit" name="addProduct">Ajoutez le produit</button><!--Ce bouton doit envoyer sur la page correspondante au produits via son nom ou id-->
                 </div>
             </fieldset>
         </form>

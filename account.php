@@ -46,7 +46,7 @@ include 'header.php';
                     <p class="text-danger"><?= isset($formErrors['password']) ? $formErrors['password'] : '' ?></p>
                 </div>
                 <div class="button">
-                    <button class="btn btn-dark" type="submit" name="createMyAccount">Créer mon compte</button>
+                    <button class="btn btn-success" type="submit" name="createMyAccount">Créer mon compte</button>
                 </div>
             </fieldset>
         </form>

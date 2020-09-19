@@ -38,8 +38,8 @@ include 'header.php';
                     <input class="form-control" type="text" id="mail" name="mail" placeholder="adresse mail" value="<?= isset($_POST['mail']) ? $_POST['mail'] : $userProfil->mail ?>"/>
                     <p class="text-danger"><?= isset($formErrors['mail']) ? $formErrors['mail'] : '' ?></p>
                 </div>    
-                <div class="button mb-3">
-                    <button type="submit" name="updateMyAccount">Modifier</button>
+                <div>
+                    <button class="btn btn-success mb-3" type="submit" name="updateMyAccount">Modifier</button>
                 </div>
             </fieldset>
         </form>
