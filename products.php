@@ -8,11 +8,10 @@ include 'models/types.php';
 include 'models/products.php';
 include 'controllers/productsController.php';
 include 'header.php';
-
 ?>
     <h1>Liste des produits</h1>
     <div class="row">
-        <form id="makeYourChoice" class="form-inline container-fluid" method="POST" action="products.php">
+        <form id="makeYourChoice" class="form-inline container-fluid mb-5" method="POST" action="products.php">
             <label for="selectCategory" class="mr-sm-2">Catégorie : </label>
             <select class="form-control col-2" id="selectCategory" onchange="choiceCategory(this, 'selectSubcategory')" name="selectCategory">
             <option disabled selected>Choisir</option>
@@ -42,8 +41,8 @@ include 'header.php';
         </form>
     <div class="row">    
         <div class="offset-5">
-            <input type="search" name="find" placeholder="Rechercher un produit" />
-            <button type="submit" value="" ><i class="fas fa-binoculars" id="binocular"></i></button>
+            <input type="search"  type="text" name="find" placeholder="Rechercher un produit" />
+            <button class="btn btn-secondary" type="submit" value="" ><i class="fas fa-binoculars" id="binocular"></i></button>
         </div>
     </div>
         <table class="table table-dark table-striped">
@@ -67,27 +66,6 @@ include 'header.php';
                     </tr>
             <?php } ?>
         </table>
-        <div class="modal fade" id="deleteProduct" tabindex="-1" aria-labelledby="deleteProduct" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <p>Le produit va être supprimé.</p>
-        </div>
-        <form action="products.php" method="POST">
-            <div class="modal-footer">
-                <input type="hidden" name="deleteId" value="" />
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                <button type="submit" class="btn btn-primary" name="deleteProduct">Confirmer</button>
-            </div>
-        </form>
-    </div>
-  </div>
-</div>
 <?php 
 include 'footer.php';
 ?>

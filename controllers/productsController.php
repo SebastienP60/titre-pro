@@ -35,12 +35,33 @@ if(isset($_POST['idFirstSelect'])){
     }
     
     //Ouverture modal pour supprimer un produit
-    if(isset($_POST['deleteProduct'])){
+    if(isset($_POST['deleteProd'])){
         $product = new product();
         $product->id = $_POST['deleteId'];
         $deleteProduct = $product->deleteProduct();
-    } 
-    
+    } ?> 
+    <div class="modal fade" id="deleteProduct" tabindex="-1" aria-labelledby="deleteProduct" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <p>Le produit va être supprimé.</p>
+          </div>
+          <form action="products.php" method="POST">
+              <div class="modal-footer">
+                <input type="hidden" name="deleteId" value="" />
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                <button type="submit" class="btn btn-primary" name="deleteProd">Confirmer</button>
+              </div>
+          </form>
+      </div>
+    </div>
+  </div> 
+  <?php   
     $product = new product();
     $category = new category();
 

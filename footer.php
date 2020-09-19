@@ -2,7 +2,7 @@
     <footer>
         <div class="container-fluid">
             <div class="row" id="footPage">
-                <div class="col-lg-5 m-auto">
+                <div class="col-lg-5 mt-3">
                     <ul>
                         <li><h3>Contact</h3></li>
                         <li>Retz Airsoft Shop</li>
@@ -12,7 +12,7 @@
                         <li>09.88.66.27.55</li>
                     </ul>
                 </div>
-                <div class="col-lg-5 m-auto">
+                <div class="col-lg-5 mt-3">
                     <ul>
                         <li><h3>Horaires</h3></li>
                         <li>du Mardi au Vendredi : 11h00 à 12h30</li>

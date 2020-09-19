@@ -8,18 +8,20 @@ include 'header.php';
 <h1 id="registration">Modifier mon compte</h1>
     <!-- On crée une ternaire pour afficher le message d'erreur si il existe -->
     <p><?= isset($addUserAccountMessage) ? $addUserAccountMessage : '' ?></p>
-    <div id="registrationForm" class="container text-center">
+    <div id="registrationForm" class="container text-center mb-5">
         <form class="w-75 mx-auto" method="POST" action="updateProfile.php">
             <fieldset>
-                <div class="form-group">
-                    <label for="lastname">Votre nom : </label>
-                    <input class="form-control" type="text" id="lastname" name="lastname" placeholder="Nom" value="<?= isset($_POST['lastname']) ? $_POST['lastname'] : $userProfil->lastname ?>" />
-                    <p class="text-danger"><?= isset($formErrors['lastname']) ? $formErrors['lastname'] : '' ?></p>
-                </div>        
-                <div class="form-group">
-                    <label for="firstname">Votre prénom : </label>
-                    <input class="form-control" type="text" id="firstname" name="firstname" placeholder="Prénom" value="<?= isset($_POST['firstname']) ? $_POST['firstname'] : $userProfil->firstname ?>" />
-                    <p class="text-danger"><?= isset($formErrors['firstname']) ? $formErrors['firstname'] : '' ?></p>
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="lastname">Votre nom : </label>
+                        <input class="form-control" type="text" id="lastname" name="lastname" placeholder="Nom" value="<?= isset($_POST['lastname']) ? $_POST['lastname'] : $userProfil->lastname ?>" />
+                        <p class="text-danger"><?= isset($formErrors['lastname']) ? $formErrors['lastname'] : '' ?></p>
+                    </div>        
+                    <div class="form-group col-6">
+                        <label for="firstname">Votre prénom : </label>
+                        <input class="form-control" type="text" id="firstname" name="firstname" placeholder="Prénom" value="<?= isset($_POST['firstname']) ? $_POST['firstname'] : $userProfil->firstname ?>" />
+                        <p class="text-danger"><?= isset($formErrors['firstname']) ? $formErrors['firstname'] : '' ?></p>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="address">Votre adresse postale : </label>
@@ -36,7 +38,7 @@ include 'header.php';
                     <input class="form-control" type="text" id="mail" name="mail" placeholder="adresse mail" value="<?= isset($_POST['mail']) ? $_POST['mail'] : $userProfil->mail ?>"/>
                     <p class="text-danger"><?= isset($formErrors['mail']) ? $formErrors['mail'] : '' ?></p>
                 </div>    
-                <div class="button">
+                <div class="button mb-3">
                     <button type="submit" name="updateMyAccount">Modifier</button>
                 </div>
             </fieldset>

@@ -12,8 +12,8 @@ $infoProduct = $product->getInfoProductById();
     $formErrors = array();
     //Si le formulaire est validé
     if(isset($_POST['updateProduct'])){
-        //On instencie dans une variable l'objet de notre model products
-        $product = new product();
+        // //On instencie dans une variable l'objet de notre model products
+        // $product = new product();
 
         //On vérifie que le champ du nom est correctement rempli et si il n'est pas vide
         if(!empty($_POST['name'])){
@@ -76,12 +76,13 @@ $infoProduct = $product->getInfoProductById();
         if(!empty($_POST['selectSubtype'])){
             $product->id_ahl115_subtypes = $_POST['selectSubtype'];
                 if(empty($formErrors)){
-                    if(!$product->checkProductExist()){
-                        if($product->updateinfoProduct()){
-                            $updateProductMessage = 'Le produit a été modifié.';
-                            } else {
-                                $updateProductMessage = 'Le produit n\'a pas été modifié.';
-                            }
+                    if($product->checkProductExist()){
+                        if($product->updateInfoProduct()){
+                            header('Location: products.php');
+                            exit;
+                        } else {
+                            $updateProductMessage = 'Le produit n\'a pas été modifié.';
+                        }
                     }
                 }
         }

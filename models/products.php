@@ -171,8 +171,8 @@ public function getListProductsByCategory($categories){
     return $ListProduct->fetchAll(PDO::FETCH_OBJ);
 }
 //On crée une méthode pour modifier les informations d'un produit
-    public function updateinfoProduct(){
-        $updateinfoProductQuery = $this->db->prepare(
+    public function updateInfoProduct(){
+        $updateInfoProductQuery = $this->db->prepare(
             'UPDATE `ahl115_products`
             SET
              `name` = :name
@@ -181,15 +181,16 @@ public function getListProductsByCategory($categories){
             , `price` = :price
             , `picture` = :picture
             , `energy` = :energy
-            WHERE `reference` = :reference
+            WHERE `id` = :id
             ');
-        $updateinfoProductQuery->bindValue(':name', $this->name, PDO::PARAM_STR);
-        $updateinfoProductQuery->bindValue(':reference', $this->reference, PDO::PARAM_STR);
-        $updateinfoProductQuery->bindValue(':description', $this->description, PDO::PARAM_STR);
-        $updateinfoProductQuery->bindValue(':price', $this->price, PDO::PARAM_STR);
-        $updateinfoProductQuery->bindValue(':picture', $this->picture, PDO::PARAM_STR);
-        $updateinfoProductQuery->bindValue(':energy', $this->energy, PDO::PARAM_STR);
-        return $updateinfoProductQuery->execute();
+        $updateInfoProductQuery->bindValue(':name', $this->name, PDO::PARAM_STR);
+        $updateInfoProductQuery->bindValue(':reference', $this->reference, PDO::PARAM_STR);
+        $updateInfoProductQuery->bindValue(':description', $this->description, PDO::PARAM_STR);
+        $updateInfoProductQuery->bindValue(':price', $this->price, PDO::PARAM_STR);
+        $updateInfoProductQuery->bindValue(':picture', $this->picture, PDO::PARAM_STR);
+        $updateInfoProductQuery->bindValue(':energy', $this->energy, PDO::PARAM_STR);
+        $updateInfoProductQuery->bindValue(':id', $this->id, PDO::PARAM_INT);
+        return $updateInfoProductQuery->execute();
     }
 //On crée une méthode pour supprimer un produit
     public function deleteProduct(){

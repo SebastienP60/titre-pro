@@ -5,7 +5,7 @@ include 'models/products.php';
 include 'controllers/infoProductController.php';
 include 'header.php';
 ?>
-<form method="GET" enctype="multipart/form-data">
+<form class="mb-5" method="GET" enctype="multipart/form-data">
     <div class="row container-fluid">
         <div id="allInfoProd" class="col-6">
             <ul class="text-center mt-5 mb-5">
