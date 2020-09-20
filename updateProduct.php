@@ -75,8 +75,8 @@ include 'header.php';
                     <option disabled selected></option>
                     </select>
                 </div>    
-                <div class="button mb-4 mt-5">
-                    <button type="submit" name="updateProduct">Modifiez le produit</button>
+                <div>
+                    <button class="btn btn-secondary mb-4 mt-5" type="submit" name="updateProduct">Modifiez le produit</button>
                 </div>
             </fieldset>
         </form>

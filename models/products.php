@@ -206,15 +206,37 @@ public function getListProductsByCategory($categories){
     public function searchReferenceProduct(){
         $searchRefProduct = $this->db->prepare(
             'SELECT
-            `reference`
+            `id`
+            , `name`
+            , `price`
+            , `reference`
             FROM 
-            `products`
+            `ahl115_products`
             WHERE
             `reference`
             LIKE :find
+            ORDER BY `reference` ASC
         ');
-        $searchRefProduct->bindvalue(':find', '%'.$this->reference.'%',PDO::PARAM_STR);
+        $searchRefProduct->bindvalue(':find', $this->reference.'%',PDO::PARAM_STR);
         $searchRefProduct->execute();
-        return $searchRefProduct->fetch(PDO::FETCH_OBJ);    
-    }    
+        return $searchRefProduct->fetchAll(PDO::FETCH_OBJ);    
+    }  
+    
+//On crée une méthode pour le champ de recherche de la page index
+    // public function searchProduct(){
+    //     $searchProd = $this->db->prepare(
+    //         'SELECT
+    //         `id`
+    //         , `name`
+    //         FROM 
+    //         `ahl115_products`
+    //         WHERE
+    //         `name`
+    //         LIKE :find
+    //         ORDER BY `name` ASC
+    //     ');
+    //     $searchProd->bindvalue(':find', '%'.$this->name.'%',PDO::PARAM_STR);
+    //     $searchProd->execute();
+    //     return $searchProd->fetchAll(PDO::FETCH_OBJ);    
+    // }    
 }

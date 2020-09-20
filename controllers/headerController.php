@@ -4,5 +4,10 @@ if(isset($_GET['action'])){
         session_destroy();
         header('location:index.php');
         exit;
-    }
+    }        
 }
+
+// if (!empty($_GET['findProd'])){
+//     $product->name = htmlspecialchars($_GET['findProd']);
+//     $listProd = $product->searchProduct();
+//     }

@@ -16,7 +16,7 @@ include 'header.php';
                 <li> Mail : <?= $userProfil->mail ?></li>
             </ul>
         <div>
-            <button class="btn btn-success mb-3 mt-3" type="submit" name="updateMyAccount"><a href="updateProfile.php"> Modifier mon compte</a></button>
+            <button class="btn btn-success mb-3 mt-3 mr-2" type="submit" name="updateMyAccount"><a href="updateProfile.php"> Modifier mon compte</a></button>
             <button class="btn btn-danger mb-3 mt-3" type="submit" data-toggle="modal" data-target="#deleteProfile">Supprimer mon compte</button>
         </div>
     </div>

@@ -25,7 +25,7 @@ if(isset($_POST['myIdentity'])){
             $formErrors['password'] = 'Minimum 8 caractères présents 1 fois minimum : AZer12&!';
         }
     }else{
-        $formErrors['password'] = 'Veuillez choisir un mot de passe';
+        $formErrors['password'] = 'Veuillez renseigner votre mot de passe';
     }
     if (empty($formErrors)){
         //Vérification que le mot de passe saisi correspond au Hash

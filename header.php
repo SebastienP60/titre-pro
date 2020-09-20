@@ -1,4 +1,5 @@
 <?php
+// include_once 'models/products.php';
 include 'controllers/headerController.php';
 ?>
 <!DOCTYPE html>
@@ -50,10 +51,10 @@ include 'controllers/headerController.php';
         <div class="col-lg-10"> <!--colonne pour inclure les rangées secondaires-->
           <div class="row mt-4">  <!--1ère rangée secondaire pour différents liens-->
             <div class="col-lg-4" id="search"> <!-- colonne pour la barre de recherche-->
-              <form class="form-inline my-2 my-lg-0">
+              <form class="form-inline my-2 my-lg-0" method="GET">
                 <div class="form-row">
                   <div class="form-group col-10">
-                    <input class="form-control " type="text" placeholder="rechercher">
+                    <input class="form-control " name="findProd" type="text" value="" placeholder="rechercher">
                   </div>
                   <div class="form-group col-2">  
                     <button class="btn btn-secondary " type="submit"><i class="fas fa-binoculars"></i></button>

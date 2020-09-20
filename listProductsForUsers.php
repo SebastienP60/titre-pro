@@ -29,7 +29,7 @@ include 'header.php';
         if($i % 4 == 0){
             ?>
                 </div>
-                <div class="card-deck">
+                <div class="card-deck mb-5">
             <?php
         }
         ?>

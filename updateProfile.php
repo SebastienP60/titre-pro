@@ -11,7 +11,7 @@ include 'header.php';
     <div id="registrationForm" class="container text-center mb-5">
         <form class="w-75 mx-auto" method="POST" action="updateProfile.php">
             <fieldset>
-                <div class="row">
+                <div class="row mt-4">
                     <div class="form-group col-6">
                         <label for="lastname">Votre nom : </label>
                         <input class="form-control" type="text" id="lastname" name="lastname" placeholder="Nom" value="<?= isset($_POST['lastname']) ? $_POST['lastname'] : $userProfil->lastname ?>" />

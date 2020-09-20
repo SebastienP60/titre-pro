@@ -1,7 +1,7 @@
 <?php
 include 'header.php';
 ?>
-    <p>Mon panier</p>
+    <h1 class="mt-5">CETTE PAGE EST EN COURS DE DÉVELOPPEMENT </h1>
 <?php
 include 'footer.php';
 ?>

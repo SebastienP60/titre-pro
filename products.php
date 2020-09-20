@@ -39,12 +39,14 @@ include 'header.php';
         </div>
     </div>
         </form>
-    <div class="row">    
-        <div class="offset-5">
-            <input type="search"  type="text" name="find" placeholder="Rechercher un produit" />
-            <button class="btn btn-secondary" type="submit" value="" ><i class="fas fa-binoculars" id="binocular"></i></button>
+    <form method="GET">
+        <div class="row">    
+            <div class="offset-5">
+                <input type="search" name="find" placeholder="Rechercher une référence" />
+                <button class="btn btn-secondary" type="submit" value="" ><i class="fas fa-binoculars" id="binocular"></i></button>
+            </div>
         </div>
-    </div>
+    </form>
         <table class="table table-dark table-striped">
             <tr>
                 <th>Nom</th>

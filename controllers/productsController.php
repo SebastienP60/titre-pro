@@ -112,7 +112,12 @@ if(isset($_POST['idFirstSelect'])){
     }else { 
         $productsList = $product->getProductsList();
     }
-}
+
+    if (!empty($_GET['find'])){
+        $product->reference = htmlspecialchars($_GET['find']);
+        $productsList = $product->searchReferenceProduct();
+        }
+    }
      
 ?>
 
