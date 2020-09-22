@@ -48,32 +48,18 @@ html, body {
         display: none;
     }
 }
-    /* Mise en forme des menus déroulants de la barre de navigation*/
+/* Mise en forme des menus déroulants de la barre de navigation*/
 .dropdown-menu{
-    background-color: #2E86AB;
+    background-color: #007053;
 }
 .dropdown-item {
-    color: black;
+    color: white;
+}
+.dropdown-item:hover{
+    background-color: #007053;
 }
 li{
     list-style: none;
-}
-.dropdown-submenu {
-    position: relative;
-}
-
-.dropdown-submenu a::after {
-    transform: rotate(-90deg);
-    position: absolute;
-    right: 6px;
-    top: .8em;
-}
-
-.dropdown-submenu .dropdown-menu {
-    top: 0;
-    left: 100%;
-    margin-left: .1rem;
-    margin-right: .1rem;
 }
 /*Mise en forme menu déroulant icône du compte*/
 #dropIcone{
@@ -107,6 +93,10 @@ h1{
 }
 #cardContainer{
     padding-bottom: 70px;
+}
+#titlePage{
+    color: white;
+    font-weight: bold;
 }
 /* Pied de page */
 footer {
@@ -184,6 +174,10 @@ input[name=find], [name=search]{
 #nameRefAddProd{
     margin-top: 20px;
 }
+#mesgError{
+    background-color: #007053;
+    font-size: 1.2rem;
+}
 /*Les select de la liste des produits*/
 #makeYourChoice{
     margin-top: 30px;
@@ -214,7 +208,30 @@ color: #007053;
     font-size: 1.2rem;
 }
 #imgProd, #allInfoProd{
-    background-color: white;
     top: 25px;
     left: 25px;
+}
+#imgProd{
+    padding-right: 25px;
+}
+#ctnW{
+    background-color: white;
+}
+/*Card produit*/
+#nameProd{
+    color: black;
+    font-weight: bold;
+    font-size: 3rem;
+}
+#priceProd{
+    font-weight: bold;
+    font-size: 2rem;
+}
+#descriptionProd{
+    background-color: #303030;
+    font-size: 1.3rem;
+}
+.jumbotron{
+    font-weight: bold;
+    font-size: 2rem;
 }
