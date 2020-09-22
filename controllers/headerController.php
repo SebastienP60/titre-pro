@@ -7,7 +7,3 @@ if(isset($_GET['action'])){
     }        
 }
 
-// if (!empty($_GET['findProd'])){
-//     $product->name = htmlspecialchars($_GET['findProd']);
-//     $listProd = $product->searchProduct();
-//     }

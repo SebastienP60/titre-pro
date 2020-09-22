@@ -52,16 +52,19 @@ car on attend des informations de l'administrateur */
     public function getInfoProductById(){
         $infoProductById = $this->db->prepare(
             'SELECT
-                `name`
+                `pro`.`name`
                 , `reference`
                 , `description`
                 , `price`
                 , `picture`
                 , `energy`
-                , `id_ahl115_subtypes`   
+                , `id_ahl115_subtypes`
+                ,`typ`.`id` AS `t`
                 FROM
-                `ahl115_products`
-                WHERE `id` = :id
+                `ahl115_products` AS `pro`
+                INNER JOIN `ahl115_subtypes` AS `subtyp` ON `pro`.`id_ahl115_subtypes` = `subtyp`.`id`
+                INNER JOIN `ahl115_types` AS `typ` ON `subtyp`.`id_ahl115_types`= `typ`.`id`
+                WHERE `pro`.`id` = :id
                 '); 
         $infoProductById->bindValue(':id', $this->id, PDO::PARAM_INT);
         $infoProductById->execute();
@@ -72,7 +75,8 @@ car on attend des informations de l'administrateur */
  public function getListProductsBySubtype(){
     $getListProductsSubtype = $this->db->prepare(
         'SELECT
-            `name`
+            `id`
+            , `name`
             , `reference`
             , `description`
             , `price`
@@ -92,15 +96,20 @@ via le type*/
 public function getListProductsByType($types){
     $getListProductsByType = $this->db->prepare(
         'SELECT
-        `pro`.`name`
+        `pro`.`id`
+        , `pro`.`name`
         , `reference`
         , `description`
         , `price`
         , `picture`
-        , `energy`  
+        , `energy`
+        , `typ`.`name` AS `tn`
+        ,`subcat`.`id` AS `t`
         FROM
         `ahl115_products` AS `pro`
         INNER JOIN `ahl115_subtypes` AS `subtyp` ON `pro`.`id_ahl115_subtypes` = `subtyp`.`id`
+        INNER JOIN `ahl115_types` AS `typ` ON `subtyp`.`id_ahl115_types`= `typ`.`id`
+        INNER JOIN `ahl115_subcategories` AS `subcat` ON `typ`.`id_ahl115_subcategories`= `subcat`.`id`
         WHERE `subtyp`.`id_ahl115_types` = :types
     ');
     $getListProductsByType->bindValue(':types', $types, PDO::PARAM_INT);
@@ -113,7 +122,8 @@ public function getListProductsByType($types){
  public function getListProductsBySubcategory($subcategories){
     $getListProductsSubcategory = $this->db->prepare(
         'SELECT
-        `pro`.`name`
+           `pro`.`id` 
+        , `pro`.`name`
         , `reference`
         , `description`
         , `price`
@@ -135,7 +145,8 @@ via la catégorie*/
 public function getListProductsByCategory($categories){
     $getListProductsCategory = $this->db->prepare(
         'SELECT
-        `pro`.`name`
+        `pro`.`id`
+        , `pro`.`name`
         , `reference`
         , `description`
         , `price`
@@ -207,13 +218,17 @@ public function getListProductsByCategory($categories){
         $searchRefProduct = $this->db->prepare(
             'SELECT
             `id`
-            , `name`
+            , `picture`
             , `price`
+            , `name`
+            , `energy`
             , `reference`
             FROM 
             `ahl115_products`
             WHERE
-            `reference`
+            `reference` 
+            LIKE :find
+            OR `name`
             LIKE :find
             ORDER BY `reference` ASC
         ');
@@ -222,21 +237,4 @@ public function getListProductsByCategory($categories){
         return $searchRefProduct->fetchAll(PDO::FETCH_OBJ);    
     }  
     
-//On crée une méthode pour le champ de recherche de la page index
-    // public function searchProduct(){
-    //     $searchProd = $this->db->prepare(
-    //         'SELECT
-    //         `id`
-    //         , `name`
-    //         FROM 
-    //         `ahl115_products`
-    //         WHERE
-    //         `name`
-    //         LIKE :find
-    //         ORDER BY `name` ASC
-    //     ');
-    //     $searchProd->bindvalue(':find', '%'.$this->name.'%',PDO::PARAM_STR);
-    //     $searchProd->execute();
-    //     return $searchProd->fetchAll(PDO::FETCH_OBJ);    
-    // }    
 }

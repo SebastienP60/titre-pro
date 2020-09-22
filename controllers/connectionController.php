@@ -38,6 +38,7 @@ if(isset($_POST['myIdentity'])){
             $_SESSION['profil']['lastname'] = $userProfil->lastname;
             $_SESSION['profil']['firstname'] = $userProfil->firstname;
             $_SESSION['profil']['id_ahl115_roles'] = $userProfil->id_ahl115_roles; 
+            $_SESSION['profil']['mail'] = $user->mail; 
             
          if($_SESSION['profil']['id_ahl115_roles'] == 1){
              //On redirige vers la page de l'administrateur

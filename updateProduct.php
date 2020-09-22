@@ -76,7 +76,7 @@ include 'header.php';
                     </select>
                 </div>    
                 <div>
-                    <button class="btn btn-secondary mb-4 mt-5" type="submit" name="updateProduct">Modifiez le produit</button>
+                    <button class="btn btn-success mb-4 mt-5" type="submit" name="updateProduct">Modifiez le produit</button>
                 </div>
             </fieldset>
         </form>

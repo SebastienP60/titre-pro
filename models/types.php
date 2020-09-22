@@ -44,4 +44,18 @@ grâce à son id avant de les afficher*/
         $data = $ProductExistByTypeId->fetch(PDO::FETCH_OBJ);
         return $data->isIdProductTypeExist;
     }
+
+/*On crée une méthode pour récupérer le nom du type*/
+    public function getNameTypeById(){
+        $getNameTypeByIdQuery = $this->db->prepare(
+            'SELECT
+            `id`
+            , `name`
+            FROM `ahl115_types`
+            WHERE `id` = :id
+        ');
+        $getNameTypeByIdQuery->bindValue(':id', $this->id, PDO::PARAM_INT);
+        $getNameTypeByIdQuery->execute();
+        return $getNameTypeByIdQuery->fetch(PDO::FETCH_OBJ)->name;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 //Constantes pour la connection à la base de données e, local
-define('SQL_HOST','localhost');
+define('SQL_HOST','127.0.0.1');
 define('SQL_DBNAME','retzAirsoftShop');
 define('SQL_USER','sebastien');
 define('SQL_PWD','ahlmann');

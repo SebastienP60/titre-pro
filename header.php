@@ -1,5 +1,4 @@
 <?php
-// include_once 'models/products.php';
 include 'controllers/headerController.php';
 ?>
 <!DOCTYPE html>
@@ -51,13 +50,13 @@ include 'controllers/headerController.php';
         <div class="col-lg-10"> <!--colonne pour inclure les rangées secondaires-->
           <div class="row mt-4">  <!--1ère rangée secondaire pour différents liens-->
             <div class="col-lg-4" id="search"> <!-- colonne pour la barre de recherche-->
-              <form class="form-inline my-2 my-lg-0" method="GET">
+              <form class="form-inline my-2 my-lg-0" method="GET" action="listProductsForUsers.php">
                 <div class="form-row">
                   <div class="form-group col-10">
-                    <input class="form-control " name="findProd" type="text" value="" placeholder="rechercher">
+                    <input class="form-control " name="find" type="text" value="" placeholder="rechercher/référence">
                   </div>
                   <div class="form-group col-2">  
-                    <button class="btn btn-secondary " type="submit"><i class="fas fa-binoculars"></i></button>
+                    <button class="btn btn-secondary mb-2" type="submit"><i class="fas fa-binoculars"></i></button>
                   </div>
                 </div>
               </form>
@@ -75,7 +74,7 @@ include 'controllers/headerController.php';
                       <div class="dropdown">
                         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,100"><i class="fas fa-user fa-2x" id="isConnect"></i></button>
                         <div class="dropdown-menu" id="dropIcone" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="profile.php">Mon profil</a>
+                          <a class="dropdown-item" href="profile.php">Mon Compte</a>
                           <a class="dropdown-item" href="userBasket.php">Mon panier</a>
                           <a class="dropdown-item" href="?action=disconnect">Déconnexion</a>
                         </div>
@@ -92,88 +91,53 @@ include 'controllers/headerController.php';
                       <span class="navbar-toggler-icon"></span>
                   </button>
                   <a href="panier.php"> <i class="fas fa-shopping-basket fa-3x" id="iconCart"></i></a>
-                  <a href="connection.php"><i class="<?= isset($_SESSION['profil']['lastname']) ? 'fas' : 'far' ?> fa-user fa-2x" id="iconAccount"></i></a>
-                  <!--Intégration du bloc navbar-collapse-->
+                  <?php if(!isset($_SESSION['profil']['lastname'])){?> <!--On est pas connecté-->
+                    <a class="btn btn-account text-white" href="connection.php"><i class="far fa-user fa-2x" id="iconAccount"></i></a>                  
+                    <?php }else{ ?>
+                      <div class="dropdown" id="iconAccount">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,100"><i class="fas fa-user fa-2x"></i></button>
+                        <div class="dropdown-menu" id="dropIcone" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="profile.php">Mon profil</a>
+                          <a class="dropdown-item" href="userBasket.php">Mon panier</a>
+                          <a class="dropdown-item" href="?action=disconnect">Déconnexion</a>
+                        </div>
+                      </div>  
+                    <?php  } ?>                  
+                    <!--Intégration du bloc navbar-collapse-->
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <!--Création de la liste non ordonnée de tous les liens et sous-menus-->
                     <ul class="navbar-nav mr-auto container-fluid">
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarReplicate" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Répliques
+                      <li class=" nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="replicate" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Réplique
                         </a>
-                          <ul class="dropdown-menu">
-                            <li class="nav-item dropdown-submenu dropdown">
-                                <a class="nav-link dropdown-toggle navDropdown" id="navbarGunReplicate" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Répliques de poing
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarGunReplicate" id="submenuGunReplicate">
-                                  <li><a class="dropdown-item" href="listProductsForUsers.php">Répliques de poing</a></li>
-                                  <li><a class="dropdown-item" href="#">Répliques à gaz</a></li>
-                                  <li><a class="dropdown-item" href="#">Répliques CO2</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown-submenu">
-                                <a class="nav-link dropdown-toggle navDropdown" id="navbarLongReplicate" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Répliques longues
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarLongReplicate" id="submenuLongReplicate">
-                                    <li><a class="dropdown-item" href="répliques-longues.php">Répliques longues</a></li>
-                                    <li><a class="dropdown-item" href="#">Répliques à ressort</a></li>
-                                    <li><a class="dropdown-item" href="#">Répliques électriques</a></li>
-                                </ul>
-                            </li>
-                          </ul>
+                        <div class="dropdown-menu" aria-labelledby="replicate">
+                            <a class="dropdown-item" href="listProductsForUsers.php?t=1">Répliques de poing</a>
+                            <a class="dropdown-item" href="listProductsForUsers.php?t=2">Réplique longues</a>
+                        </div>
                       </li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarAccessory" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Accessoires
+                      <li class=" nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="accessories" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Accessoires
                         </a>
-                          <ul class="dropdown-menu">
-                            <li class="nav-item dropdown-submenu dropdown">
-                              <a class="nav-link dropdown-toggle navDropdown" id="navbarAccessories" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Accessoires
-                              </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarAccessories">
-                                    <?php
-                                    //boucle qui récupère dans le tableau asociatif la clé et la valeur de chaque élément
-                                        foreach ($accessories as $accessory => $allAccessories) { ?>
-                                            <li><a class="dropdown-item" href="<?= $allAccessories ?>"><?= $accessory; ?></a></li>
-                                        <?php }
-                                    ?>
-                                    <?php
-                                        foreach ($chargers as $charger => $allChargers) { ?>
-                                            <li value="<?= $charger ?>"><a class="dropdown-item" href="accessoires.php"><?= $allChargers; ?></a></li>
-                                        <?php }
-                                    ?>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown-submenu">
-                              <a class="nav-link dropdown-toggle navDropdown" id="navbarAccessories" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Chargeurs
-                              </a>
-                              <ul class="dropdown-menu" aria-labelledby="navbarAccessories">
-                                  <li><a class="dropdown-item" href="#">Chargeurs</a></li>
-                                  <li><a class="dropdown-item" href="#">Chargeurs AEP</a></li>
-                                  <li><a class="dropdown-item" href="#">Chargeurs AEP Mid-cap</a></li>
-                                  <li><a class="dropdown-item" href="#">BB Loaders et Accessoires</a></li>
-                                  <li><a class="dropdown-item" href="#">Chargeurs AEG Low-cap</a></li>
-                                  <li><a class="dropdown-item" href="#">Chargeurs pour sniper</a></li>
-                                  <li><a class="dropdown-item" href="#">Chargeurs AEG Hi-cap</a></li>
-                                  <li><a class="dropdown-item" href="#">Chargeurs Pistolets Gaz</a></li>
-                                  <li><a class="dropdown-item" href="#">Chargeurs Pistolets CO2</a></li>
-                                  <li><a class="dropdown-item" href="#">Chargeurs Fusils à pompe</a></li>
-                                  <li><a class="dropdown-item" href="#">Chargeurs Revolvers</a></li>
-                                  <li><a class="dropdown-item" href="#">Chargeurs GBBR</a></li>
-                              </ul>
-                            </li>
-                          </ul>
-                      </li> 
+                        <div class="dropdown-menu" aria-labelledby="accessories">
+                            <a class="dropdown-item" href="listProductsForUsers.php?t=3">Accessoires</a>
+                            <a class="dropdown-item" href="listProductsForUsers.php?t=4">Chargeurs</a>
+                            <a class="dropdown-item" href="listProductsForUsers.php?t=5">Cibleries</a>
+                            <a class="dropdown-item" href="listProductsForUsers.php?t=6">Lunettes/Optiques</a>
+                            <a class="dropdown-item" href="listProductsForUsers.php?t=7">Silencieux/Cache flamme</a>
+                            <a class="dropdown-item" href="listProductsForUsers.php?t=8">Bipieds</a>
+                            <a class="dropdown-item" href="listProductsForUsers.php?t=9">Lampes</a>
+                            <a class="dropdown-item" href="listProductsForUsers.php?t=10">Rails picatinny/ Weaver</a>
+                        </div>
+                      </li>
                       <li class=" nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="replicateConsumable" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             Consommable
                         </a>
                         <div class="dropdown-menu" aria-labelledby="replicateConsumable">
-                            <a class="dropdown-item" href="#">Air-soft</a>
+                            <a class="dropdown-item" href="listProductsForUsers.php?t=11">Billes</a>
+                            <a class="dropdown-item" href="listProductsForUsers.php?t=13">Gaz et CO2</a>
                         </div>
                       </li>
                       <li class="nav-item dropdown">
@@ -181,7 +145,11 @@ include 'controllers/headerController.php';
                             Équipements
                         </a>
                         <div class="dropdown-menu" aria-labelledby="replicateEquipment">
-                            <a class="dropdown-item" href="#">Air-soft</a>
+                            <a class="dropdown-item" href="listProductsForUsers.php?t=14">Protections</a>
+                            <a class="dropdown-item" href="listProductsForUsers.php?t=16">Sangles</a>
+                            <a class="dropdown-item" href="listProductsForUsers.php?t=17">Holsters</a>
+                            <a class="dropdown-item" href="listProductsForUsers.php?t=18">Poches molles</a>
+                            <a class="dropdown-item" href="listProductsForUsers.php?t=19">Gilets tactiques</a>
                         </div>
                       </li>
                       <li class="nav-item dropdown">

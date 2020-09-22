@@ -74,6 +74,20 @@ grâce à son id lorsqu'il veut modifier son compte*/
             return '';
         }
     }
+/*On crée une lméthode pour modifier le mot de passe de l'utilisateur*/
+    public function updatePasswordUser(){
+        $updatePwdUser = $this->db->prepare(
+            'UPDATE
+            `ahl115_users`
+            SET
+            `password`= :password
+            WHERE `id`= :id
+        ');
+        $updatePwdUser->bindValue(':password', $this->password, PDO::PARAM_STR);
+        $updatePwdUser->bindValue(':id', $this->id, PDO::PARAM_INT);
+
+        return $updatePwdUser->execute();
+    }
 /*On crée une méthode pour récupérer toutes les informations relatives
  au compte de l'utilisateur déjà inscrit*/
     public function getInfoUserAccount(){

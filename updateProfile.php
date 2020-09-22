@@ -43,6 +43,28 @@ include 'header.php';
                 </div>
             </fieldset>
         </form>
+        <form class="w-75 mx-auto" method="POST" action="updateProfile.php">
+            <fieldset>
+                <div class="form-group">
+                    <label for="oldPassword">Ancien mot de passe :</label>
+                    <input class="form-control" type="password" name="oldPassword" id="oldPassword" placeholder="Ancien mot de passe"  value="<?= isset($_POST['oldPassword']) ? $_POST['oldPassword'] : '' ?>"/>
+                    <!--message erreur-->
+                    <p class="text-danger"><?= isset($formErrors['oldPassword']) ? $formErrors['oldPassword'] : '' ?></p>
+                </div>
+                <div class="form-group">
+                    <label for="password">Nouveau mot de passe :</label>
+                    <input type="password" name="password" id="password" placeholder="Mot de passe" class="form-control" value="<?= isset($_POST['password']) ? $_POST['password'] : '' ?>"/>
+                    <!--message erreur-->
+                    <p class="text-danger"><?= isset($formErrors['password']) ? $formErrors['password'] : '' ?></p>
+                </div>
+                <div class="form-group">
+                    <label for="verifyPassword">Confirmer nouveau mot de passe :</label>
+                    <input type="password" name="verifyPassword" id="verifyPassword" placeholder="Saisir à nouveau" class="form-control" value="<?= isset($_POST['verifyPassword']) ? $_POST['verifyPassword'] : '' ?>" />
+                    <p class="text-danger"><?= isset($formErrors['verifyPassword']) ? $formErrors['verifyPassword'] : '' ?></p>
+                </div>
+                <button type="submit" name="updatePassword" class="btn btn-success mb-3">Modifier mot de passe</button>
+            </fieldset>
+        </form>
     </div>
 <?php
 include 'footer.php';

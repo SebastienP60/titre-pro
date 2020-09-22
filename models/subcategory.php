@@ -30,15 +30,29 @@ class subcategory{
 
 /*On crée une méthode pour vérifié si la sous-catégorie du produit existe déjà 
 grâce à son id avant de les afficher*/
-public function checkSubcategoryExistById(){
-    $ProductExistBySubcategoryId = $this->db->prepare(
-        'SELECT COUNT(`id`) AS `isIdProductSubcategoryExist`
-                FROM `ahl115_subcategories` 
-                WHERE `id` = :id
-                ');
-    $ProductExistBySubcategoryId->bindValue(':id', $this->id, PDO::PARAM_INT);
-    $ProductExistBySubcategoryId->execute();
-    $data = $ProductExistBySubcategoryId->fetch(PDO::FETCH_OBJ);
-    return $data->isIdProductSubcategoryExist;
-}
+    public function checkSubcategoryExistById(){
+        $ProductExistBySubcategoryId = $this->db->prepare(
+            'SELECT COUNT(`id`) AS `isIdProductSubcategoryExist`
+                    FROM `ahl115_subcategories` 
+                    WHERE `id` = :id
+                    ');
+        $ProductExistBySubcategoryId->bindValue(':id', $this->id, PDO::PARAM_INT);
+        $ProductExistBySubcategoryId->execute();
+        $data = $ProductExistBySubcategoryId->fetch(PDO::FETCH_OBJ);
+        return $data->isIdProductSubcategoryExist;
+    }
+
+/*On crée une méthode pour récupérer le nom de la sous-catégorie*/
+    public function getSubcatTypeById(){
+        $getSubcatTypeByIdQuery = $this->db->prepare(
+            'SELECT
+            `id`
+            , `name`
+            FROM `ahl115_subcategories`
+            WHERE `id` = :id
+        ');
+        $getSubcatTypeByIdQuery->bindValue(':id', $this->id, PDO::PARAM_INT);
+        $getSubcatTypeByIdQuery->execute();
+        return $getSubcatTypeByIdQuery->fetch(PDO::FETCH_OBJ)->name;
+    }
 }

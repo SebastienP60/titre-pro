@@ -2,41 +2,40 @@
 session_start();
 include 'config.php';
 include 'models/products.php';
+include 'models/subcategory.php';
+include 'models/types.php';
 include 'controllers/listProductsForUsersController.php';
 include 'header.php';
 ?>
-<form method="GET" enctype="multipart/form-data">
-    <div>
-        <h1 class=""><?= isset($_GET['id']) ?></h1>
+<?php
+if(isset($message)){ ?>
+    <div class="jumbotron mt-5 text-center">
+        <p><?= $message ?></p>
     </div>
-    <div class="row container-fluid">
-        <div class="card-deck mb-5">
-            <?php $i = 0; ?>
-    <?php foreach($listProd as $prod){ ?>
-        <div class="card">
-            <img class="card-img-top" src="<?= $prod->picture ?>" alt="" />
-            <div class="card-body">
-                <p>Nom : <?= $prod->name ?></p>
-                <p>Référence : <?= $prod->reference ?></p>
-                <p>prix <?= $prod->price ?> €</p>
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+<?php } else { ?>
+    <form method="GET" enctype="multipart/form-data">
+        <div class="row container-fluid">
+            <h1 class="mx-auto mb-5" id="titlePage"><?= $listProd[0]->tn; ?></h1>
+            <div class="card-deck mb-5">
+                <?php $i = 0; ?>
+                <?php foreach($listProd as $prod){ ?>
+                    <?php $i++; ?>
+                    <div class="card">
+                        <img class="card-img-top" src="<?= $prod->picture ?>" alt="picture" />
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $prod->name ?></h5>
+                            <p>Réf : <?= $prod->reference ?></p>
+                            <p id="priceProd"><?= $prod->price ?> €</p>
+                            <a href="cardProductInfo.php?id=<?= $prod->id ?>" class="btn btn-success">En savoir +</a>
+                        </div>
+                    </div>
+                    <?php if($i % 4 == 0){ ?>
+                        </div>
+                        <div class="card-deck mb-5">
+                    <?php } ?>
+                <?php } ?>
             </div>
         </div>
-        <?php 
-        $i++; 
-        if($i % 4 == 0){
-            ?>
-                </div>
-                <div class="card-deck mb-5">
-            <?php
-        }
-        ?>
-    <?php } ?>
-    </div>
-    </div>
-</form>
-<?php
-include 'footer.php';
-?>
+    </form>
+ <?php } ?>
+<?php include 'footer.php'; ?>

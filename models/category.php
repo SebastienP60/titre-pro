@@ -27,80 +27,16 @@ class category{
 
 /*On crée une méthode pour vérifié si le type du produit existe déjà 
 grâce à son id avant de les afficher*/
-public function checkCategoryExistById(){
-    $ProductExistByCategoryId = $this->db->prepare(
-        'SELECT COUNT(`id`) AS `isIdProductCategoryExist`
-                FROM `ahl115_categories` 
-                WHERE `id` = :id
-                ');
-    $ProductExistByCategoryId->bindValue(':id', $this->id, PDO::PARAM_INT);
-    $ProductExistByCategoryId->execute();
-    $data = $ProductExistByCategoryId->fetch(PDO::FETCH_OBJ);
-    return $data->isIdProductCategoryExist;
-}
+    public function checkCategoryExistById(){
+        $ProductExistByCategoryId = $this->db->prepare(
+            'SELECT COUNT(`id`) AS `isIdProductCategoryExist`
+                    FROM `ahl115_categories` 
+                    WHERE `id` = :id
+                    ');
+        $ProductExistByCategoryId->bindValue(':id', $this->id, PDO::PARAM_INT);
+        $ProductExistByCategoryId->execute();
+        $data = $ProductExistByCategoryId->fetch(PDO::FETCH_OBJ);
+        return $data->isIdProductCategoryExist;
+    }
 }
  
-//     public function getAllTypes(){
-//         $getAllTypesQuery = $this->db->query(
-//             'SELECT
-//             `name`.`ahl115_subtypes` AS `subtypesName`
-//             , `id`.`ahl115_subtypes` AS `subtypesId`
-//             ,`link`
-//             FROM
-//             `ahl115_subtypes` AS `subtypes`
-//             INNER JOIN `ahl115_types` AS `typ` ON `id` = `id_ahl115_subcategories`
-//             ');
-//     }
-    
-// }      
-
-/*SELECT 
-                `name` AS `subName`
-                ,`id`
-                ,`typ`.`name` AS `typeName`
-                ,`link`
-                ,`subTyp`.`name` AS `subtypeName`
-            FROM 
-                `ahl115_subcategories` AS `sub`
-            INNER JOIN `ahl115_types` AS `typ` ON id = `id_ahl115_subcategories`
-            INNER JOIN `ahl115_subtypes` AS `subTyp` ON `id_ahl115_types` = `typ`.`id`
-            WHERE `id` = 1*/
-/* 
-            public function getTypeNames(){
-
-                $categoryQuery = $this->db->query(
-                        'SELECT 
-                        `sub`.`name` AS `subName`
-                        ,`sub`.`id`
-                        ,`typ`.`name` AS `typeName`
-                      
-                    FROM 
-                        `ahl115_subcategories` AS `sub`
-                    INNER JOIN `ahl115_types` AS `typ` ON `sub`.`id` = `id_ahl115_subcategories`
-                    WHERE `sub`.`id` = 1
-                        
-                    ');
-                    $data = $categoryQuery->fetchAll(PDO::FETCH_OBJ);
-                    return $data;
-            }
-        
-            public function getSubTypes($id){
-        
-                $categoryQuery = $this->db->query(
-                        'SELECT 
-                        `sub`.`name` AS `subName`
-                        ,`sub`.`id`
-                        ,`typ`.`name` AS `typeName`
-                        ,`typ`.`id` AS `typeID`
-                        ,`link`
-                        ,`subTyp`.`name` AS `subtypeName`
-                    FROM 
-                        `ahl115_subcategories` AS `sub`
-                    INNER JOIN `ahl115_types` AS `typ` ON `sub`.id = `id_ahl115_subcategories`
-                    INNER JOIN `ahl115_subtypes` AS `subTyp` ON `id_ahl115_types` = `typ`.`id`
-                    WHERE `sub`.`id` = 1 OR `typ`.`id` =' . $id
-                    );
-                    $data = $categoryQuery->fetchAll(PDO::FETCH_OBJ);
-                    return $data;
-            }
- */        

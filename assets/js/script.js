@@ -9,7 +9,7 @@
 
 
 //jquery pour affichage menus déroulants à plusieurs niveaux
-  $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+/*   $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
       if (!$(this).next().hasClass('show')) {
           $(this).parents('.dropdown-menu').first().find('.show').removeClass('show');
       }
@@ -19,7 +19,7 @@
           $('.dropdown-submenu .show').removeClass('show');
       });
       return false;
-  });
+  }); */
   //AJAX
   //On crée une fonction qui sera appelée au changement du select (quand on clique sur une option)
   function choiceCategory(firstSelectElement, secondSelectId){

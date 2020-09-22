@@ -1,12 +1,8 @@
 <?php
 session_start();
 include 'config.php';
-include 'tables.php';
-include 'models/category.php';
 include 'controllers/headerController.php';
 include 'header.php';
-/* $types = array('Armes de poing', 'Armes longues'); */
-$armesdepoing = array('Répliques à ressorts', 'Répliques à gaz');
 ?>
     <div class="container text-center">
         <h1>Notre histoire</h1>
@@ -21,7 +17,7 @@ $armesdepoing = array('Répliques à ressorts', 'Répliques à gaz');
                         <h5 class="card-title">Bas de masque</h5>
                             <p class="card-text">Bas de masque grillage v1 - olive 21€</p>
                             <p class="card-text">21€ TTC</p>
-                            <a href="#" class="btn btn-primary">En savoir plus</a>
+                            <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>
                 <div class="card">
@@ -30,7 +26,7 @@ $armesdepoing = array('Répliques à ressorts', 'Répliques à gaz');
                         <h5 class="card-title">Pistolet à ressort H&K</h5>
                             <p class="card-text">Réplique pistolet à ressort H&K VP9 HME Culasse métal 0,5J</p>
                             <p class="card-text">44€ TTC</p>
-                            <a href="#" class="btn btn-primary">En savoir plus</a>
+                            <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div>
                 <div class="card">
@@ -39,7 +35,7 @@ $armesdepoing = array('Répliques à ressorts', 'Répliques à gaz');
                         <h5 class="card-title">Billes BIO</h5>
                             <p class="card-text">Billes BIO 0.30g x 5100 en bouteille</p>
                             <p class="card-text">22,20€ TTC</p>
-                            <a href="#" class="btn btn-primary">En savoir plus</a>
+                            <a href="#" class="btn btn-success">En savoir plus</a>
                     </div>
                 </div> 
             </div>   

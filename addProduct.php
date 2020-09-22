@@ -8,7 +8,7 @@ include 'header.php';
 ?>
 <h1 id="addProduct">Ajouter un nouveau produit</h1>
     <!-- On crée une ternaire pour afficher le message d'erreur si il existe -->
-    <p><?= isset($addProductMessage) ? $addProductMessage : '' ?></p>
+    <p id="mesgError" class="text-center"><?= isset($addProductMessage) ? $addProductMessage : '' ?></p>
     <div class="container text-center" id="productForm">
         <form class="w-75 mx-auto mb-5" method="POST" action="addProduct.php" enctype="multipart/form-data">
             <fieldset>
