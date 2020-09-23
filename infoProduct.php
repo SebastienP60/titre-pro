@@ -13,7 +13,7 @@ include 'header.php';
                     <li>Nom : <?= $infoProduct->name ?></li>
                     <li>Référence : <?= $infoProduct->reference ?></li>
                     <li>Description : <?= htmlspecialchars_decode($infoProduct->description) ?></li>
-                     <li>Puissance : <?= $infoProduct->energy ?></li>
+                    <?= (isset($infoProduct->energy) && ($infoProduct->energy > 0)) ? '<li>Puissance : ' . $infoProduct->energy . '</li>' : '' ?>
                     <li>prix <?= $infoProduct->price ?> €</li>
                 </ul>
             </div>

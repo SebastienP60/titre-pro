@@ -20,7 +20,7 @@ include 'header.php';
                     <div class="col-6 my-auto">
                         <ul>
                             <li>Réf : <?= $infoProduct->reference ?></li>
-                            <li>Puissance : <?= $infoProduct->energy ?></li>
+                            <?= (isset($infoProduct->energy) && ($infoProduct->energy > 0)) ? '<li>Puissance : ' . $infoProduct->energy . '</li>' : '' ?>
                             <li class="mt-5" id="priceProd"><?= $infoProduct->price ?> €</li>
                         </ul>
                     </div>

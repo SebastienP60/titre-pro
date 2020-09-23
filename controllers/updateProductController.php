@@ -67,10 +67,21 @@ $infoProduct = $product->getInfoProductById();
         } else {
             $formErrors['picture'] = 'Veuillez selectionner un fichier';
         }
-        if(!empty($_POST['energy'])){
-            $product->energy = htmlspecialchars($_POST['energy']);
-        }else{
-            $formErrors['energy'] = 'Veuillez renseigner le nombre de joules';
+        
+        if(isset($_POST['selectSubcategory'])){
+            if($_POST['selectSubcategory'] == 1){
+                if(isset($_POST['energy'])){
+                    if(!empty($_POST['energy'])){
+                        $product->energy = htmlspecialchars($_POST['energy']);
+                    }else{
+                        $formErrors['energy'] = 'Veuillez renseigner le nombre de joules';
+                    }
+                } else{
+                    $formErrors['energy'] = 'Veuillez renseigner le nombre de joules';
+                }       
+            } else{
+                $product->energy = 0;
+            }
         }
 
         if(!empty($_POST['selectSubtype'])){

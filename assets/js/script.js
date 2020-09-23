@@ -1,25 +1,3 @@
-//  $(document).ready(function(){
-//      $('.dropdown-submenu a.navDropdown').on("click", function(e){
-//       /*$('.dropdown-menu').toggle();*/
-//       $(this).next('ul').toggle();
-//       e.stopPropagation();
-//        e.preventDefault();
-//      });
-//   });
-
-
-//jquery pour affichage menus déroulants à plusieurs niveaux
-/*   $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
-      if (!$(this).next().hasClass('show')) {
-          $(this).parents('.dropdown-menu').first().find('.show').removeClass('show');
-      }
-      var $subMenu = $(this).next('.dropdown-menu');
-      $subMenu.toggleClass('show');
-      $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
-          $('.dropdown-submenu .show').removeClass('show');
-      });
-      return false;
-  }); */
   //AJAX
   //On crée une fonction qui sera appelée au changement du select (quand on clique sur une option)
   function choiceCategory(firstSelectElement, secondSelectId){
@@ -52,15 +30,35 @@
     request.send('idFirstSelect=' + firstSelectElement.value + '&secondSelect=' + secondSelectId);
 }
 
+
+//Jquery pour déclenchement fenêtre modale
 $('#deleteProduct').on('show.bs.modal', function (event) {
     var button = $(event.relatedTarget) // Bouton qui déclenche la fenêtre modal
     var recipient = button.data('delete') // Extract info from data-* attributes
-    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    //Mise à jour du contenu de la modale. 
     var modal = $(this)
     modal.find('.modal-footer input').val(recipient)
   })
 
+//Js pour WYSIWYG (What you see is what you get)
   tinymce.init({
       selector: '#descriptionMCE'
   })
+
+//Fonction pour afficher le champ énergie en sélectionnant la sous-catégorie réplique
+function showEnergy(select){
+  var value = select.value;
+  var energy = document.getElementById('energy');
+  var energyLabel = document.getElementById('energyLabel');
+  if(value == 1){
+    energyLabel.style.display = "block";
+    energy.style.display = "block";
+  } else {
+    energyLabel.style.display = "none";
+    energy.style.display = "none";
+  }
+}
+function showElements(select, firstSelectElement, secondSelectId){
+  showEnergy(select);
+  choiceCategory(firstSelectElement, secondSelectId);
+}

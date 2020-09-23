@@ -50,13 +50,11 @@ include 'controllers/headerController.php';
         <div class="col-lg-10"> <!--colonne pour inclure les rangées secondaires-->
           <div class="row mt-4">  <!--1ère rangée secondaire pour différents liens-->
             <div class="col-lg-4" id="search"> <!-- colonne pour la barre de recherche-->
-              <form class="form-inline my-2 my-lg-0" method="GET" action="listProductsForUsers.php">
-                <div class="form-row">
-                  <div class="form-group col-10">
-                    <input class="form-control " name="find" type="text" value="" placeholder="rechercher/référence">
-                  </div>
-                  <div class="form-group col-2">  
-                    <button class="btn btn-secondary mb-2" type="submit"><i class="fas fa-binoculars"></i></button>
+              <form class="form-inline my-2 my-0" method="GET" action="listProductsForUsers.php">
+                <div class="input-group">
+                  <input class="form-control m-0" name="find" type="text" value="" placeholder="rechercher/référence">
+                  <div class="input-group-append">  
+                    <button class="btn btn-secondary" type="submit"><i class="fas fa-binoculars"></i></button>
                   </div>
                 </div>
               </form>
