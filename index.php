@@ -4,12 +4,12 @@ include 'config.php';
 include 'controllers/headerController.php';
 include 'header.php';
 ?>
-    <div class="container text-center">
+    <div class="container text-center mt-5">
         <h1>Notre histoire</h1>
         <p id="history">Notre boutique se situe dans le département de l'Aisne(02), et plus particulièrement dans la commune de Villers-Cotterêts. Toute notre équipe est à votre écoute et saura vous renseigner afin de vous équiper des meilleurs produits pour la pratique du Airsoft ou du Paintball en toute sécurité. Pour vous satisfaire nous vous mettons à disposition une salle pour tester vos armes avant un achat. Vous trouverez dans notre magasin un grand choix de répliques en tout genre ainsi que de l'équipement et de nombreux consommables. Nous espérons vous voir prochainement dans notre boutique ou sur notre terrain afin de pratiquer ensemble ce sport.</p>
     </div>
     <div class="container" id="cardContainer">
-        <h2 class="text-center" id="indexProduct">Nos produits du moment</h2>                
+        <h2 class="text-center mt-5 mb-5" id="indexProduct">Nos produits du moment</h2>                
             <div class="card-deck">
                 <div class="card">
                     <img class="card-img-top" src="assets/img/A69987-2.jpg" alt="Bas de masque" title="Bas de masque" />

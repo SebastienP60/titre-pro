@@ -15,7 +15,7 @@ if(isset($message)){ ?>
 <?php } else { ?>
     <form method="GET" enctype="multipart/form-data">
         <div class="row container-fluid">
-            <h1 class="mx-auto mb-5" id="titlePage"><?= isset($listProd[0]->tn) ? ($listProd[0]->tn) : '' ?></h1>
+            <h1 class="mx-auto mb-5 mt-5" id="titlePage"><?= isset($listProd[0]->tn) ? ($listProd[0]->tn) : '' ?></h1>
             <div class="card-deck mb-5">
                 <?php $i = 0; ?>
                 <?php foreach($listProd as $prod){ ?>

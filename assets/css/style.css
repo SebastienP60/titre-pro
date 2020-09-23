@@ -2,7 +2,8 @@
 body{
     background: url(../img/camoVert.png);
 	display : table;
-	width: 100%;
+    width: 100%;
+    height: auto;
 }
 html, body {
 	height: 100%;
@@ -70,10 +71,10 @@ li{
 }
 /*Contenu de la page principale */
 h1{
+    background-color:  #BFB083;
     color: black;
     font-weight: bold;
     font-size: 3.5rem;
-    padding-top: 40px;
     text-align: center;
 }
 #history{
@@ -85,17 +86,18 @@ h1{
     margin-bottom: 30px;
 }
 #indexProduct{
-    color: black;
+    background-color: #302727;
+    color: white;
     font-weight: bold;
     font-size: 3.5rem;
-    padding-top: 70px;
-    padding-bottom: 70px;
+    /* padding-top: 70px; */
+    /* padding-bottom: 70px; */
 }
 #cardContainer{
     padding-bottom: 70px;
 }
 #titlePage{
-    color: white;
+    color: black;
     font-weight: bold;
 }
 /* Pied de page */
@@ -219,6 +221,7 @@ color: #007053;
 }
 /*Card produit*/
 #nameProd{
+    background-color:  #4D704D;
     color: black;
     font-weight: bold;
     font-size: 3rem;
